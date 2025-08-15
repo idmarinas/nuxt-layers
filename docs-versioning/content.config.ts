@@ -10,7 +10,9 @@ const versions: Version[] = options.appConfig?.docsVersioning?.versions || []
 const isEnabled: boolean = options.appConfig?.docsVersioning?.enable || false
 
 // Not use prefix strategy
-options.i18n.strategy = 'no_prefix'
+if (options.i18n?.strategy) {
+  options.i18n.strategy = 'no_prefix'
+}
 
 const DocsSchema = z.object({
   links: z.array(z.object({
