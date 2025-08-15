@@ -42,7 +42,6 @@ collections['docs_versioning'] = defineCollection({
   source: {
     cwd,
     include: '**/*.md',
-    exclude: ['index.md'],
     prefix: isEnabled ? '/current' : '/'
   },
   schema: DocsSchema,
