@@ -32,7 +32,7 @@ const {version, items} = useDocsVersioning()
 
     <template #item-label="{ item }">
       <div class="flex items-center gap-1.5">
-        <span class="truncate">{{ item.label }}</span>
+        <span class="truncate text-left flex-1">{{ item.label }}</span>
 
         <UBadge :color="item.tagColor" class="rounded-full" size="sm" variant="subtle">
           {{ item.tag }}
