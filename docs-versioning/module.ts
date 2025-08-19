@@ -10,6 +10,7 @@ import {
 import githubVersions from './src/utils/githubVersions'
 import {parseSemanticVersion} from './src/utils/parseVersions'
 import {PageMeta} from 'nuxt/app'
+import {Version} from './src/utils/version'
 
 export interface StaticVersion {
   tag: string,
