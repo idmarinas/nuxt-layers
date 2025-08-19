@@ -1,4 +1,4 @@
-import type {Version} from './utils/version'
+import type {Version} from './src/utils/version'
 
 export default defineAppConfig({})
 
