@@ -8,12 +8,4 @@ export default defineNuxtConfig({
   modules: [resolve('./module')],
   compatibilityDate: '2025-08-11',
   devtools: {enabled: true},
-  docsVersioning: {
-    versions: {
-      github: {
-        owner: 'idmarinas',
-        repo: 'advertising-bundle'
-      }
-    }
-  },
 })

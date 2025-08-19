@@ -10,7 +10,13 @@ export default defineNuxtConfig({
     }
   },
   devtools: {enable: true},
-  docsVersioning: {enable: true},
+  docsVersioning: {
+    enable: true,
+    github: {
+      owner: 'idmarinas',
+      repo: 'advertising-bundle'
+    }
+  },
   i18n: {
     defaultLocale: 'en',
     locales: [{
