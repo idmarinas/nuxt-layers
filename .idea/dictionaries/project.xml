@@ -2,6 +2,7 @@
   <dictionary name="project">
     <words>
       <w>commitish</w>
+      <w>composables</w>
       <w>zipball</w>
     </words>
   </dictionary>
