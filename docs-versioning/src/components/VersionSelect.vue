@@ -22,7 +22,7 @@ const {version, items} = useDocsVersioning()
         trailing-icon="i-lucide-chevron-down"
         variant="outline"
       >
-        <span class="truncate">{{ version.label }}</span>
+        <span class="truncate text-left flex-1">{{ version.label }}</span>
 
         <UBadge :color="version.tagColor" class="rounded-full" size="sm" variant="subtle">
           {{ version.tag }}
