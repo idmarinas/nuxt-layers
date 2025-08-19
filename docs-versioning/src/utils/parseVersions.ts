@@ -9,7 +9,7 @@ export interface SemanticVersion {
   build?: string;
 }
 
-function parseSemanticVersion(version: string): SemanticVersion | null {
+export function parseSemanticVersion(version: string): SemanticVersion | null {
   // Eliminar prefijo 'v' si existe
   const cleanVersion = version.replace(/^v/, '')
 
