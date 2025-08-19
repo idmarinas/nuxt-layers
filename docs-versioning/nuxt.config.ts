@@ -5,6 +5,9 @@ import {createResolver} from '@nuxt/kit'
 const {resolve} = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
+  $meta: {
+    name: 'docs-versioning',
+  },
   modules: [resolve('./module')],
   compatibilityDate: '2025-08-11',
   devtools: {enabled: true},
