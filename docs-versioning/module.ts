@@ -109,9 +109,7 @@ export default defineNuxtModule<ModuleOptions>({
     const cssTemplate = addTemplate({
       filename: 'docs-versioning.css',
       getContents: () => {
-        return `@import "tailwindcss";
-
-@source "src/**/*.vue";`
+        return `@import "tailwindcss"; @source "${resolve('src/**/*.vue')}";`
       },
     })
 
