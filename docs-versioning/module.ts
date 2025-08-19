@@ -1,4 +1,3 @@
-import type {Version} from './src/utils/version'
 import {
   addComponentsDir,
   addImportsDir,
@@ -9,16 +8,20 @@ import {
   extendPages
 } from '@nuxt/kit'
 import githubVersions from './src/utils/githubVersions'
+import {parseSemanticVersion} from './src/utils/parseVersions'
 import {PageMeta} from 'nuxt/app'
+
+export interface StaticVersion {
+  tag: string,
+  isCurrent: boolean,
+}
 
 export interface ModuleOptions {
   enable?: boolean,
-  versions?: {
-    static?: Version[],
-    github?: {
-      owner: string,
-      repo: string
-    }
+  list?: StaticVersion[],
+  github?: {
+    owner: string,
+    repo: string
   }
 }
 
@@ -30,26 +33,26 @@ export default defineNuxtModule<ModuleOptions>({
   // Default configuration options of the Nuxt module
   defaults: {
     enable: false,
-    versions: {
-      static: undefined,
-      github: undefined
-    }
+    list: undefined,
+    github: undefined
   },
   setup: async function (options: ModuleOptions, nuxt) {
-    const opts = options?.versions
     nuxt.options.appConfig.docsVersioning = {
       enable: options.enable,
-      versions: []
+      versions: [] as Version[]
     }
 
     if (!options.enable) {
       return
     }
 
-    if (opts?.static !== undefined && opts.static.length > 0) {
-      nuxt.options.appConfig.docsVersioning.versions = opts.static
-    } else if (opts?.github?.owner !== undefined && opts?.github?.repo !== undefined) {
-      nuxt.options.appConfig.docsVersioning.versions = await githubVersions(opts.github.owner, opts.github.repo)
+    if (options?.list !== undefined && options.list.length > 0) {
+      nuxt.options.appConfig.docsVersioning.versions = []
+      options.list.forEach(v => {
+        nuxt.options.appConfig.docsVersioning.versions.push(new Version(v.tag, parseSemanticVersion(v.tag), v.isCurrent))
+      })
+    } else if (options?.github?.owner !== undefined && options?.github?.repo !== undefined) {
+      nuxt.options.appConfig.docsVersioning.versions = await githubVersions(options.github.owner, options.github.repo)
     }
 
     const {resolve} = createResolver(import.meta.url)
@@ -79,7 +82,6 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     addImportsDir(resolve('./src/composables'))
-    addImportsDir(resolve('./src/utils'))
 
     nuxt.hook('pages:resolved', (pages: PageMeta[]) => {
       const exclude = ['index', 'lang', 'lang-index', 'lang-slug']
