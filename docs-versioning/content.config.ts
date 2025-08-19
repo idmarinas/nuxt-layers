@@ -1,6 +1,6 @@
 import type {DefinedCollection} from '@nuxt/content'
 import {defineCollection, defineContentConfig, z} from '@nuxt/content'
-import type {Version} from './utils/version'
+import type {Version} from './src/utils/version'
 import {useNuxt} from '@nuxt/kit'
 import {joinURL} from 'ufo'
 
@@ -39,14 +39,16 @@ versions.filter(v => !v.isCurrent).forEach(v => {
   })
 })
 
-collections['docs_versioning'] = defineCollection({
-  type: 'page',
-  source: {
-    cwd,
-    include: '**/*.md',
-    prefix: isEnabled ? '/current' : '/'
-  },
-  schema: DocsSchema,
-})
+if (isEnabled) {
+  collections['docs_versioning'] = defineCollection({
+    type: 'page',
+    source: {
+      cwd,
+      include: '**/*.md',
+      prefix: isEnabled ? '/current' : '/'
+    },
+    schema: DocsSchema,
+  })
+}
 
 export default defineContentConfig({collections})
