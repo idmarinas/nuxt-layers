@@ -7,7 +7,8 @@ const {version, items} = useDocsVersioning()
     :items="items"
     :modal="false"
     :ui="{
-      content: 'w-(--reka-dropdown-menu-trigger-width) min-w-0'
+      content: 'w-(--reka-dropdown-menu-trigger-width) min-w-0',
+      itemLabel: 'truncate flex-1'
     }"
   >
     <template #default="{ open }">
