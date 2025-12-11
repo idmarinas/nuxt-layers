@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AIAssistantCustomInstructionsStorage">
+    <option name="instructions">
+      <map>
+        <entry key="AIAssistant.VCS.GenerateCommitMessage">
+          <value>
+            <AIAssistantStoredInstruction>
+              <option name="actionId" value="AIAssistant.VCS.GenerateCommitMessage" />
+              <option name="content" value="Use the Conventional Commit format.&#10;Avoid overly verbose descriptions or unnecessary details.&#10;Avoid Markdown format." />
+            </AIAssistantStoredInstruction>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/externalDependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/scopes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/.navigation.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/2.introduction.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/3.installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/4.project-structure.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/5.studio.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/6.migration.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/.navigation.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/1.markdown-syntax.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/2.code-blocks.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/3.components.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/4.images-embeds.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/en/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/.navigation.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/2.introduction.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/3.installation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/4.project-structure.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/5.studio.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/6.migration.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/.navigation.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/1.markdown-syntax.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/2.code-blocks.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/3.components.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/4.images-embeds.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/content/fr/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/.playground/nuxt.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/app.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/assets/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/utils/collectionsSource.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/content.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/modules/docs.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/_robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Nuxt Layers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Nuxt Layers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copyright/Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copyright/Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/app.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/1.getting-started/.navigation.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/1.getting-started/2.introduction.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/1.getting-started/3.installation.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/1.getting-started/4.project-structure.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/1.getting-started/5.studio.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/1.getting-started/6.migration.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/2.essentials/.navigation.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/2.essentials/1.markdown-syntax.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/2.essentials/2.code-blocks.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/2.essentials/3.components.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/2.essentials/4.images-embeds.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/en/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/1.getting-started/.navigation.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/1.getting-started/2.introduction.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/1.getting-started/3.installation.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/1.getting-started/4.project-structure.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/1.getting-started/5.studio.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/1.getting-started/6.migration.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/2.essentials/.navigation.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/2.essentials/1.markdown-syntax.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/2.essentials/2.code-blocks.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/2.essentials/3.components.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/2.essentials/4.images-embeds.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/content/fr/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/nuxt.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/app.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/content.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/src/app.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/src/components/DocsAsideLeftTop.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/src/components/LanguageSelect.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/src/components/VersionSelect.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/src/composables/useDocsVersioning.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/src/layouts/docs.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/src/middleware/00.setup.global.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/src/pages/[v]/[lang]/[...slug].vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-versioning/src/pages/[v]/[lang]/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/app/utils/githubVersions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/app/utils/githubVersions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/app/utils/version.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/app/utils/version.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs/nuxt.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
+  </component>
+  <component name="ComposerSettings" loadUpdateAvailability="false" synchronizationState="SYNCHRONIZE">
+    <execution>
+      <interpreter name="idmarinas/php:8.4-xdebug" composer="composer" />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;idmarinas&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/idmarinas/nuxt-layers.git&quot;,
+    &quot;accountId&quot;: &quot;5d2d0cdd-9d10-48a8-bcea-15f9cc65ca8a&quot;
+  }
+}</component>
+  <component name="MaliciousPackageCheckinHandlerState">
+    <option name="packageCheck" value="true" />
+  </component>
+  <component name="NamedScopeManager">
+    <order>
+      <scope name="Copyright" />
+    </order>
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="idmarinas/php:8.4-xdebug" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="36cUcNNvJYkpkD71r4Tuy3Z7c4p" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Projects - Utils/nuxt-layers/docs/.playground&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\idmarinas\\AppData\\Local\\Programs\\PhpStorm 2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: []
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Projects - Utils\nuxt-layers\docs\.playground" />
+      <recent name="F:\Projects - Utils\nuxt-layers" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs\app\utils" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs\app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Projects - Utils\nuxt-layers\.docus.dist" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs\app" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs\modules" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs\.playground" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine parameters="-d xdebug.mode=coverage" />
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="ReactNative" factoryName="React Native">
+      <node-interpreter value="project" />
+      <react-native value="" />
+      <platform value="ANDROID" />
+      <envs />
+      <only-packager />
+      <browser value="268e1650-82cc-4578-bc1e-313dfa826c93" />
+      <method v="2">
+        <option name="ReactNativePackager" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="envFilePaths">
+            <list>
+              <option value="" />
+            </list>
+          </option>
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-PS-252.28238.9" />
+        <option value="bundled-php-predefined-a98d8de5180a-58f58c5035b3-com.jetbrains.php.sharedIndexes-PS-252.28238.9" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+    <option name="myConnectionType" value="NONE" />
+    <option name="myConnectionId" value="" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="" />
+      <created>1732488585774</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732488585774</updated>
+      <workItem from="1765305438757" duration="1427000" />
+      <workItem from="1765306926391" duration="2164000" />
+      <workItem from="1765373932158" duration="17940000" />
+      <workItem from="1765449563451" duration="28622000" />
+    </task>
+    <task id="LOCAL-00001" summary="refactor(docs): migrate package configuration from docs-versioning to docs with updated dependencies and scripts">
+      <option name="closed" value="true" />
+      <created>1765388667050</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765388667050</updated>
+    </task>
+    <task id="LOCAL-00002" summary="refactor(docs): migrate tsconfig from docs-versioning to docs for improved structure and consistency">
+      <option name="closed" value="true" />
+      <created>1765388714000</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765388714000</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactor(docs): migrate .gitignore from docs-versioning to docs with updated structure and entries">
+      <option name="closed" value="true" />
+      <created>1765388724256</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765388724256</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor(docs): migrate .editorconfig from docs-versioning to root for centralized configuration">
+      <option name="closed" value="true" />
+      <created>1765388733865</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765388733865</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactor(docs): update .gitignore to include wildcard patterns for *.dist files">
+      <option name="closed" value="true" />
+      <created>1765388827664</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765388827664</updated>
+    </task>
+    <task id="LOCAL-00006" summary="chore(docs): update docus dependency to version ^5.4.0">
+      <option name="closed" value="true" />
+      <created>1765388952442</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1765388952442</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactor(docs-versioning): remove eslint and nuxtrc configuration files for cleanup">
+      <option name="closed" value="true" />
+      <created>1765388974756</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1765388974756</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactor(docs): migrate utils from docs-versioning to docs with updated structure and improved handling">
+      <option name="closed" value="true" />
+      <created>1765454314341</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1765454314341</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactor(docs): migrate nuxt.config.ts from docs-versioning to docs with updated structure and compatibility date">
+      <option name="closed" value="true" />
+      <created>1765454376845</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1765454376845</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="refactor(docs): migrate package configuration from docs-versioning to docs with updated dependencies and scripts" />
+    <MESSAGE value="refactor(docs): migrate tsconfig from docs-versioning to docs for improved structure and consistency" />
+    <MESSAGE value="refactor(docs): migrate .gitignore from docs-versioning to docs with updated structure and entries" />
+    <MESSAGE value="refactor(docs): migrate .editorconfig from docs-versioning to root for centralized configuration" />
+    <MESSAGE value="refactor(docs): update .gitignore to include wildcard patterns for *.dist files" />
+    <MESSAGE value="chore(docs): update docus dependency to version ^5.4.0" />
+    <MESSAGE value="refactor(docs-versioning): remove eslint and nuxtrc configuration files for cleanup" />
+    <MESSAGE value="refactor(docs): migrate utils from docs-versioning to docs with updated structure and improved handling" />
+    <MESSAGE value="refactor(docs): migrate nuxt.config.ts from docs-versioning to docs with updated structure and compatibility date" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(docs): migrate nuxt.config.ts from docs-versioning to docs with updated structure and compatibility date" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

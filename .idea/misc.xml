@@ -5,30 +5,12 @@
       <profile-state>
         <expanded-state>
           <State>
-            <id>Data flowJavaScript and TypeScript</id>
-          </State>
-          <State>
-            <id>JavaScript and TypeScript</id>
-          </State>
-          <State>
-            <id>PHP</id>
-          </State>
-          <State>
-            <id>PHPUnitPHP</id>
-          </State>
-          <State>
-            <id>PestPHP</id>
-          </State>
-          <State>
-            <id>Potentially undesirable code constructsJavaScript and TypeScript</id>
-          </State>
-          <State>
-            <id>Try statement issuesJavaScript and TypeScript</id>
+            <id>General</id>
           </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>User defined</id>
+            <id>InconsistentLineSeparators</id>
           </State>
         </selected-state>
       </profile-state>
