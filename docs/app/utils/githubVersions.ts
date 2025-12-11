@@ -1,10 +1,10 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 11/08/2025, 20:00
+ * Last modified by "IDMarinas" on 09/12/2025, 20:41
  *
  * @project Nuxt Layers
- * @see https://github.com/idmarinas/
+ * @see https://github.com/idmarinas/nuxt-layers
  *
  * @file githubVersions.ts
  * @date 11/08/2025
@@ -25,6 +25,10 @@ export default async function githubVersions(owner: string, repo: string): Promi
   const releasesResponse = await fetch(githubApi)
   const json: Release[] = await releasesResponse.json()
   const versions: Version[] = []
+
+  if (releasesResponse.status >= 400) {
+    return []
+  }
 
   const parsedVersions = getLatestReleasesPerMajorVersion(json)
 

@@ -1,3 +1,21 @@
+/**
+ * Copyright 2025 (C) IDMarinas - All Rights Reserved
+ *
+ * Last modified by "IDMarinas" on 10/12/2025, 16:54
+ *
+ * @project Nuxt Layers
+ * @see https://github.com/idmarinas/nuxt-layers
+ *
+ * @file parseVersions.ts
+ * @date 09/12/2025
+ * @time 20:43
+ *
+ * @author Iván Diaz Marinas (IDMarinas)
+ * @license BSD 3-Clause License
+ *
+ * @since 1.0.0
+ */
+
 import type {Release} from './githubRelease'
 
 // Función para parsear versión semántica
@@ -9,7 +27,7 @@ export interface SemanticVersion {
   build?: string;
 }
 
-export function parseSemanticVersion(version: string): SemanticVersion | null {
+export function parseSemanticVersion(version: string): SemanticVersion {
   // Eliminar prefijo 'v' si existe
   const cleanVersion = version.replace(/^v/, '')
 
@@ -17,7 +35,13 @@ export function parseSemanticVersion(version: string): SemanticVersion | null {
   const semverRegex = /^(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?$/
 
   const match = cleanVersion.match(semverRegex)
-  if (!match) return null
+  if (null === match) {
+    return {
+      major: 0,
+      minor: 0,
+      patch: 0
+    }
+  }
 
   return {
     major: parseInt(match[1], 10),

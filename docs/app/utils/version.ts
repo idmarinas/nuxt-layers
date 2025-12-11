@@ -1,12 +1,12 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 04/08/2025, 17:14
+ * Last modified by "IDMarinas" on 09/12/2025, 20:48
  *
- * @project docs
- * @see https://github.com/idmarinas/
+ * @project Nuxt Layers
+ * @see https://github.com/idmarinas/nuxt-layers
  *
- * @file version.class.ts
+ * @file version.ts
  * @date 04/08/2025
  * @time 17:24
  *
@@ -23,11 +23,11 @@ export class Version {
   public label: string
   public tag: string
   public isCurrent: boolean
-  public branch: string
-  public owner: string
-  public repo: string
+  public branch: string = ''
+  public owner: string = ''
+  public repo: string = ''
   public path: string
-  public repository: string
+  public repository: string = ''
   public collection: string
   public tagColor: BadgeProps['color']
   public semver: SemanticVersion

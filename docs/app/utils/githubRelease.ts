@@ -1,12 +1,12 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 05/08/2025, 21:00
+ * Last modified by "IDMarinas" on 12/08/2025, 13:10
  *
- * @project docs
- * @see https://github.com/idmarinas/
+ * @project Nuxt Layers
+ * @see https://github.com/idmarinas/nuxt-layers
  *
- * @file releases.interface.ts
+ * @file githubRelease.ts
  * @date 05/08/2025
  * @time 21:00
  *
