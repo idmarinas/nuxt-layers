@@ -27,6 +27,7 @@ export class Version {
   public owner: string = ''
   public repo: string = ''
   public path: string
+  public tarballUrl: string
   public repository: string = ''
   public collection: string
   public tagColor: BadgeProps['color']
@@ -85,6 +86,14 @@ export class Version {
 
   public setBranch(branch: string): this {
     this.branch = branch
+
+    return this
+  }
+
+  public setTarballUrl(tarballUrl: string): this {
+    if (URL.canParse(tarballUrl)) {
+      this.tarballUrl = tarballUrl
+    }
 
     return this
   }
