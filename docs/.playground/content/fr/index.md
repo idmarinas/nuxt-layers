@@ -11,7 +11,7 @@ Créez votre documentation en Markdown
 #description
 Publiez instantanément une documentation élégante, optimisée pour le SEO, avec design déjà pensé.
 
-Docus intègre le meilleur de l'écosystème Nuxt.
+Docus rassemble le meilleur de l'écosystème Nuxt en une seule CLI.
 
 #links
   :::u-button
@@ -21,22 +21,26 @@ Docus intègre le meilleur de l'écosystème Nuxt.
   to: /fr/getting-started/installation
   trailing-icon: i-lucide-arrow-right
   ---
-  Commencez
+  Commencer
   :::
-  
+
   :::u-button
   ---
   color: neutral
   icon: simple-icons-github
   size: xl
-  to: https://github.com/nuxt-ui-pro/docus
+  to: https://github.com/nuxt-content/docus
   variant: outline
   ---
-  Étoile sur GitHub
+  Voir sur GitHub
   :::
 ::
 
 ::u-page-section
+#title
+Livré avec de nombreuses fonctionnalités
+
+#features
   :::u-page-feature
   ---
   icon: i-simple-icons-nuxt
@@ -44,7 +48,7 @@ Docus intègre le meilleur de l'écosystème Nuxt.
   to: https://nuxt.com
   ---
   #title
-  Construit avec [Nuxt 3]{.text-primary}
+  Construit avec [Nuxt 4]{.text-primary}
   
   #description
   Optimisé par votre meta framework Vue préféré. Docus vous donne tout ce dont vous avez besoin pour créer des sites rapides, performants et optimisés pour le SEO.
@@ -57,10 +61,10 @@ Docus intègre le meilleur de l'écosystème Nuxt.
   to: https://ui.nuxt.com/
   ---
   #title
-  Propulsé par [Nuxt UI Pro]{.text-primary}
+  Désigné par [Nuxt UI]{.text-primary}
   
   #description
-  Sexy, minimaliste et personnalisable. Docus intègre Nuxt UI Pro pour vous offrir la meilleure expérience pour écrire une documentation sans boilerplate, concentrez-vous simplement sur votre contenu.
+  Sexy, minimaliste et personnalisable. Docus intègre Nuxt UI pour vous offrir la meilleure expérience pour écrire une documentation sans boilerplate, concentrez-vous simplement sur votre contenu.
   :::
 
   :::u-page-feature
