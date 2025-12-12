@@ -44,9 +44,9 @@ export function parseSemanticVersion(version: string): SemanticVersion {
   }
 
   return {
-    major: parseInt(match[1], 10),
-    minor: parseInt(match[2], 10),
-    patch: parseInt(match[3], 10),
+    major: parseInt(match[1]!, 10),
+    minor: parseInt(match[2]!, 10),
+    patch: parseInt(match[3]!, 10),
     prerelease: match[4],
     build: match[5]
   }
@@ -73,16 +73,16 @@ function compareVersions(a: SemanticVersion, b: SemanticVersion): number {
   return 0
 }
 
-// Interfaz para el resultado que incluye la información parseada
+// Interface for the result that includes the parsed information
 interface ReleaseWithVersion {
   release: Release;
   version: SemanticVersion;
   isCurrent?: boolean
 }
 
-// Función principal: agrupar releases y obtener el último de cada versión mayor (con información de versión)
+// Group releases and get the latest of each major version (with version information)
 export function getLatestReleasesPerMajorVersion(releases: Release[]): ReleaseWithVersion[] {
-  // Filtrar releases válidos (con versiones parseables, no draft, no prerelease)
+  // Filter valid releases (with parseable versions, not draft, not prerelease)
   const validReleases = releases
     .filter(release => !release.draft && !release.prerelease && release.published_at)
     .map(release => ({
@@ -103,7 +103,7 @@ export function getLatestReleasesPerMajorVersion(releases: Release[]): ReleaseWi
 
   // Obtener la última release lanzada
   const lastRelease: ReleaseWithVersion = validReleases.reduce((previous, current) => {
-    return current.release.published_at < previous.release.published_at ? previous : current
+    return current.release.published_at! < previous.release.published_at! ? previous : current
   })
   // Obtener la versión más alta de cada grupo
   const latestReleases: ReleaseWithVersion[] = []
@@ -114,7 +114,9 @@ export function getLatestReleasesPerMajorVersion(releases: Release[]): ReleaseWi
       compareVersions(a.version, b.version)
     )
 
-    const latestInGroup = sortedGroup[sortedGroup.length - 1]
+
+    const latestInGroup = sortedGroup.pop()!
+
     latestReleases.push({
       release: latestInGroup.release,
       version: latestInGroup.version,
@@ -124,38 +126,4 @@ export function getLatestReleasesPerMajorVersion(releases: Release[]): ReleaseWi
 
   // Ordenar el resultado por versión mayor
   return latestReleases.sort((a, b) => b.version.major - a.version.major)
-}
-
-// Función alternativa más simple si solo necesitas incluir releases publicados
-export function getLatestReleasesSimple(releases: Release[]): Release[] {
-  const releaseMap = new Map<number, Release>()
-
-  for (const release of releases) {
-    // Filtrar drafts, prereleases y releases no publicados
-    if (release.draft || release.prerelease || !release.published_at) {
-      continue
-    }
-
-    const version = parseSemanticVersion(release.tag_name)
-    if (!version) continue
-
-    const major = version.major
-    const currentLatest = releaseMap.get(major)
-
-    if (!currentLatest) {
-      releaseMap.set(major, release)
-    } else {
-      const currentVersion = parseSemanticVersion(currentLatest.tag_name)!
-      if (compareVersions(version, currentVersion) > 0) {
-        releaseMap.set(major, release)
-      }
-    }
-  }
-
-  return Array.from(releaseMap.values())
-    .sort((a, b) => {
-      const versionA = parseSemanticVersion(a.tag_name)!
-      const versionB = parseSemanticVersion(b.tag_name)!
-      return versionB.major - versionA.major
-    })
 }
