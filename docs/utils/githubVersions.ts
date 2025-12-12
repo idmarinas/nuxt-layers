@@ -1,7 +1,7 @@
 /**
  * Copyright 2025 (C) IDMarinas - All Rights Reserved
  *
- * Last modified by "IDMarinas" on 09/12/2025, 20:41
+ * Last modified by "IDMarinas" on 11/12/2025, 20:43
  *
  * @project Nuxt Layers
  * @see https://github.com/idmarinas/nuxt-layers
@@ -15,7 +15,7 @@
  *
  * @since 1.0.0
  */
-import { Version } from './version'
+import { Version } from '../app/utils/version'
 import type { Release } from './githubRelease'
 import { getLatestReleasesPerMajorVersion } from './parseVersions'
 import { promises as fs } from 'fs'
@@ -107,7 +107,7 @@ export default async function githubVersions(owner: string, repo: string): Promi
         new Version(rv.release.tag_name, rv.version, rv.isCurrent)
           .setBranch(rv.release.target_commitish)
           .setRepository(owner, repo)
-          .setTarballUrl(rv.release.tarball_url)
+          .setTarballUrl(rv.release.tarball_url || '')
       )
     })
 
