@@ -1,11 +1,11 @@
-import {createResolver, defineNuxtModule, useLogger, useNuxt} from 'nuxt/kit'
-import type {Author, DocsBundleConfig, LabelProps} from '../bundle.config'
-import type {TooltipProps} from '@nuxt/ui'
-import {defu} from 'defu'
-import {pascalCase, titleCase} from 'scule'
-import type {FileAfterParseHook} from '@nuxt/content'
-import type {PageMeta} from 'nuxt/app'
-import type {Nuxt} from 'nuxt/schema'
+import { createResolver, defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
+import type { Author, DocsBundleConfig, LabelProps } from '../bundle.config'
+import type { TooltipProps } from '@nuxt/ui'
+import { defu } from 'defu'
+import { pascalCase, titleCase } from 'scule'
+import type { FileAfterParseHook } from '@nuxt/content'
+import type { PageMeta } from 'nuxt/app'
+import type { Nuxt } from 'nuxt/schema'
 
 interface ModuleOptions {
   package_name: string;
@@ -34,7 +34,7 @@ const idmarinas: Author = {
   name: 'Iván Diaz',
   description: '@IDMarinas',
   username: 'IDMarinas',
-  avatar: {src: 'https://avatars.githubusercontent.com/u/35842929?v=4'},
+  avatar: { src: 'https://avatars.githubusercontent.com/u/35842929?v=4' },
   to: 'https://github.com/idmarinas',
   target: '_blank'
 }
@@ -52,7 +52,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    colors: {purple: 'purple'},
+    colors: { purple: 'purple' },
     labels: {
       wip: {
         label: 'WIP',
@@ -107,7 +107,8 @@ export default defineNuxtModule<ModuleOptions>({
   },
   moduleDependencies: {
     'nuxt-seo-utils': {
-      version: '>=7.0.0'
+      version: '>=7.0.0',
+      optional: false
     }
   },
   setup(options: ModuleOptions, nuxt) {
@@ -129,7 +130,7 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    const {docsBundle, socials} = createDocsBundleConfig(options.package_name, options, nuxt)
+    const { docsBundle, socials } = createDocsBundleConfig(options.package_name, options, nuxt)
 
     // Merge docsBundle config
     nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle)
@@ -159,7 +160,7 @@ export default defineNuxtModule<ModuleOptions>({
           twitterCreator: `@${docsBundle.repository.owner}`,
         }
       })
-      nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, {colors: Array.from(colors)})
+      nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, { colors: Array.from(colors) })
 
       // Modify AppConfig defaults
       nuxt.options.appConfig.header.title = docsBundle.name
@@ -187,7 +188,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   hooks: {
     'pages:resolved'(pages: PageMeta[]) {
-      const {resolve} = createResolver(import.meta.url)
+      const { resolve } = createResolver(import.meta.url)
       const exclude = ['index', 'lang-index']
       const landingTemplate = resolve('../app/templates/landing.vue')
 
@@ -265,22 +266,22 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
     return Array.from(icons).map(key => `i-simple-icons-${key}`)
   }
 
-  return {docsBundle, socials}
+  return { docsBundle, socials }
 }
 
 function parseLabelsForVersions(versions: string[]) {
   return Object.fromEntries(versions.map((version, index) => [
-      `v${version.replace('.', '_')}`,
-      {
-        label: version,
-        color: 0 === index ? 'primary' : 'secondary',
-        icon: 'i-tabler-tag',
-        tooltip: {
-          ...defaultTooltip,
-          text: `New in version ${version}`,
-        }
+    `v${version.replace('.', '_')}`,
+    {
+      label: version,
+      color: 0 === index ? 'primary' : 'secondary',
+      icon: 'i-tabler-tag',
+      tooltip: {
+        ...defaultTooltip,
+        text: `New in version ${version}`,
       }
-    ])
+    }
+  ])
   )
 }
 
@@ -292,7 +293,7 @@ const getAuthorByUserName = (authors: Record<string, Author>, userName: string, 
       name: placeholder,
       username: placeholder,
       description: '',
-      avatar: {src: ''}
+      avatar: { src: '' }
     }
   }
 
