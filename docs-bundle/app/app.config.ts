@@ -1,0 +1,6 @@
+export default defineAppConfig({
+  ui: {
+    colors: {primary: 'blue', secondary: 'cyan'}
+  },
+  github: {rootDir: 'docs'},
+})

@@ -1,0 +1,17 @@
+{
+  "name": "idmarinas-nuxt-layer-docs-bundle",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build .playground",
+    "dev": "nuxi dev .playground",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "docus": "^5.4.0",
+    "nuxt-seo-utils": "^7.0.19"
+  }
+}
