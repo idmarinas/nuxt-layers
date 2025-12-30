@@ -105,30 +105,10 @@ export default defineNuxtModule<ModuleOptions>({
       default: idmarinas,
     }
   },
-  onInstall(_nuxt) {
-    // This runs only when the module is first installed
-    console.log(`Setting up ${MODULE_NAME} for the first time!`)
-
-    // You might want to:
-    // - Create initial configuration files
-    // - Set up database schemas
-    // - Display welcome messages
-    // - Perform initial data migration
-  },
-
-  onUpgrade(_nuxt: Nuxt, _options: ModuleOptions, previousVersion: string) {
-    // This runs when the module is upgraded to a newer version
-    console.log(`Upgrading ${MODULE_NAME} from ${previousVersion} to 1.2.0`)
-
-    // You might want to:
-    // - Migrate configuration files
-    // - Update database schemas
-    // - Clean up deprecated files
-    // - Display upgrade notes
-
-    // if (semver.lt(previousVersion, '1.1.0')) {
-    //   console.log('⚠️ Breaking changes in 1.1.0 - please check the migration guide')
-    // }
+  moduleDependencies: {
+    'nuxt-seo-utils': {
+      version: '>=7.0.0'
+    }
   },
   setup(options: ModuleOptions, nuxt) {
     const logger = useLogger()
@@ -188,6 +168,21 @@ export default defineNuxtModule<ModuleOptions>({
       nuxt.options.appConfig.toc = defu(nuxt.options.appConfig.toc, {
         bottom: options.support_links
       })
+    })
+
+    nuxt.hook('nuxt-og-image:runtime-config', (config) => {
+      config.defaults = defu(config.defaults, {
+        props: {
+          headline: docsBundle.name,
+          description: docsBundle.description,
+          socials: {
+            icons: docsBundle.socialsIconsOnly(['github']),
+            username: docsBundle.repository.owner
+          }
+        }
+      })
+
+      config.defaults.component = 'Docs'
     })
   },
   hooks: {
