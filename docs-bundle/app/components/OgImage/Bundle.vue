@@ -54,7 +54,7 @@ const socials = computed(() => {
       </div>
 
       <div class="w-[340px] flex flex-col items-center justify-center gap-0 text-blue-300 dark:text-blue-900">
-        <div class="text-4xl -mb-8">{{ bundle.author }}</div>
+        <div class="text-4xl -mb-8">{{ bundle.author.username }}</div>
         <SvgShip width="340" height="340" class="opacity-65" />
         <span class="text-5xl -mt-24">{{ bundle.short_name }}</span>
         <div class="flex items-center justify-center gap-4 mt-1">

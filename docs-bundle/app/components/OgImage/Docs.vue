@@ -44,7 +44,7 @@ const description = computed(() => (props.description || "").slice(0, 200))
     </div>
 
     <div class="flex-none flex flex-col items-center justify-center text-blue-300 dark:text-blue-900">
-      <div class="text-4xl -mb-7">{{ bundle.author }}</div>
+      <div class="text-4xl -mb-7">{{ bundle.author.username }}</div>
       <SvgShip width="340" height="340" class="opacity-65" />
       <span class="text-5xl -mt-24">{{ bundle.short_name }}</span>
       <div class="flex items-center justify-center gap-4 mt-1">
