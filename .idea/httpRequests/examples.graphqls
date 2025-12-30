@@ -1,0 +1,23 @@
+
+type Query {
+    getUser(userName: String): User
+    getCommentsWith(text: String): [Comment]
+}
+
+type Mutation {
+    newComment(userName: String, text: String): Comment
+}
+
+type Subscription {
+    newComments : Comment
+}
+
+type User {
+    name: String,
+    comments: [Comment]
+}
+
+type Comment {
+    text: String,
+    by: String
+}

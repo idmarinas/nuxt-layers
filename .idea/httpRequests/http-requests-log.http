@@ -1,0 +1,26 @@
+GET http://localhost:63342/http-client/examples/graphql
+User-Agent: IntelliJ HTTP Client/PhpStorm 2025.2.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> examples-2.graphqls
+
+###
+
+GET http://localhost:63342/http-client/examples/graphql
+User-Agent: IntelliJ HTTP Client/PhpStorm 2025.2.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> examples-1.graphqls
+
+###
+
+GET http://localhost:63342/http-client/examples/graphql
+User-Agent: IntelliJ HTTP Client/PhpStorm 2025.2.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> examples.graphqls
+
+###
