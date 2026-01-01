@@ -140,8 +140,6 @@ export default defineNuxtModule<ModuleOptions>({
       authors: options.authors as typeof nuxt.options.runtimeConfig.docsBundle.authors
     }
 
-    nuxt.options.app.baseURL = `/${docsBundle.repository.name}/`
-
     nuxt.hook('modules:done', () => {
       nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui.colors, options.colors)
 
