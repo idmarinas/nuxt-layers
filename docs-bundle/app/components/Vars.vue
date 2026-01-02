@@ -13,6 +13,10 @@ const props = defineProps({
 const content = computed((): string => {
   if (!props.n) return ''
 
+  if ('project' === props.n) {
+    return bundle.name
+  }
+
   const repo = `https://github.com/${bundle.package_name}`
 
   const keys = props.n.split('.')
@@ -28,12 +32,7 @@ const content = computed((): string => {
   }
 
   for (const key of keys) {
-    if ('project' === key) {
-      value = value.project.name
-    } else {
-      value = value?.[key]
-    }
-
+    value = value?.[key]
   }
 
   return value || ''
