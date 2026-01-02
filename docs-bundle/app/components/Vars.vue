@@ -10,18 +10,33 @@ const props = defineProps({
     default: ''
   }
 })
-
 const content = computed((): string => {
+  if (!props.n) return ''
+
   const repo = `https://github.com/${bundle.package_name}`
 
-  return {
-    project: bundle.name,
+  const keys = props.n.split('.')
+  let value: any = {
+    project: {
+      name: bundle.name,
+      description: bundle.description
+    },
     package_name: bundle.package_name,
     repository: repo,
     security_advisories_url: `${repo}/security/advisories`,
     ...bundle.vars,
-    '': '',
-  }[props.n] ?? ''
+  }
+
+  for (const key of keys) {
+    if ('project' === key) {
+      value = value.project.name
+    } else {
+      value = value?.[key]
+    }
+
+  }
+
+  return value || ''
 })
 
 function isUrl(str: string): boolean {
