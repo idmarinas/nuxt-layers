@@ -1,10 +1,9 @@
-import { createResolver, defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
 import type { Author, DocsBundleConfig, LabelProps } from '../bundle.config'
 import type { TooltipProps } from '@nuxt/ui'
-import { defu } from 'defu'
-import { pascalCase, titleCase } from 'scule'
 import type { FileAfterParseHook } from '@nuxt/content'
 import type { Nuxt } from 'nuxt/schema'
+import { defu } from 'defu'
+import { pascalCase, titleCase } from 'scule'
 import { getLocalGitInfo, getGitEnv } from 'docus/utils/git'
 
 interface ModuleOptions {
