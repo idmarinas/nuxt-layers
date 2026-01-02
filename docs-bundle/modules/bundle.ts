@@ -4,7 +4,6 @@ import type { TooltipProps } from '@nuxt/ui'
 import { defu } from 'defu'
 import { pascalCase, titleCase } from 'scule'
 import type { FileAfterParseHook } from '@nuxt/content'
-import type { PageMeta } from 'nuxt/app'
 import type { Nuxt } from 'nuxt/schema'
 
 interface ModuleOptions {
@@ -186,17 +185,6 @@ export default defineNuxtModule<ModuleOptions>({
     })
   },
   hooks: {
-    'pages:resolved'(pages: PageMeta[]) {
-      const { resolve } = createResolver(import.meta.url)
-      const exclude = ['index', 'lang-index']
-      const landingTemplate = resolve('../app/templates/landing.vue')
-
-      pages.map(page => {
-        if (exclude.includes(page.name!) && (page.file as string).endsWith('docus/app/templates/landing.vue')) {
-          page.file = landingTemplate
-        }
-      })
-    },
     'content:file:afterParse'(ctx: FileAfterParseHook) {
       const nuxt = useNuxt()
       const options = nuxt.options.runtimeConfig.docsBundle
