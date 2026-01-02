@@ -1,12 +1,12 @@
-import type {Author, DocsBundleConfig, LabelProps} from '../bundle.config'
-import type {TooltipProps} from '@nuxt/ui'
-import type {FileAfterParseHook} from '@nuxt/content'
-import type {Nuxt} from 'nuxt/schema'
-import {defineNuxtModule, useLogger, useNuxt} from 'nuxt/kit'
-import {defu} from 'defu'
-import {pascalCase, titleCase} from 'scule'
-import {getGitEnv, getLocalGitInfo} from 'docus/utils/git'
-import {updateSiteConfig} from 'nuxt-site-config/kit'
+import type { Author, DocsBundleConfig, LabelProps } from '../bundle.config'
+import type { TooltipProps } from '@nuxt/ui'
+import type { FileAfterParseHook } from '@nuxt/content'
+import type { Nuxt } from 'nuxt/schema'
+import { defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
+import { defu } from 'defu'
+import { pascalCase, titleCase } from 'scule'
+import { getGitEnv, getLocalGitInfo } from 'docus/utils/git'
+import { updateSiteConfig } from 'nuxt-site-config/kit'
 
 interface ModuleOptions {
   package_name: string;
@@ -35,7 +35,7 @@ const idmarinas: Author = {
   name: 'Iván Diaz',
   description: '@IDMarinas',
   username: 'IDMarinas',
-  avatar: {src: 'https://avatars.githubusercontent.com/u/35842929?v=4'},
+  avatar: { src: 'https://avatars.githubusercontent.com/u/35842929?v=4' },
   to: 'https://github.com/idmarinas',
   target: '_blank'
 }
@@ -53,7 +53,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    colors: {purple: 'purple'},
+    colors: { purple: 'purple' },
     labels: {
       wip: {
         label: 'WIP',
@@ -137,13 +137,14 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    const {docsBundle, socials} = createDocsBundleConfig(options.package_name, options, nuxt)
+    const { docsBundle, socials } = createDocsBundleConfig(options.package_name, options, nuxt)
 
     // Merge docsBundle config
     nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle)
 
     nuxt.options.runtimeConfig.docsBundle = {
-      authors: options.authors as typeof nuxt.options.runtimeConfig.docsBundle.authors
+      authors: options.authors as typeof nuxt.options.runtimeConfig.docsBundle.authors,
+      repository: docsBundle.repository as typeof nuxt.options.runtimeConfig.docsBundle.repository
     }
 
     nuxt.hook('modules:done', () => {
@@ -160,7 +161,7 @@ export default defineNuxtModule<ModuleOptions>({
           twitterCreator: `@${docsBundle.repository.owner}`,
         }
       })
-      nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, {colors: Array.from(colors)})
+      nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, { colors: Array.from(colors) })
 
       // Modify AppConfig defaults
       nuxt.options.appConfig.header.title = docsBundle.name
@@ -266,22 +267,22 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
     return Array.from(icons).map(key => `i-simple-icons-${key}`)
   }
 
-  return {docsBundle, socials}
+  return { docsBundle, socials }
 }
 
 function parseLabelsForVersions(versions: string[]) {
   return Object.fromEntries(versions.map((version, index) => [
-      `v${version.replace('.', '_')}`,
-      {
-        label: version,
-        color: 0 === index ? 'primary' : 'secondary',
-        icon: 'i-tabler-tag',
-        tooltip: {
-          ...defaultTooltip,
-          text: `New in version ${version}`,
-        }
+    `v${version.replace('.', '_')}`,
+    {
+      label: version,
+      color: 0 === index ? 'primary' : 'secondary',
+      icon: 'i-tabler-tag',
+      tooltip: {
+        ...defaultTooltip,
+        text: `New in version ${version}`,
       }
-    ])
+    }
+  ])
   )
 }
 
@@ -293,7 +294,7 @@ const getAuthorByUserName = (authors: Record<string, Author>, userName: string, 
       name: placeholder,
       username: placeholder,
       description: '',
-      avatar: {src: ''}
+      avatar: { src: '' }
     }
   }
 
