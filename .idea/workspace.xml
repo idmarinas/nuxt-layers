@@ -19,58 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/.playground/nuxt.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/content.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/src/app.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/src/components/DocsAsideLeftTop.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/src/components/LanguageSelect.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/src/components/VersionSelect.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/src/composables/useDocsVersioning.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/src/middleware/00.setup.global.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/src/pages/[v]/[lang]/[...slug].vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-versioning/src/pages/[v]/[lang]/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/.navigation.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/2.introduction.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/3.installation.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/4.project-structure.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/5.studio.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/1.getting-started/6.migration.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/.navigation.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/1.markdown-syntax.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/2.code-blocks.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/3.components.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/2.essentials/4.images-embeds.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/en/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/.navigation.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/2.introduction.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/3.installation.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/4.project-structure.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/5.studio.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/1.getting-started/6.migration.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/.navigation.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/1.markdown-syntax.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/2.code-blocks.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/3.components.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/2.essentials/4.images-embeds.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/.playground/content/fr/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/app/app.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/app/utils/collectionsSource.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/app/utils/version.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/nuxt.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/utils/githubRelease.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/utils/githubVersions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/utils/parseVersions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/utils/prerender.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/modules/bundle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/modules/bundle.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,8 +128,8 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\Projects - Utils\\nuxt-layers\\docs-changelog.dist\\node_modules\\typescript\\lib&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.JavaScript&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\idmarinas\\AppData\\Local\\Programs\\PhpStorm 2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -198,11 +148,11 @@
       <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog\.playground" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground" />
       <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog\app" />
       <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog" />
       <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog\.playground" />
       <recent name="F:\Projects - Utils\nuxt-layers\docs\app" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs\components" />
     </key>
   </component>
   <component name="RunManager">
@@ -310,7 +260,11 @@
       <workItem from="1766579702290" duration="2458000" />
       <workItem from="1766582220370" duration="97000" />
       <workItem from="1767020584725" duration="12829000" />
-      <workItem from="1767094690098" duration="10919000" />
+      <workItem from="1767094690098" duration="12570000" />
+      <workItem from="1767114282102" duration="27000" />
+      <workItem from="1767115190658" duration="4132000" />
+      <workItem from="1767120220227" duration="1315000" />
+      <workItem from="1767355941425" duration="8853000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(docs): migrate package configuration from docs-versioning to docs with updated dependencies and scripts">
       <option name="closed" value="true" />
@@ -504,31 +458,154 @@
       <option name="project" value="LOCAL" />
       <updated>1765561178789</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="chore: update .gitignore to exclude node_modules, .nuxt, and .data directories">
+      <option name="closed" value="true" />
+      <created>1767111293876</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1767111293876</updated>
+    </task>
+    <task id="LOCAL-00026" summary="ide(config): auto-updated">
+      <option name="closed" value="true" />
+      <created>1767111308121</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1767111308121</updated>
+    </task>
+    <task id="LOCAL-00027" summary="chore(docs): remove legacy documentation files and navigation for a cleaner structure">
+      <option name="closed" value="true" />
+      <created>1767111332419</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1767111332419</updated>
+    </task>
+    <task id="LOCAL-00028" summary="feat(docs): add new documentation bundle with changelog pages, localized content, and improved structure">
+      <option name="closed" value="true" />
+      <created>1767111670857</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1767111670857</updated>
+    </task>
+    <task id="LOCAL-00029" summary="chore(docs-bundle): remove unused dependencies and unnecessary fields from package.json">
+      <option name="closed" value="true" />
+      <created>1767119915646</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1767119915646</updated>
+    </task>
+    <task id="LOCAL-00030" summary="refactor(docs-bundle): remove unused lifecycle hooks and add nuxt-seo-utils dependency with runtime config updates">
+      <option name="closed" value="true" />
+      <created>1767119958799</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1767119958799</updated>
+    </task>
+    <task id="LOCAL-00031" summary="chore(docs-bundle): move changelog page to playground directory">
+      <option name="closed" value="true" />
+      <created>1767119986972</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1767119986972</updated>
+    </task>
+    <task id="LOCAL-00032" summary="style(docs-bundle): apply consistent spacing and formatting across module files">
+      <option name="closed" value="true" />
+      <created>1767120237726</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1767120237726</updated>
+    </task>
+    <task id="LOCAL-00033" summary="refactor(docs-bundle): relocate `pages:resolved` hook to `nuxt.config.ts` and remove unused imports">
+      <option name="closed" value="true" />
+      <created>1767360043133</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1767360043133</updated>
+    </task>
+    <task id="LOCAL-00034" summary="feat(docs-bundle): enhance SEO config with title and titleTemplate support">
+      <option name="closed" value="true" />
+      <created>1767361025704</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1767361025704</updated>
+    </task>
+    <task id="LOCAL-00035" summary="feat(docs-bundle): auto-detect package_name using local git info or environment variables">
+      <option name="closed" value="true" />
+      <created>1767361156930</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1767361156930</updated>
+    </task>
+    <task id="LOCAL-00036" summary="refactor(docs-bundle): reorder and clean up imports in bundle module">
+      <option name="closed" value="true" />
+      <created>1767361225355</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1767361225355</updated>
+    </task>
+    <task id="LOCAL-00037" summary="refactor(docs-bundle): update module imports and unify spacing/formatting">
+      <option name="closed" value="true" />
+      <created>1767361915610</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1767361915610</updated>
+    </task>
+    <task id="LOCAL-00038" summary="style(docs-bundle): apply consistent spacing and formatting across the module file">
+      <option name="closed" value="true" />
+      <created>1767363934877</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1767363934877</updated>
+    </task>
+    <task id="LOCAL-00039" summary="refactor(docs-bundle): comment out `package_name` in playground config">
+      <option name="closed" value="true" />
+      <created>1767365679543</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1767365679543</updated>
+    </task>
+    <task id="LOCAL-00040" summary="feat(docs-bundle): fallback to appConfig SEO description for bundle description">
+      <option name="closed" value="true" />
+      <created>1767366349992</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1767366349992</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="refactor(docs): migrate package configuration from docs-versioning to docs with updated dependencies and scripts" />
-    <MESSAGE value="refactor(docs): migrate tsconfig from docs-versioning to docs for improved structure and consistency" />
-    <MESSAGE value="refactor(docs): migrate .gitignore from docs-versioning to docs with updated structure and entries" />
-    <MESSAGE value="refactor(docs): migrate .editorconfig from docs-versioning to root for centralized configuration" />
-    <MESSAGE value="refactor(docs): update .gitignore to include wildcard patterns for *.dist files" />
-    <MESSAGE value="chore(docs): update docus dependency to version ^5.4.0" />
-    <MESSAGE value="refactor(docs-versioning): remove eslint and nuxtrc configuration files for cleanup" />
-    <MESSAGE value="refactor(docs): migrate utils from docs-versioning to docs with updated structure and improved handling" />
-    <MESSAGE value="refactor(docs): migrate nuxt.config.ts from docs-versioning to docs with updated structure and compatibility date" />
-    <MESSAGE value="refactor(docs): update nuxt.config.ts with meta information and resolver for assets" />
-    <MESSAGE value="refactor(docs): update dev script to use nuxi with .playground directory" />
-    <MESSAGE value="refactor(docs): update tsconfig paths to reference .playground directory" />
-    <MESSAGE value="refactor(docs-versioning): remove outdated &quot;getting started&quot; content and navigation files" />
-    <MESSAGE value="ide(config): auto-updated" />
-    <MESSAGE value="feat(docs): add tarballUrl support and setter method to version utility" />
-    <MESSAGE value="feat(docs): add caching mechanism to githubVersions utility" />
     <MESSAGE value="feat(docs): add collections source utility for managing GitHub and local content" />
     <MESSAGE value="refactor(docs-versioning): remove unused app.config.ts file from .playground" />
     <MESSAGE value="refactor(docs): migrate and update app.config.ts with new structure and compatibility date" />
@@ -537,7 +614,24 @@
     <MESSAGE value="refactor(docs-utils): improve type safety and update comments in parseVersions utility" />
     <MESSAGE value="refactor(docs-utils): update import paths and handle empty tarballUrl in githubVersions utility" />
     <MESSAGE value="refactor(docs-utils): relocate githubRelease utility to utils directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(docs-utils): relocate githubRelease utility to utils directory" />
+    <MESSAGE value="chore: update .gitignore to exclude node_modules, .nuxt, and .data directories" />
+    <MESSAGE value="ide(config): auto-updated" />
+    <MESSAGE value="chore(docs): remove legacy documentation files and navigation for a cleaner structure" />
+    <MESSAGE value="feat(docs): add new documentation bundle with changelog pages, localized content, and improved structure" />
+    <MESSAGE value="chore(docs-bundle): remove unused dependencies and unnecessary fields from package.json" />
+    <MESSAGE value="refactor(docs-bundle): remove unused lifecycle hooks and add nuxt-seo-utils dependency with runtime config updates" />
+    <MESSAGE value="chore(docs-bundle): move changelog page to playground directory" />
+    <MESSAGE value="Please provide the &quot;Diff&quot; so I can craft the appropriate commit message for you." />
+    <MESSAGE value="style(docs-bundle): apply consistent spacing and formatting across module files" />
+    <MESSAGE value="refactor(docs-bundle): relocate `pages:resolved` hook to `nuxt.config.ts` and remove unused imports" />
+    <MESSAGE value="feat(docs-bundle): enhance SEO config with title and titleTemplate support" />
+    <MESSAGE value="feat(docs-bundle): auto-detect package_name using local git info or environment variables" />
+    <MESSAGE value="refactor(docs-bundle): reorder and clean up imports in bundle module" />
+    <MESSAGE value="refactor(docs-bundle): update module imports and unify spacing/formatting" />
+    <MESSAGE value="style(docs-bundle): apply consistent spacing and formatting across the module file" />
+    <MESSAGE value="refactor(docs-bundle): comment out `package_name` in playground config" />
+    <MESSAGE value="feat(docs-bundle): fallback to appConfig SEO description for bundle description" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(docs-bundle): fallback to appConfig SEO description for bundle description" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
