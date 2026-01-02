@@ -5,6 +5,7 @@ import { defu } from 'defu'
 import { pascalCase, titleCase } from 'scule'
 import type { FileAfterParseHook } from '@nuxt/content'
 import type { Nuxt } from 'nuxt/schema'
+import { getLocalGitInfo, getGitEnv } from 'docus/utils/git'
 
 interface ModuleOptions {
   package_name: string;
@@ -110,9 +111,15 @@ export default defineNuxtModule<ModuleOptions>({
       optional: false
     }
   },
-  setup(options: ModuleOptions, nuxt) {
+  async setup(options: ModuleOptions, nuxt) {
     const logger = useLogger()
     const missed: string[] = []
+
+    const gitInfo = await getLocalGitInfo(nuxt.options.rootDir) || getGitEnv()
+
+    if (gitInfo?.owner && gitInfo?.name) {
+      options.package_name ||= `${gitInfo.owner}/${gitInfo.name}`
+    }
 
     options.package_name || missed.push('package_name')
     options.versions || missed.push('versions')
