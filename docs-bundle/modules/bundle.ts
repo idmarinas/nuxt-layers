@@ -245,7 +245,7 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
 
   // Name and Description
   docsBundle.name = options.name || `${docsBundle.author.username} ${short_name} Bundle`
-  docsBundle.description = options.description || ''
+  docsBundle.description = options.description || nuxt.options.appConfig.seo.description || ''
 
   // Vars - namespace
   docsBundle.vars = {
