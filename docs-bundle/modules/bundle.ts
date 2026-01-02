@@ -2,15 +2,16 @@ import type { Author, DocsBundleConfig, LabelProps } from '../bundle.config'
 import type { TooltipProps } from '@nuxt/ui'
 import type { FileAfterParseHook } from '@nuxt/content'
 import type { Nuxt } from 'nuxt/schema'
+import { parseLabelsForVersions } from '../utils/versions'
 import { defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
 import { defu } from 'defu'
 import { pascalCase, titleCase } from 'scule'
 import { getGitEnv, getLocalGitInfo } from 'docus/utils/git'
 import { updateSiteConfig } from 'nuxt-site-config/kit'
+import { join } from 'node:path'
 
 interface ModuleOptions {
   package_name: string;
-  versions: string[];
   name?: string;
   description?: string;
   author?: Author;
@@ -123,7 +124,6 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     options.package_name || missed.push('package_name')
-    options.versions || missed.push('versions')
 
     if (missed.length > 0) {
       logger.error(`[${MODULE_NAME}] At a minimum, the following options must be configured: "${missed.join('", "')}"`)
@@ -237,7 +237,6 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
   const short_name = titleCase(repository.name).replace('Bundle', '').trim()
   const vendor = pascalCase(repository.owner === 'idmarinas' ? 'idm' : repository.owner)
 
-
   docsBundle.package_name = package_name
   docsBundle.repository = repository
   docsBundle.author = options.author || getAuthorByUserName(options.authors, repository.owner, repository.owner)!
@@ -254,7 +253,7 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
 
   // Labels
   docsBundle.labels = {
-    versions: parseLabelsForVersions(options.versions),
+    versions: parseLabelsForVersions(join(nuxt.options.rootDir, 'changelog')),
     ...options.labels
   }
 
@@ -268,22 +267,6 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
   }
 
   return { docsBundle, socials }
-}
-
-function parseLabelsForVersions(versions: string[]) {
-  return Object.fromEntries(versions.map((version, index) => [
-    `v${version.replace('.', '_')}`,
-    {
-      label: version,
-      color: 0 === index ? 'primary' : 'secondary',
-      icon: 'i-tabler-tag',
-      tooltip: {
-        ...defaultTooltip,
-        text: `New in version ${version}`,
-      }
-    }
-  ])
-  )
 }
 
 const getAuthorByUserName = (authors: Record<string, Author>, userName: string, placeholder?: string): undefined | Author => {
