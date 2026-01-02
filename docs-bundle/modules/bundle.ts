@@ -162,7 +162,10 @@ export default defineNuxtModule<ModuleOptions>({
 
       // Modify AppConfig defaults
       nuxt.options.appConfig.header.title = docsBundle.name
-      nuxt.options.appConfig.seo.title = docsBundle.name
+      nuxt.options.appConfig.seo = Object.assign({}, nuxt.options.appConfig.seo, {
+        title: docsBundle.name,
+        titleTemplate: `%s - ${docsBundle.name}`
+      })
       nuxt.options.appConfig.socials = defu(nuxt.options.appConfig.socials, socials)
       nuxt.options.appConfig.toc = defu(nuxt.options.appConfig.toc, {
         bottom: options.support_links
