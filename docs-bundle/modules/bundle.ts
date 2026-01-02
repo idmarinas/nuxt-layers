@@ -1,10 +1,12 @@
-import type { Author, DocsBundleConfig, LabelProps } from '../bundle.config'
-import type { TooltipProps } from '@nuxt/ui'
-import type { FileAfterParseHook } from '@nuxt/content'
-import type { Nuxt } from 'nuxt/schema'
-import { defu } from 'defu'
-import { pascalCase, titleCase } from 'scule'
-import { getLocalGitInfo, getGitEnv } from 'docus/utils/git'
+import type {Author, DocsBundleConfig, LabelProps} from '../bundle.config'
+import type {TooltipProps} from '@nuxt/ui'
+import type {FileAfterParseHook} from '@nuxt/content'
+import type {Nuxt} from 'nuxt/schema'
+import {defineNuxtModule, useLogger, useNuxt} from 'nuxt/kit'
+import {defu} from 'defu'
+import {pascalCase, titleCase} from 'scule'
+import {getGitEnv, getLocalGitInfo} from 'docus/utils/git'
+import {updateSiteConfig} from 'nuxt-site-config/kit'
 
 interface ModuleOptions {
   package_name: string;
@@ -33,7 +35,7 @@ const idmarinas: Author = {
   name: 'Iván Diaz',
   description: '@IDMarinas',
   username: 'IDMarinas',
-  avatar: { src: 'https://avatars.githubusercontent.com/u/35842929?v=4' },
+  avatar: {src: 'https://avatars.githubusercontent.com/u/35842929?v=4'},
   to: 'https://github.com/idmarinas',
   target: '_blank'
 }
@@ -51,7 +53,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    colors: { purple: 'purple' },
+    colors: {purple: 'purple'},
     labels: {
       wip: {
         label: 'WIP',
@@ -135,7 +137,7 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    const { docsBundle, socials } = createDocsBundleConfig(options.package_name, options, nuxt)
+    const {docsBundle, socials} = createDocsBundleConfig(options.package_name, options, nuxt)
 
     // Merge docsBundle config
     nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle)
@@ -151,12 +153,6 @@ export default defineNuxtModule<ModuleOptions>({
       Object.keys(nuxt.options.appConfig.ui.colors!).forEach(color => !colors.has(color) && colors.add(color))
 
       // Nuxt Config
-      nuxt.options.site = defu(nuxt.options.site, {
-        url: `https://${docsBundle.repository.owner}.github.io/${docsBundle.repository.name}`,
-        name: docsBundle.name,
-        description: docsBundle.description,
-        debug: false,
-      })
       nuxt.options.seo = defu(nuxt.options.seo, {
         meta: {
           title: docsBundle.name,
@@ -164,7 +160,7 @@ export default defineNuxtModule<ModuleOptions>({
           twitterCreator: `@${docsBundle.repository.owner}`,
         }
       })
-      nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, { colors: Array.from(colors) })
+      nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, {colors: Array.from(colors)})
 
       // Modify AppConfig defaults
       nuxt.options.appConfig.header.title = docsBundle.name
@@ -191,6 +187,14 @@ export default defineNuxtModule<ModuleOptions>({
       })
 
       config.defaults.component = 'Docs'
+    })
+
+    // @ts-ignore
+    nuxt.hook('site-config:resolve', () => {
+      updateSiteConfig({
+        name: docsBundle.name,
+        description: docsBundle.description,
+      })
     })
   },
   hooks: {
@@ -262,22 +266,22 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
     return Array.from(icons).map(key => `i-simple-icons-${key}`)
   }
 
-  return { docsBundle, socials }
+  return {docsBundle, socials}
 }
 
 function parseLabelsForVersions(versions: string[]) {
   return Object.fromEntries(versions.map((version, index) => [
-    `v${version.replace('.', '_')}`,
-    {
-      label: version,
-      color: 0 === index ? 'primary' : 'secondary',
-      icon: 'i-tabler-tag',
-      tooltip: {
-        ...defaultTooltip,
-        text: `New in version ${version}`,
+      `v${version.replace('.', '_')}`,
+      {
+        label: version,
+        color: 0 === index ? 'primary' : 'secondary',
+        icon: 'i-tabler-tag',
+        tooltip: {
+          ...defaultTooltip,
+          text: `New in version ${version}`,
+        }
       }
-    }
-  ])
+    ])
   )
 }
 
@@ -289,7 +293,7 @@ const getAuthorByUserName = (authors: Record<string, Author>, userName: string, 
       name: placeholder,
       username: placeholder,
       description: '',
-      avatar: { src: '' }
+      avatar: {src: ''}
     }
   }
 
