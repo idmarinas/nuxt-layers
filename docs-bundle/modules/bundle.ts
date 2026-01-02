@@ -135,6 +135,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Merge docsBundle config
     nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle)
 
+    nuxt.options.app.cdnURL = `https://${docsBundle.repository.owner}.github.io/${docsBundle.repository.name}`
 
     nuxt.options.runtimeConfig.docsBundle = {
       authors: options.authors as typeof nuxt.options.runtimeConfig.docsBundle.authors
