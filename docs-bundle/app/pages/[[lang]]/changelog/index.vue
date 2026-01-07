@@ -24,9 +24,9 @@ const [{ data: pages }, { data: page }, { data: surround }] = await Promise.all(
     const query = queryCollection(collectionName.value as keyof PageCollections)
 
     if (route.params.v) {
-      query.where('branch', '=', route.params.v).order('date' as any, 'DESC')
+      query.where('branch', '=', route.params.v).order('branch' as any, 'DESC')
     } else {
-      query.where('branch', 'IS NOT NULL').order('date' as any, 'DESC')
+      query.where('branch', 'IS NOT NULL').order('branch' as any, 'DESC')
     }
 
     return query.all() as Promise<ChangelogVCollectionItem[]>
