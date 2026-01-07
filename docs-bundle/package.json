@@ -1,5 +1,6 @@
 {
   "name": "idmarinas-nuxt-layer-docs-bundle",
+  "description": "Nuxt Layer for Docs of bundles",
   "type": "module",
   "version": "0.1.0",
   "scripts": {
