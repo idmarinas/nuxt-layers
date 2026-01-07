@@ -7,6 +7,8 @@ export const useReleases = async () => {
 
   const { data: lastRelease } = await useAsyncData('last_release', () => queryCollection(collectionName.value as keyof Collections)
     .order('date' as any, 'DESC')
+    .where('date', 'IS NOT NULL')
+    .where('date', '<>', 'dd-mm-yyy')
     .first() as Promise<ChangelogVCollectionItem>
   )
 
