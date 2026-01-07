@@ -3,6 +3,11 @@ import { createResolver } from 'nuxt/kit'
 
 export default defineNuxtConfig({
   modules: ['nuxt-seo-utils'],
+  mdc: {
+    highlight: {
+      langs: ['php']
+    }
+  },
   hooks: {
     'pages:resolved'(pages: PageMeta[]) {
       const { resolve } = createResolver(import.meta.url)
