@@ -14,7 +14,7 @@ seo:
 :text-bundle-name
 
 #description
-
+:vars{n="project.description"}
 
 #default
 :svg-logo
