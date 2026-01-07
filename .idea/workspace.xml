@@ -18,8 +18,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="">
+    <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="fix(docs-bundle): update schema to use `z.date()` for date validation">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/content.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/content.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/modules/bundle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/modules/bundle.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +41,7 @@
     </execution>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="1203" />
+    <option name="cachedIndexableFilesCount" value="79" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -264,31 +266,9 @@
       <workItem from="1767114282102" duration="27000" />
       <workItem from="1767115190658" duration="4132000" />
       <workItem from="1767120220227" duration="1315000" />
-      <workItem from="1767355941425" duration="8853000" />
-    </task>
-    <task id="LOCAL-00001" summary="refactor(docs): migrate package configuration from docs-versioning to docs with updated dependencies and scripts">
-      <option name="closed" value="true" />
-      <created>1765388667050</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1765388667050</updated>
-    </task>
-    <task id="LOCAL-00002" summary="refactor(docs): migrate tsconfig from docs-versioning to docs for improved structure and consistency">
-      <option name="closed" value="true" />
-      <created>1765388714000</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1765388714000</updated>
-    </task>
-    <task id="LOCAL-00003" summary="refactor(docs): migrate .gitignore from docs-versioning to docs with updated structure and entries">
-      <option name="closed" value="true" />
-      <created>1765388724256</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1765388724256</updated>
+      <workItem from="1767355941425" duration="9974000" />
+      <workItem from="1767370639745" duration="1003000" />
+      <workItem from="1767804073098" duration="1909000" />
     </task>
     <task id="LOCAL-00004" summary="refactor(docs): migrate .editorconfig from docs-versioning to root for centralized configuration">
       <option name="closed" value="true" />
@@ -586,7 +566,103 @@
       <option name="project" value="LOCAL" />
       <updated>1767366349992</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="refactor(docs-bundle): move version label parsing to a utility file and simplify setup">
+      <option name="closed" value="true" />
+      <created>1767368520780</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1767368520780</updated>
+    </task>
+    <task id="LOCAL-00042" summary="ide(config): auto-updated">
+      <option name="closed" value="true" />
+      <created>1767368542440</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1767368542440</updated>
+    </task>
+    <task id="LOCAL-00043" summary="refactor(docs-bundle): remove unused versions property from playground config">
+      <option name="closed" value="true" />
+      <created>1767368723980</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1767368723980</updated>
+    </task>
+    <task id="LOCAL-00044" summary="refactor(docs-bundle): simplify Vars component logic and improve handling of nested keys">
+      <option name="closed" value="true" />
+      <created>1767370648056</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1767370648056</updated>
+    </task>
+    <task id="LOCAL-00045" summary="fix(docs-bundle): correctly handle 'project' key in Vars component computation">
+      <option name="closed" value="true" />
+      <created>1767371633823</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1767371633823</updated>
+    </task>
+    <task id="LOCAL-00046" summary="feat(docs-bundle): add PHP language support for code highlighting in markdown content">
+      <option name="closed" value="true" />
+      <created>1767804259634</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1767804259634</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fix(docs-bundle): update Vars syntax for description key in index.md">
+      <option name="closed" value="true" />
+      <created>1767804290405</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1767804290405</updated>
+    </task>
+    <task id="LOCAL-00048" summary="feat(docs-bundle): add description field to package.json">
+      <option name="closed" value="true" />
+      <created>1767804298250</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1767804298252</updated>
+    </task>
+    <task id="LOCAL-00049" summary="fix(docs-bundle): ensure valid release date filtering in useReleases composable">
+      <option name="closed" value="true" />
+      <created>1767804393391</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1767804393391</updated>
+    </task>
+    <task id="LOCAL-00050" summary="fix(docs-bundle): update date filtering logic to exclude invalid patterns in useReleases composable">
+      <option name="closed" value="true" />
+      <created>1767805899257</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1767805899257</updated>
+    </task>
+    <task id="LOCAL-00051" summary="fix(docs-bundle): correct date filtering logic in useReleases composable to exclude patterns with '%y%'">
+      <option name="closed" value="true" />
+      <created>1767806071852</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1767806071852</updated>
+    </task>
+    <task id="LOCAL-00052" summary="fix(docs-bundle): update incorrect release dates in 1.x changelog files">
+      <option name="closed" value="true" />
+      <created>1767806643188</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1767806643188</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,19 +682,6 @@
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="feat(docs): add collections source utility for managing GitHub and local content" />
-    <MESSAGE value="refactor(docs-versioning): remove unused app.config.ts file from .playground" />
-    <MESSAGE value="refactor(docs): migrate and update app.config.ts with new structure and compatibility date" />
-    <MESSAGE value="refactor(docs-versioning): remove obsolete docs.vue file from layouts directory" />
-    <MESSAGE value="feat(docs-utils): add addPrerenderPath utility for handling prerender paths in headers" />
-    <MESSAGE value="refactor(docs-utils): improve type safety and update comments in parseVersions utility" />
-    <MESSAGE value="refactor(docs-utils): update import paths and handle empty tarballUrl in githubVersions utility" />
-    <MESSAGE value="refactor(docs-utils): relocate githubRelease utility to utils directory" />
-    <MESSAGE value="chore: update .gitignore to exclude node_modules, .nuxt, and .data directories" />
-    <MESSAGE value="ide(config): auto-updated" />
-    <MESSAGE value="chore(docs): remove legacy documentation files and navigation for a cleaner structure" />
-    <MESSAGE value="feat(docs): add new documentation bundle with changelog pages, localized content, and improved structure" />
-    <MESSAGE value="chore(docs-bundle): remove unused dependencies and unnecessary fields from package.json" />
     <MESSAGE value="refactor(docs-bundle): remove unused lifecycle hooks and add nuxt-seo-utils dependency with runtime config updates" />
     <MESSAGE value="chore(docs-bundle): move changelog page to playground directory" />
     <MESSAGE value="Please provide the &quot;Diff&quot; so I can craft the appropriate commit message for you." />
@@ -631,7 +694,20 @@
     <MESSAGE value="style(docs-bundle): apply consistent spacing and formatting across the module file" />
     <MESSAGE value="refactor(docs-bundle): comment out `package_name` in playground config" />
     <MESSAGE value="feat(docs-bundle): fallback to appConfig SEO description for bundle description" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(docs-bundle): fallback to appConfig SEO description for bundle description" />
+    <MESSAGE value="refactor(docs-bundle): move version label parsing to a utility file and simplify setup" />
+    <MESSAGE value="ide(config): auto-updated" />
+    <MESSAGE value="refactor(docs-bundle): remove unused versions property from playground config" />
+    <MESSAGE value="refactor(docs-bundle): simplify Vars component logic and improve handling of nested keys" />
+    <MESSAGE value="fix(docs-bundle): correctly handle 'project' key in Vars component computation" />
+    <MESSAGE value="feat(docs-bundle): add PHP language support for code highlighting in markdown content" />
+    <MESSAGE value="fix(docs-bundle): update Vars syntax for description key in index.md" />
+    <MESSAGE value="feat(docs-bundle): add description field to package.json" />
+    <MESSAGE value="fix(docs-bundle): ensure valid release date filtering in useReleases composable" />
+    <MESSAGE value="fix(docs-bundle): update date filtering logic to exclude invalid patterns in useReleases composable" />
+    <MESSAGE value="fix(docs-bundle): correct date filtering logic in useReleases composable to exclude patterns with '%y%'" />
+    <MESSAGE value="fix(docs-bundle): update incorrect release dates in 1.x changelog files" />
+    <MESSAGE value="fix(docs-bundle): update schema to use `z.date()` for date validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix(docs-bundle): update schema to use `z.date()` for date validation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
