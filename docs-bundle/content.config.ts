@@ -1,7 +1,6 @@
 import { defineCollection, defineContentConfig, type DefinedCollection, z } from '@nuxt/content'
 import { join } from 'pathe'
 import { useNuxt } from '@nuxt/kit'
-import { asOgImageCollection } from 'nuxt-og-image/content'
 
 const { options } = useNuxt()
 const locales = (options as any).i18n?.locales
@@ -10,7 +9,7 @@ const createDocsSchema = () => z.object({
   version: z.string(),
   title: z.string(),
   description: z.string(),
-  date: z.string(),
+  date: z.date(),
   badge: z.string().optional(),
   branch: z.string(),
   authors: z.array(z.object({
