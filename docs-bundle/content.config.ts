@@ -5,7 +5,7 @@ import { useNuxt } from '@nuxt/kit'
 const { options } = useNuxt()
 const locales = (options as any).i18n?.locales
 
-const createDocsSchema = () => z.object({
+const createVersionsSchema = () => z.object({
   version: z.string(),
   title: z.string(),
   description: z.string(),
@@ -24,31 +24,65 @@ const createDocsSchema = () => z.object({
   target: z.string().default('_self'),
 })
 
+const createBranchSchema = () => z.object({
+  branch: z.string(),
+})
+
+const createDocsSchema = () => z.object({
+  links: z.array(z.object({
+    label: z.string(),
+    icon: z.string(),
+    to: z.string(),
+    target: z.string().optional(),
+  })).optional(),
+})
+
 const langs = locales || ['']
 const collections: Record<string, DefinedCollection> = {}
-const cwd = join(options.rootDir, 'changelog')
+const cwd = join(options.rootDir, 'content')
 
 for (const locale of langs) {
-  let code = typeof locale === 'string' ? locale : locale.code
-  code = code === '' ? '' : '_' + code
+  let code: string = typeof locale === 'string' ? locale : locale.code
+  let codeCwd = code === '' ? '' : `${code}/`
+  code = code === '' ? '' : `_${code}`
 
-  collections[`changelog_v${code}`] = defineCollection({
+  // Changelog Collections
+  collections[`versions${code}`] = defineCollection({
     type: 'page',
     source: {
-      cwd,
+      cwd: `${cwd}/.changelog`,
       include: '**/*.md',
-      exclude: ['**/index.md'],
       prefix: '/changelog',
     },
-    schema: createDocsSchema(),
+    schema: createVersionsSchema(),
   })
 
-  collections[`changelog${code}`] = defineCollection({
+  collections[`branchs${code}`] = defineCollection({
+    type: 'page',
+    source: {
+      cwd: `${cwd}/.changelog`,
+      include: '**/index.yaml',
+      prefix: '/changelog',
+    },
+    schema: createBranchSchema(),
+  })
+
+  // Docus original Collections
+  collections[`landing${code}`] = defineCollection({
     type: 'page',
     source: {
       cwd,
-      include: '**/index.md',
-      prefix: '/changelog',
+      include: `${codeCwd}index.md`
+    }
+  })
+
+  collections[`docs${code}`] = defineCollection({
+    type: 'page',
+    source: {
+      cwd,
+      include: `${codeCwd}**/*`,
+      prefix: `/${codeCwd.replace('/', '')}`,
+      exclude: [`${codeCwd}index.md`, `${codeCwd}.changelog/**/*`]
     },
     schema: createDocsSchema(),
   })
