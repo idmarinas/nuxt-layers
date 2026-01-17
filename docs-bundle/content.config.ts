@@ -57,7 +57,7 @@ for (const locale of langs) {
     schema: createVersionsSchema(),
   })
 
-  collections[`branchs${code}`] = defineCollection({
+  collections[`branches${code}`] = defineCollection({
     type: 'page',
     source: {
       cwd: `${cwd}/.changelog`,
