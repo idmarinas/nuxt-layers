@@ -18,11 +18,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="fix(docs-bundle): update schema to use `z.date()` for date validation">
+    <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/1.x/1.0.0.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/1.x/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/nuxt.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/app/composables/useReleases.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/app/composables/useReleases.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/[...slug].vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/details.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/index.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/bundle.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/bundle.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/content.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/content.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/modules/bundle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/modules/bundle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/utils/versions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/utils/versions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +52,7 @@
     </execution>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="79" />
+    <option name="cachedIndexableFilesCount" value="116" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -123,7 +134,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Projects - Utils/nuxt-layers/docs-bundle/.playground&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Projects - Utils/nuxt-layers/docs-bundle/app/pages&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -143,18 +154,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog\app\components" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog\.playground" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\app\pages" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground\content\.changelog" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground\content\999.changelog\3_x" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground\content\999.changelog\4_x" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground\content\999.changelog\5_x" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Projects - Utils\nuxt-layers\.docus.dist" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground\content" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docus\content\changelog" />
+      <recent name="F:\Projects - Utils\nuxt-layers\docus\content" />
       <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog\app" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs-changelog\.playground" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs\app" />
     </key>
   </component>
   <component name="RunManager">
@@ -228,7 +239,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.29346.151" />
+        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.29346.257" />
       </set>
     </attachedChunks>
   </component>
@@ -268,31 +279,10 @@
       <workItem from="1767120220227" duration="1315000" />
       <workItem from="1767355941425" duration="9974000" />
       <workItem from="1767370639745" duration="1003000" />
-      <workItem from="1767804073098" duration="1909000" />
-    </task>
-    <task id="LOCAL-00004" summary="refactor(docs): migrate .editorconfig from docs-versioning to root for centralized configuration">
-      <option name="closed" value="true" />
-      <created>1765388733865</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1765388733865</updated>
-    </task>
-    <task id="LOCAL-00005" summary="refactor(docs): update .gitignore to include wildcard patterns for *.dist files">
-      <option name="closed" value="true" />
-      <created>1765388827664</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1765388827664</updated>
-    </task>
-    <task id="LOCAL-00006" summary="chore(docs): update docus dependency to version ^5.4.0">
-      <option name="closed" value="true" />
-      <created>1765388952442</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1765388952442</updated>
+      <workItem from="1767804073098" duration="2942000" />
+      <workItem from="1768594743439" duration="4900000" />
+      <workItem from="1768639608690" duration="21996000" />
+      <workItem from="1768673146940" duration="1853000" />
     </task>
     <task id="LOCAL-00007" summary="refactor(docs-versioning): remove eslint and nuxtrc configuration files for cleanup">
       <option name="closed" value="true" />
@@ -662,7 +652,31 @@
       <option name="project" value="LOCAL" />
       <updated>1767806643188</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fix(docs-bundle): update schema to use `z.date()` for date validation">
+      <option name="closed" value="true" />
+      <created>1767806729980</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1767806729980</updated>
+    </task>
+    <task id="LOCAL-00054" summary="fix(docs-bundle): update changelog query to order by branch instead of date">
+      <option name="closed" value="true" />
+      <created>1767807714881</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1767807714881</updated>
+    </task>
+    <task id="LOCAL-00055" summary="ide(config): auto-updated">
+      <option name="closed" value="true" />
+      <created>1767807743174</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1767807743174</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -682,7 +696,6 @@
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="refactor(docs-bundle): remove unused lifecycle hooks and add nuxt-seo-utils dependency with runtime config updates" />
     <MESSAGE value="chore(docs-bundle): move changelog page to playground directory" />
     <MESSAGE value="Please provide the &quot;Diff&quot; so I can craft the appropriate commit message for you." />
     <MESSAGE value="style(docs-bundle): apply consistent spacing and formatting across module files" />
@@ -695,7 +708,6 @@
     <MESSAGE value="refactor(docs-bundle): comment out `package_name` in playground config" />
     <MESSAGE value="feat(docs-bundle): fallback to appConfig SEO description for bundle description" />
     <MESSAGE value="refactor(docs-bundle): move version label parsing to a utility file and simplify setup" />
-    <MESSAGE value="ide(config): auto-updated" />
     <MESSAGE value="refactor(docs-bundle): remove unused versions property from playground config" />
     <MESSAGE value="refactor(docs-bundle): simplify Vars component logic and improve handling of nested keys" />
     <MESSAGE value="fix(docs-bundle): correctly handle 'project' key in Vars component computation" />
@@ -707,7 +719,9 @@
     <MESSAGE value="fix(docs-bundle): correct date filtering logic in useReleases composable to exclude patterns with '%y%'" />
     <MESSAGE value="fix(docs-bundle): update incorrect release dates in 1.x changelog files" />
     <MESSAGE value="fix(docs-bundle): update schema to use `z.date()` for date validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix(docs-bundle): update schema to use `z.date()` for date validation" />
+    <MESSAGE value="fix(docs-bundle): update changelog query to order by branch instead of date" />
+    <MESSAGE value="ide(config): auto-updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="ide(config): auto-updated" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
