@@ -2,7 +2,7 @@ import type { Author, DocsBundleConfig, LabelProps } from '../bundle.config'
 import type { TooltipProps } from '@nuxt/ui'
 import type { FileAfterParseHook } from '@nuxt/content'
 import type { Nuxt } from 'nuxt/schema'
-import { parseLabelsForVersions } from '../utils/versions'
+import { getVersionsMajorWithDate, parseLabelsForVersions } from '../utils/versions'
 import { defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
 import { defu } from 'defu'
 import { pascalCase, titleCase } from 'scule'
@@ -203,7 +203,7 @@ export default defineNuxtModule<ModuleOptions>({
       const nuxt = useNuxt()
       const options = nuxt.options.runtimeConfig.docsBundle
 
-      if (ctx.collection.name.startsWith('changelog_v')) {
+      if (ctx.collection.name.startsWith('versions')) {
         if (ctx.content.authors === undefined || Array.isArray(ctx.content.authors) && ctx.content.authors.length === 0) {
           ctx.content.authors = [getAuthorByUserName(options.authors, 'idmarinas')]
         } else if (typeof ctx.content.authors === 'string') {
@@ -251,9 +251,11 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
     namespace: `${vendor}\\Bundle\\${short_name}\\${vendor}${short_name}Bundle`
   }
 
+  docsBundle.majorVersions = getVersionsMajorWithDate(join(nuxt.options.rootDir, 'content/.changelog'))
+
   // Labels
   docsBundle.labels = {
-    versions: parseLabelsForVersions(join(nuxt.options.rootDir, 'changelog')),
+    versions: parseLabelsForVersions(join(nuxt.options.rootDir, 'content/.changelog')),
     ...options.labels
   }
 
