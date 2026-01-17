@@ -27,4 +27,5 @@ export interface DocsBundleConfig {
   labels: Record<string, Record<string, LabelProps> | LabelProps>;
   vars: Record<string, string | number | boolean>;
   links: Record<string, string>;
+  majorVersions: Record<string, string>
 }
