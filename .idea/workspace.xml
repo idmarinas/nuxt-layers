@@ -19,20 +19,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/2_x/2_0_0.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/2_x/index.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/3_x/3_0_0.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/3_x/index.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/4_x/4_0_0.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/4_x/index.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/5_x/5_0_0.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/5_x/index.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/1.x/1.0.0.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/1.x/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/1.x/1.0.0.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/1_x/1_0_0.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/1.x/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/1_x/index.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/index.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/nuxt.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/app/composables/useReleases.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/app/composables/useReleases.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/[...slug].vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/details.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/index.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/bundle.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/bundle.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/content.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/content.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/modules/bundle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/modules/bundle.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/utils/versions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/utils/versions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -282,63 +283,7 @@
       <workItem from="1767804073098" duration="2942000" />
       <workItem from="1768594743439" duration="4900000" />
       <workItem from="1768639608690" duration="21996000" />
-      <workItem from="1768673146940" duration="1853000" />
-    </task>
-    <task id="LOCAL-00007" summary="refactor(docs-versioning): remove eslint and nuxtrc configuration files for cleanup">
-      <option name="closed" value="true" />
-      <created>1765388974756</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1765388974756</updated>
-    </task>
-    <task id="LOCAL-00008" summary="refactor(docs): migrate utils from docs-versioning to docs with updated structure and improved handling">
-      <option name="closed" value="true" />
-      <created>1765454314341</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1765454314341</updated>
-    </task>
-    <task id="LOCAL-00009" summary="refactor(docs): migrate nuxt.config.ts from docs-versioning to docs with updated structure and compatibility date">
-      <option name="closed" value="true" />
-      <created>1765454376845</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1765454376845</updated>
-    </task>
-    <task id="LOCAL-00010" summary="refactor(docs): update nuxt.config.ts with meta information and resolver for assets">
-      <option name="closed" value="true" />
-      <created>1765482710168</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482710168</updated>
-    </task>
-    <task id="LOCAL-00011" summary="refactor(docs): update dev script to use nuxi with .playground directory">
-      <option name="closed" value="true" />
-      <created>1765482738969</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482738969</updated>
-    </task>
-    <task id="LOCAL-00012" summary="refactor(docs): update tsconfig paths to reference .playground directory">
-      <option name="closed" value="true" />
-      <created>1765482745936</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482745936</updated>
-    </task>
-    <task id="LOCAL-00013" summary="refactor(docs-versioning): remove outdated &quot;getting started&quot; content and navigation files">
-      <option name="closed" value="true" />
-      <created>1765482862668</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482862668</updated>
+      <workItem from="1768673146940" duration="2526000" />
     </task>
     <task id="LOCAL-00014" summary="ide(config): auto-updated">
       <option name="closed" value="true" />
@@ -676,7 +621,63 @@
       <option name="project" value="LOCAL" />
       <updated>1767807743174</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="ide(config): auto-updated">
+      <option name="closed" value="true" />
+      <created>1768675156120</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675156122</updated>
+    </task>
+    <task id="LOCAL-00057" summary="feat(docs-bundle): add majorVersions field to bundle.config.ts">
+      <option name="closed" value="true" />
+      <created>1768675193649</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675193649</updated>
+    </task>
+    <task id="LOCAL-00058" summary="feat(docs-bundle): restructure content config with new schemas and collections">
+      <option name="closed" value="true" />
+      <created>1768675214077</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675214077</updated>
+    </task>
+    <task id="LOCAL-00059" summary="feat(docs-bundle): integrate majorVersions and update changelog paths for consistency">
+      <option name="closed" value="true" />
+      <created>1768675335051</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675335051</updated>
+    </task>
+    <task id="LOCAL-00060" summary="refactor(docs-bundle): update useReleases composable to align with renamed collection and type adjustments">
+      <option name="closed" value="true" />
+      <created>1768675350355</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675350355</updated>
+    </task>
+    <task id="LOCAL-00061" summary="refactor(docs-bundle): adjust changelog collections, paths, and types for versioning consistency">
+      <option name="closed" value="true" />
+      <created>1768675632910</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675632910</updated>
+    </task>
+    <task id="LOCAL-00062" summary="refactor(docs-bundle): update changelog paths, collections, and types for improved versioning consistency">
+      <option name="closed" value="true" />
+      <created>1768675662930</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675662930</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -696,12 +697,6 @@
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="chore(docs-bundle): move changelog page to playground directory" />
-    <MESSAGE value="Please provide the &quot;Diff&quot; so I can craft the appropriate commit message for you." />
-    <MESSAGE value="style(docs-bundle): apply consistent spacing and formatting across module files" />
-    <MESSAGE value="refactor(docs-bundle): relocate `pages:resolved` hook to `nuxt.config.ts` and remove unused imports" />
-    <MESSAGE value="feat(docs-bundle): enhance SEO config with title and titleTemplate support" />
-    <MESSAGE value="feat(docs-bundle): auto-detect package_name using local git info or environment variables" />
     <MESSAGE value="refactor(docs-bundle): reorder and clean up imports in bundle module" />
     <MESSAGE value="refactor(docs-bundle): update module imports and unify spacing/formatting" />
     <MESSAGE value="style(docs-bundle): apply consistent spacing and formatting across the module file" />
@@ -721,7 +716,13 @@
     <MESSAGE value="fix(docs-bundle): update schema to use `z.date()` for date validation" />
     <MESSAGE value="fix(docs-bundle): update changelog query to order by branch instead of date" />
     <MESSAGE value="ide(config): auto-updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="ide(config): auto-updated" />
+    <MESSAGE value="feat(docs-bundle): add majorVersions field to bundle.config.ts" />
+    <MESSAGE value="feat(docs-bundle): restructure content config with new schemas and collections" />
+    <MESSAGE value="feat(docs-bundle): integrate majorVersions and update changelog paths for consistency" />
+    <MESSAGE value="refactor(docs-bundle): update useReleases composable to align with renamed collection and type adjustments" />
+    <MESSAGE value="refactor(docs-bundle): adjust changelog collections, paths, and types for versioning consistency" />
+    <MESSAGE value="refactor(docs-bundle): update changelog paths, collections, and types for improved versioning consistency" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(docs-bundle): update changelog paths, collections, and types for improved versioning consistency" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
