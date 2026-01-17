@@ -1,21 +1,23 @@
 <script setup lang="ts">
 import { kebabCase } from 'scule'
-import type { Collections, ChangelogVCollectionItem } from '@nuxt/content'
+import type { Collections, VersionsCollectionItem } from '@nuxt/content'
 import type { ButtonProps } from '@nuxt/ui'
 
 definePageMeta({
   layout: 'changelog',
-  path: '/:lang?/changelog/:v(\\d+\.x)/:semver(\\d+\.\\d+\.\\d+)',
+  path: '/:lang?/changelog/:v(\\d+_x)/:semver(\\d+_\\d+_\\d+)',
 })
 
 const route = useRoute()
 const { locale, isEnabled, t } = useDocusI18n()
 const { lastRelease } = await useReleases()
 const appConfig = useAppConfig()
-const collectionName = computed(() => isEnabled.value ? `changelog_v_${locale.value}` : 'changelog_v')
+const collectionName = computed(() => isEnabled.value ? `versions_${locale.value}` : 'versions')
 
 const [{ data: page }, { data: surround }] = await Promise.all([
-  useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections).where('version', '=', route.params.semver).first() as Promise<ChangelogVCollectionItem>),
+  useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections)
+    .where('version', '=', (route.params.semver as string).replaceAll('_', '.'))
+    .first() as Promise<VersionsCollectionItem>),
   useAsyncData(kebabCase(route.path) + '-surround', () => queryCollectionItemSurroundings(collectionName.value as keyof Collections, route.path, { fields: ['description'], }))
 ])
 
@@ -78,16 +80,16 @@ const links = ref((): ButtonProps[] => {
 
   return [
     {
-      label: 'Tag ' + route.params.semver,
+      label: 'Tag ' + page.value?.version,
       icon: 'i-tabler-tag',
       color: 'success',
-      to: `${github.value.url}/releases/tag/${route.params.semver}`,
+      to: `${github.value.url}/releases/tag/${page.value?.version}`,
       target: '_blank'
     }, {
-      label: 'Branch ' + route.params.v,
+      label: 'Branch ' + page.value?.branch,
       icon: 'i-tabler-git-branch',
       // color: 'primary',
-      to: `${github.value.url}/tree/${route.params.v}`,
+      to: `${github.value.url}/tree/${page.value?.branch}`,
       target: '_blank'
     }
   ]
