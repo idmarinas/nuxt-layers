@@ -1,5 +1,5 @@
-import {readdirSync, statSync} from 'node:fs'
-import {join} from 'pathe'
+import fs from 'fs'
+import path from 'path'
 
 /**
  * Extract all MAJOR.MINOR versions from the changelog directory
@@ -9,34 +9,36 @@ function getVersionsMajorMinor(changelogDir: string): string[] {
   const versions = new Map<string, string>() // { '1.0': '1.0.0', '1.1': '1.1.5', ... }
 
   try {
-    const mainDirs = readdirSync(changelogDir)
+    const mainDirs = fs.readdirSync(changelogDir)
 
     for (const mainDir of mainDirs) {
-      const mainPath = join(changelogDir, mainDir)
-      const stats = statSync(mainPath)
+      const mainPath = path.join(changelogDir, mainDir)
+      const stats = fs.statSync(mainPath)
 
+      // Solo procesar directorios
       if (!stats.isDirectory()) continue
 
-      const files = readdirSync(mainPath)
+      const files = fs.readdirSync(mainPath)
 
       for (const file of files) {
         if (!file.endsWith('.md') || file === 'index.md') continue
 
-        // Extract version from file name (e.g., 1.0.0.md)
-        const versionMatch = file.match(/^(\d+\.\d+\.\d+)\.md$/)
+        // Extract version from file name (e.g 1_0_0.md)
+        const versionMatch = file.match(/^(\d+)_(\d+)_(\d+)\.md$/)
         if (!versionMatch) continue
 
-        const fullVersion = versionMatch[1]
-        const [major, minor, patch] = fullVersion!.split('.').map(Number)
+        const [, major, minor, patch] = versionMatch.map(Number)
         const majorMinor = `${major}.${minor}`
+        const fullVersion = `${major}.${minor}.${patch}`
 
         const existing = versions.get(majorMinor)
         if (!existing) {
-          versions.set(majorMinor, fullVersion!)
+          versions.set(majorMinor, fullVersion)
         } else {
+          // Comparar versiones: mantener la más alta
           const [, , existingPatch] = existing.split('.').map(Number)
           if (patch! > existingPatch!) {
-            versions.set(majorMinor, fullVersion!)
+            versions.set(majorMinor, fullVersion)
           }
         }
       }
@@ -56,6 +58,91 @@ function getVersionsMajorMinor(changelogDir: string): string[] {
       console.error('Error leyendo directorio:', error.message)
     }
     return []
+  }
+}
+
+/**
+ * Extrae versiones MAJOR con la fecha de la última release
+ * Devuelve un objeto con MAJOR como clave y fecha como valor
+ */
+function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<string, string> {
+  const majorVersions = new Map<string, { date: string | null }>()
+
+  try {
+    const mainDirs = fs.readdirSync(changelogDir)
+
+    for (const mainDir of mainDirs) {
+      const mainPath = path.join(changelogDir, mainDir)
+      const stats = fs.statSync(mainPath)
+
+      if (!stats.isDirectory()) continue
+
+      const files = fs.readdirSync(mainPath)
+
+      for (const file of files) {
+        if (!file.endsWith('.md') || file === 'index.md') continue
+
+        const versionMatch = file.match(/^(\d+)_(\d+)_(\d+)\.md$/)
+        if (!versionMatch) continue
+
+        const [, majorStr, minorStr, patchStr] = versionMatch
+        const major = Number(majorStr)
+        const minor = Number(minorStr)
+        const patch = Number(patchStr)
+
+        // Leer el archivo para obtener la fecha del frontmatter
+        const filePath = path.join(mainPath, file)
+        let date: string | null = null
+
+        try {
+          const content = fs.readFileSync(filePath, 'utf-8')
+          const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/)
+          if (frontmatterMatch) {
+            const dateMatch = frontmatterMatch[1]!.match(/date:\s*(.+)/)
+            if (dateMatch) {
+              date = dateMatch[1]!.trim()
+            }
+          }
+        } catch (error) {
+          console.warn(`No se pudo leer ${filePath}`)
+        }
+
+        const majorKey = String(major)
+
+        // Guardar o actualizar si es una versión más reciente
+        const existing = majorVersions.get(majorKey)
+        if (!existing) {
+          majorVersions.set(majorKey, {date})
+        } else {
+          // Comparar versiones: mantener la más nueva (mayor minor o patch)
+          // Si no tenemos fecha, usar la que encontremos
+          if (existing.date === null && date !== null) {
+            majorVersions.set(majorKey, {date})
+          }
+        }
+      }
+    }
+
+    // Convertir a objeto y ordenar por MAJOR descendente
+    const result: Record<string, string> = {}
+    const sortedKeys = Array.from(majorVersions.keys())
+      .map(Number)
+      .sort((a, b) => b - a)
+      .map(String)
+
+    for (const key of sortedKeys) {
+      const data = majorVersions.get(key)
+      if (data?.date) {
+        result[key] = data.date
+      }
+    }
+
+    return result
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error('Error leyendo directorio:', error.message)
+    }
+    return {}
   }
 }
 
@@ -79,4 +166,4 @@ function parseLabelsForVersions(dir: string) {
   )
 }
 
-export {getVersionsMajorMinor, parseLabelsForVersions}
+export {getVersionsMajorMinor, getVersionsMajorWithDate, parseLabelsForVersions}
