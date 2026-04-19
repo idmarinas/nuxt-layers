@@ -1,17 +1,16 @@
-<script setup>
-import {computed} from "vue";
+<script lang="ts" setup>
+const {title, description, headline, icon = 'i-tabler-book'} = defineProps<{
+  title?: string,
+  description?: string,
+  headline?: string,
+  icon?: string,
+  socials?: {
+    icons: [],
+    username: string,
+  }
+}>()
 
 const bundle = useAppConfig().docsBundle
-const props = defineProps({
-  title: {type: String, required: false},
-  description: {type: String, required: false},
-  headline: {type: String, required: false},
-  icon: {type: String, required: false, default: 'i-tabler-book'}
-});
-const title = computed(() => (props.title || "").slice(0, 60))
-const description = computed(() => (props.description || "").slice(0, 200))
-
-console.log(props)
 </script>
 
 <template>
@@ -23,8 +22,13 @@ console.log(props)
               d="M628.5 -578L639.334 -94.4223L806.598 -548.281L659.827 -87.387L965.396 -462.344L676.925 -74.0787L1087.69 -329.501L688.776 -55.9396L1160.22 -164.149L694.095 -34.9354L1175.13 15.7948L692.306 -13.3422L1130.8 190.83L683.602 6.50012L1032.04 341.989L668.927 22.4412L889.557 452.891L649.872 32.7537L718.78 511.519L628.5 36.32L538.22 511.519L607.128 32.7537L367.443 452.891L588.073 22.4412L224.955 341.989L573.398 6.50012L126.198 190.83L564.694 -13.3422L81.8734 15.7948L562.905 -34.9354L96.7839 -164.149L568.224 -55.9396L169.314 -329.501L580.075 -74.0787L291.604 -462.344L597.173 -87.387L450.402 -548.281L617.666 -94.4223L628.5 -578Z" />
       </g>
       <defs>
-        <filter id="filter0_f_199_94966" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="1251.52" width="1255.25"
-                x="0.873535" y="-659">
+        <filter id="filter0_f_199_94966"
+                color-interpolation-filters="sRGB"
+                filterUnits="userSpaceOnUse"
+                height="1251.52"
+                width="1255.25"
+                x="0.873535"
+                y="-659">
           <feFlood flood-opacity="0" result="BackgroundImageFix" />
           <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
           <feGaussianBlur result="effect1_foregroundBlur_199_94966" stdDeviation="40.5" />
@@ -38,10 +42,10 @@ console.log(props)
         <span>{{ headline }}</span>
       </p>
       <h1 v-if="title" class="w-[600px] m-0 text-[75px] font-semibold mb-4 text-white text-ellipsis line-clamp-2">
-        {{ title }}
+        {{ title.slice(0, 60) }}
       </h1>
       <p v-if="description" class="block text-[32px] text-[#E4E4E7] leading-tight text-ellipsis line-clamp-3">
-        {{ description }}
+        {{ description.slice(0, 200) }}
       </p>
     </div>
 

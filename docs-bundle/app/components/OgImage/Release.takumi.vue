@@ -1,18 +1,15 @@
 <script lang="ts" setup>
-import {computed} from "vue";
+const {title, description, headline} = defineProps<{
+  title?: string,
+  description?: string,
+  headline?: string,
+  socials?: {
+    icons: [],
+    username: string,
+  }
+}>()
 
 const bundle = useAppConfig().docsBundle
-
-const props = defineProps({
-  title: {type: String, required: false, default: "title"},
-  description: {type: String, required: false, default: "description"},
-  headline: {type: String, required: false, default: "headline"},
-})
-
-
-const title = computed(() => (props.title || "").slice(0, 60))
-const description = computed(() => (props.description || "").slice(0, 200))
-console.log(props)
 </script>
 
 <template>
@@ -44,16 +41,15 @@ console.log(props)
         <span>{{ headline }}</span>
       </p>
       <h1 v-if="title" class="nlovk w-[600px] m-0 text-[75px] font-semibold mb-4 text-white text-ellipsis line-clamp-2">
-        {{ title }}
+        {{ title.slice(0, 60) }}
       </h1>
       <p v-if="description" class="block text-[32px] text-[#E4E4E7] leading-tight text-ellipsis line-clamp-3">
-        {{ description }}
+        {{ description.slice(0, 200) }}
       </p>
-      <p>
-      <pre
-        class="w-full font-mono text-xl text-center text-gray-700 border border-muted bg-black bg-gray-100 rounded-md px-4 py-3 whitespace-pre-wrap break-words overflow-x-auto">
-          composer require {{ bundle.package_name }}
-        </pre>
+      <p
+        class="w-full font-mono text-xl mt-4 text-gray-700 border border-muted bg-black bg-gray-100 rounded-md px-4 py-3 whitespace-pre-wrap break-words overflow-x-auto"
+      >
+        composer require {{ bundle.package_name }}
       </p>
     </div>
 
