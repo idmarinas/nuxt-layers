@@ -1,20 +1,20 @@
-<script setup lang="ts">
-import { kebabCase } from 'scule'
-import type { ContentNavigationItem, Collections, DocsCollectionItem } from '@nuxt/content'
-import { findPageHeadline } from '@nuxt/content/utils'
+<script lang="ts" setup>
+import {kebabCase} from 'scule'
+import type {Collections, ContentNavigationItem, DocsCollectionItem} from '@nuxt/content'
+import {findPageHeadline} from '@nuxt/content/utils'
 
 definePageMeta({
   layout: 'docs',
 })
 
 const route = useRoute()
-const { locale, isEnabled, t } = useDocusI18n()
+const {locale, isEnabled, t} = useDocusI18n()
 const appConfig = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
 const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
 
-const [{ data: page }, { data: surround }] = await Promise.all([
+const [{data: page}, {data: surround}] = await Promise.all([
   useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections).path(route.path).first() as Promise<DocsCollectionItem>),
   useAsyncData(`${kebabCase(route.path)}-surround`, () => {
     return queryCollectionItemSurroundings(collectionName.value as keyof Collections, route.path, {
@@ -24,7 +24,7 @@ const [{ data: page }, { data: surround }] = await Promise.all([
 ])
 
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({statusCode: 404, statusMessage: 'Page not found', fatal: true})
 }
 
 // Add the page path to the prerender list
@@ -36,6 +36,7 @@ const description = page.value.seo?.description || page.value.description
 useSeoMeta({
   title,
   ogTitle: title,
+  ogImage: page.value?.seo?.ogImage,
   description,
   ogDescription: description,
 })
@@ -46,14 +47,13 @@ watch(() => navigation?.value, () => {
 })
 
 // Define the OG Image
-const ogImage = page.value?.seo?.ogImage || {
-  props: {
+if (page.value?.seo?.ogImage === undefined) {
+  defineOgImage('Docs', {
     title,
     description,
     headline: headline.value,
-  },
+  })
 }
-defineOgImage(ogImage)
 
 const github = computed(() => appConfig.github ? appConfig.github : null)
 
@@ -75,7 +75,7 @@ const editLink = computed(() => {
 
 <template>
   <UPage v-if="page">
-    <UPageHeader :title="page.title" :description="page.description" :headline="headline" :ui="{
+    <UPageHeader :description="page.description" :headline="headline" :title="page.title" :ui="{
       wrapper: 'flex-row items-center flex-wrap justify-between',
     }">
       <template #links>
@@ -90,13 +90,17 @@ const editLink = computed(() => {
 
       <USeparator>
         <div v-if="github" class="flex items-center gap-2 text-sm text-muted">
-          <UButton variant="link" color="neutral" :to="editLink" target="_blank" icon="i-tabler-pencil"
-            :ui="{ leadingIcon: 'size-4' }">
+          <UButton :to="editLink" :ui="{ leadingIcon: 'size-4' }" color="neutral" icon="i-tabler-pencil" target="_blank"
+                   variant="link">
             {{ t('docs.edit', '', {}) }}
           </UButton>
           <span>{{ t('common.or', '', {}) }}</span>
-          <UButton variant="link" color="neutral" :to="`${github.url}/issues/new/choose`" target="_blank"
-            icon="i-tabler-alert-circle" :ui="{ leadingIcon: 'size-4' }">
+          <UButton :to="`${github.url}/issues/new/choose`"
+                   :ui="{ leadingIcon: 'size-4' }"
+                   color="neutral"
+                   icon="i-tabler-alert-circle"
+                   target="_blank"
+                   variant="link">
             {{ t('docs.report', '', {}) }}
           </UButton>
         </div>
@@ -105,7 +109,7 @@ const editLink = computed(() => {
     </UPageBody>
 
     <template #right>
-      <UContentToc highlight :title="appConfig.toc?.title || t('docs.toc', '', {})" :links="page.body?.toc?.links">
+      <UContentToc :links="page.body?.toc?.links" :title="appConfig.toc?.title || t('docs.toc', '', {})" highlight>
         <template #bottom>
           <LastRelease :separator="!!page?.body?.toc?.links?.length" />
           <DocsAsideRightBottom />
