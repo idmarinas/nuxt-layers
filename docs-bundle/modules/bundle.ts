@@ -1,14 +1,14 @@
-import type { Author, DocsBundleConfig, LabelProps } from '../bundle.config'
-import type { TooltipProps } from '@nuxt/ui'
-import type { FileAfterParseHook } from '@nuxt/content'
-import type { Nuxt } from 'nuxt/schema'
-import { getVersionsMajorWithDate, parseLabelsForVersions } from '../utils/versions'
-import { defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
-import { defu } from 'defu'
-import { pascalCase, titleCase } from 'scule'
-import { getGitEnv, getLocalGitInfo } from 'docus/utils/git'
-import { updateSiteConfig } from 'nuxt-site-config/kit'
-import { join } from 'node:path'
+import type {Author, DocsBundleConfig, LabelProps} from '../bundle.config'
+import type {TooltipProps} from '@nuxt/ui'
+import type {FileAfterParseHook} from '@nuxt/content'
+import type {Nuxt} from 'nuxt/schema'
+import {getVersionsMajorWithDate, parseLabelsForVersions} from '../utils/versions'
+import {defineNuxtModule, useLogger, useNuxt} from 'nuxt/kit'
+import {defu} from 'defu'
+import {pascalCase, titleCase} from 'scule'
+import {getGitEnv, getLocalGitInfo} from 'docus/utils/git'
+import {updateSiteConfig} from 'nuxt-site-config/kit'
+import {join} from 'node:path'
 
 interface ModuleOptions {
   package_name: string;
@@ -36,7 +36,7 @@ const idmarinas: Author = {
   name: 'Iván Diaz',
   description: '@IDMarinas',
   username: 'IDMarinas',
-  avatar: { src: 'https://avatars.githubusercontent.com/u/35842929?v=4' },
+  avatar: {src: 'https://avatars.githubusercontent.com/u/35842929?v=4'},
   to: 'https://github.com/idmarinas',
   target: '_blank'
 }
@@ -54,7 +54,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    colors: { purple: 'purple' },
+    colors: {purple: 'purple'},
     labels: {
       wip: {
         label: 'WIP',
@@ -137,7 +137,7 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    const { docsBundle, socials } = createDocsBundleConfig(options.package_name, options, nuxt)
+    const {docsBundle, socials} = createDocsBundleConfig(options.package_name, options, nuxt)
 
     // Merge docsBundle config
     nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle)
@@ -148,7 +148,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     nuxt.hook('modules:done', () => {
-      nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui.colors, options.colors)
+      nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui?.colors, options.colors)
 
       const colors = new Set(nuxt.options.ui.theme?.colors || UI_THEME_COLORS)
       Object.keys(nuxt.options.appConfig.ui.colors!).forEach(color => !colors.has(color) && colors.add(color))
@@ -161,7 +161,7 @@ export default defineNuxtModule<ModuleOptions>({
           twitterCreator: `@${docsBundle.repository.owner}`,
         }
       })
-      nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, { colors: Array.from(colors) })
+      nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, {colors: Array.from(colors)})
 
       // Modify AppConfig defaults
       nuxt.options.appConfig.header.title = docsBundle.name
@@ -244,7 +244,7 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
 
   // Name and Description
   docsBundle.name = options.name || `${docsBundle.author.username} ${short_name} Bundle`
-  docsBundle.description = options.description || nuxt.options.appConfig.seo.description || ''
+  docsBundle.description = options.description || nuxt.options.appConfig.seo?.description || ''
 
   // Vars - namespace
   docsBundle.vars = {
@@ -268,7 +268,7 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
     return Array.from(icons).map(key => `i-simple-icons-${key}`)
   }
 
-  return { docsBundle, socials }
+  return {docsBundle, socials}
 }
 
 const getAuthorByUserName = (authors: Record<string, Author>, userName: string, placeholder?: string): undefined | Author => {
@@ -279,7 +279,7 @@ const getAuthorByUserName = (authors: Record<string, Author>, userName: string, 
       name: placeholder,
       username: placeholder,
       description: '',
-      avatar: { src: '' }
+      avatar: {src: ''}
     }
   }
 
