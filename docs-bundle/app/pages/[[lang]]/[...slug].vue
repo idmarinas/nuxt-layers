@@ -36,7 +36,6 @@ const description = page.value.seo?.description || page.value.description
 useSeoMeta({
   title,
   ogTitle: title,
-  ogImage: page.value?.seo?.ogImage,
   description,
   ogDescription: description,
 })
@@ -48,7 +47,7 @@ watch(() => navigation?.value, () => {
 
 // Define the OG Image
 if (page.value?.seo?.ogImage === undefined) {
-  defineOgImage('Docs', {
+  defineOgImage('DocsTakumi', {
     title,
     description,
     headline: headline.value,
@@ -92,16 +91,16 @@ const editLink = computed(() => {
         <div v-if="github" class="flex items-center gap-2 text-sm text-muted">
           <UButton :to="editLink" :ui="{ leadingIcon: 'size-4' }" color="neutral" icon="i-tabler-pencil" target="_blank"
                    variant="link">
-            {{ t('docs.edit', '', {}) }}
+            {{ t('docs.edit') }}
           </UButton>
-          <span>{{ t('common.or', '', {}) }}</span>
+          <span>{{ t('common.or') }}</span>
           <UButton :to="`${github.url}/issues/new/choose`"
                    :ui="{ leadingIcon: 'size-4' }"
                    color="neutral"
                    icon="i-tabler-alert-circle"
                    target="_blank"
                    variant="link">
-            {{ t('docs.report', '', {}) }}
+            {{ t('docs.report') }}
           </UButton>
         </div>
       </USeparator>
@@ -109,7 +108,7 @@ const editLink = computed(() => {
     </UPageBody>
 
     <template #right>
-      <UContentToc :links="page.body?.toc?.links" :title="appConfig.toc?.title || t('docs.toc', '', {})" highlight>
+      <UContentToc :links="page.body?.toc?.links" :title="appConfig.toc?.title || t('docs.toc')" highlight>
         <template #bottom>
           <LastRelease :separator="!!page?.body?.toc?.links?.length" />
           <DocsAsideRightBottom />
