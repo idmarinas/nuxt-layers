@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { BranchsCollectionItem, Collections, PageCollections, VersionsCollectionItem } from '@nuxt/content'
+import type {BranchesCollectionItem, Collections, PageCollections, VersionsCollectionItem} from '@nuxt/content'
 
 definePageMeta({
   layout: 'changelog',
@@ -7,7 +7,7 @@ definePageMeta({
 })
 
 const route = useRoute()
-const { locale, isEnabled, t } = useDocusI18n()
+const {locale, isEnabled, t} = useDocusI18n()
 const appConfig = useAppConfig()
 const majorVersions = appConfig.docsBundle.majorVersions as Record<string, string>
 
@@ -18,7 +18,7 @@ const collectionName = computed(() => {
 })
 const pageName = computed(() => isEnabled.value ? `branches_${locale.value}` : 'branches')
 
-const [{ data: pages }, { data: page }, { data: surround }] = await Promise.all([
+const [{data: pages}, {data: page}, {data: surround}] = await Promise.all([
   useAsyncData(collectionName.value + route.params.v, () => {
     const query = queryCollection(collectionName.value as keyof PageCollections)
 
@@ -39,7 +39,7 @@ const [{ data: pages }, { data: page }, { data: surround }] = await Promise.all(
       query.where('branch', 'IS NULL')
     }
 
-    return query.first() as Promise<BranchsCollectionItem>
+    return query.first() as Promise<BranchesCollectionItem>
   }),
   useAsyncData(`page_${pageName.value}_${route.params.v}-surround`, () => {
     return queryCollectionItemSurroundings(pageName.value as keyof Collections, route.path, {
@@ -49,7 +49,7 @@ const [{ data: pages }, { data: page }, { data: surround }] = await Promise.all(
 ])
 
 if (!pages.value || !page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({statusCode: 404, statusMessage: 'Page not found', fatal: true})
 }
 
 const title = page.value.seo?.title || page.value.title
@@ -62,7 +62,7 @@ useSeoMeta({
   ogDescription: description,
 })
 
-defineOgImageComponent('Docs', {
+defineOgImage('DocsTakumi', {
   title,
   description,
   headline: 'Changelog'
@@ -70,10 +70,10 @@ defineOgImageComponent('Docs', {
 
 const items = useBreadcrumbItems({
   overrides: [
-    { label: 'Documentation', icon: 'i-tabler-book' },
-    { label: '', icon: 'i-tabler-layout' },
-    { label: '', icon: 'i-tabler-git-branch' },
-    { label: '', icon: 'i-tabler-tag' }
+    {label: 'Documentation', icon: 'i-tabler-book'},
+    {label: '', icon: 'i-tabler-layout'},
+    {label: '', icon: 'i-tabler-git-branch'},
+    {label: '', icon: 'i-tabler-tag'}
   ]
 })
 </script>
@@ -89,14 +89,19 @@ const items = useBreadcrumbItems({
       <UBreadcrumb :items="items" />
 
       <UChangelogVersions>
-        <UChangelogVersion v-for="(version, index) in pages" :key="index" v-bind="version"
-          :date="majorVersions[version.branch.replace('.x', '')]" :to="version.path" />
+        <UChangelogVersion
+          v-for="(version, index) in pages"
+          v-bind="version"
+          :key="index"
+          :date="majorVersions[version.branch.replace('.x', '')]"
+          :to="version.path"
+        />
       </UChangelogVersions>
 
       <UContentSurround :surround="surround" />
     </UPageBody>
     <template #right>
-      <UContentToc :links="page.body?.toc?.links" :title="appConfig.toc?.title || t('docs.toc', '', {})" highlight>
+      <UContentToc :links="page.body?.toc?.links" :title="appConfig.toc?.title || t('docs.toc')" highlight>
         <template #bottom>
           <LastRelease :separator="!!page?.body?.toc?.links?.length" />
           <DocsAsideRightBottom />
