@@ -187,7 +187,7 @@ export default defineNuxtModule<ModuleOptions>({
         }
       })
 
-      config.defaults.component = 'Docs'
+      // config.defaults.component = 'DocsTakumi'
     })
 
     // @ts-ignore
