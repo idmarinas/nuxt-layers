@@ -19,22 +19,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/2_x/2_0_0.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/2_x/index.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/3_x/3_0_0.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/3_x/index.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/4_x/4_0_0.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/4_x/index.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/5_x/5_0_0.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/5_x/index.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/1.x/1.0.0.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/1_x/1_0_0.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/1.x/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/1_x/index.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/changelog/index.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/nuxt.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/nuxt.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/content.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/content.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/utils/versions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/utils/versions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/.nuxtrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +41,13 @@
       <interpreter name="idmarinas/php:8.4-xdebug" composer="composer" />
     </execution>
   </component>
+  <component name="CopilotPersistence">
+    <persistenceIdMap>
+      <entry key="_//wsl.localhost/Proyectos/home/idmarinas/Proyectos/Utils/nuxt-layers" value="36cUcNNvJYkpkD71r4Tuy3Z7c4p" />
+    </persistenceIdMap>
+  </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="116" />
+    <option name="cachedIndexableFilesCount" value="86" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -135,14 +129,16 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Projects - Utils/nuxt-layers/docs-bundle/app/pages&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;bun&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Proyectos/home/idmarinas/Proyectos/Utils/nuxt-layers/docs-bundle/.playground&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;wsl://Proyectos@/usr/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;bun&quot;,
     &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.JavaScript&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\idmarinas\\AppData\\Local\\Programs\\PhpStorm 2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -155,11 +151,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Proyectos\home\idmarinas\Proyectos\Utils\nuxt-layers\docs-bundle\.playground" />
       <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\app\pages" />
       <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground\content\.changelog" />
       <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground\content\999.changelog\3_x" />
       <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground\content\999.changelog\4_x" />
-      <recent name="F:\Projects - Utils\nuxt-layers\docs-bundle\.playground\content\999.changelog\5_x" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Projects - Utils\nuxt-layers\.docus.dist" />
@@ -240,7 +236,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.29346.257" />
+        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.30387.85" />
       </set>
     </attachedChunks>
   </component>
@@ -283,135 +279,10 @@
       <workItem from="1767804073098" duration="2942000" />
       <workItem from="1768594743439" duration="4900000" />
       <workItem from="1768639608690" duration="21996000" />
-      <workItem from="1768673146940" duration="2526000" />
-    </task>
-    <task id="LOCAL-00014" summary="ide(config): auto-updated">
-      <option name="closed" value="true" />
-      <created>1765482884485</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482884485</updated>
-    </task>
-    <task id="LOCAL-00015" summary="feat(docs): add tarballUrl support and setter method to version utility">
-      <option name="closed" value="true" />
-      <created>1765482897729</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482897729</updated>
-    </task>
-    <task id="LOCAL-00016" summary="feat(docs): add caching mechanism to githubVersions utility">
-      <option name="closed" value="true" />
-      <created>1765482907885</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482907885</updated>
-    </task>
-    <task id="LOCAL-00017" summary="feat(docs): add collections source utility for managing GitHub and local content">
-      <option name="closed" value="true" />
-      <created>1765482943629</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482943629</updated>
-    </task>
-    <task id="LOCAL-00018" summary="refactor(docs-versioning): remove unused app.config.ts file from .playground">
-      <option name="closed" value="true" />
-      <created>1765482963091</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482963091</updated>
-    </task>
-    <task id="LOCAL-00019" summary="refactor(docs): migrate and update app.config.ts with new structure and compatibility date">
-      <option name="closed" value="true" />
-      <created>1765482997092</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1765482997092</updated>
-    </task>
-    <task id="LOCAL-00020" summary="refactor(docs-versioning): remove obsolete docs.vue file from layouts directory">
-      <option name="closed" value="true" />
-      <created>1765546516049</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1765546516049</updated>
-    </task>
-    <task id="LOCAL-00021" summary="feat(docs-utils): add addPrerenderPath utility for handling prerender paths in headers">
-      <option name="closed" value="true" />
-      <created>1765560902318</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1765560902318</updated>
-    </task>
-    <task id="LOCAL-00022" summary="refactor(docs-utils): improve type safety and update comments in parseVersions utility">
-      <option name="closed" value="true" />
-      <created>1765561154154</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1765561154154</updated>
-    </task>
-    <task id="LOCAL-00023" summary="refactor(docs-utils): update import paths and handle empty tarballUrl in githubVersions utility">
-      <option name="closed" value="true" />
-      <created>1765561168790</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1765561168790</updated>
-    </task>
-    <task id="LOCAL-00024" summary="refactor(docs-utils): relocate githubRelease utility to utils directory">
-      <option name="closed" value="true" />
-      <created>1765561178789</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1765561178789</updated>
-    </task>
-    <task id="LOCAL-00025" summary="chore: update .gitignore to exclude node_modules, .nuxt, and .data directories">
-      <option name="closed" value="true" />
-      <created>1767111293876</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1767111293876</updated>
-    </task>
-    <task id="LOCAL-00026" summary="ide(config): auto-updated">
-      <option name="closed" value="true" />
-      <created>1767111308121</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1767111308121</updated>
-    </task>
-    <task id="LOCAL-00027" summary="chore(docs): remove legacy documentation files and navigation for a cleaner structure">
-      <option name="closed" value="true" />
-      <created>1767111332419</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1767111332419</updated>
-    </task>
-    <task id="LOCAL-00028" summary="feat(docs): add new documentation bundle with changelog pages, localized content, and improved structure">
-      <option name="closed" value="true" />
-      <created>1767111670857</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1767111670857</updated>
-    </task>
-    <task id="LOCAL-00029" summary="chore(docs-bundle): remove unused dependencies and unnecessary fields from package.json">
-      <option name="closed" value="true" />
-      <created>1767119915646</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1767119915646</updated>
+      <workItem from="1768673146940" duration="3406000" />
+      <workItem from="1776356813009" duration="7567000" />
+      <workItem from="1776615945826" duration="8378000" />
+      <workItem from="1776625035601" duration="2598000" />
     </task>
     <task id="LOCAL-00030" summary="refactor(docs-bundle): remove unused lifecycle hooks and add nuxt-seo-utils dependency with runtime config updates">
       <option name="closed" value="true" />
@@ -677,7 +548,135 @@
       <option name="project" value="LOCAL" />
       <updated>1768675662930</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="fix(docs-bundle): correct typo in collection key from `branchs` to `branches`">
+      <option name="closed" value="true" />
+      <created>1768675720456</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675720456</updated>
+    </task>
+    <task id="LOCAL-00064" summary="refactor(docs-bundle): restructure changelog content with updated paths, collections, and new versioning schema">
+      <option name="closed" value="true" />
+      <created>1768675744664</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675744664</updated>
+    </task>
+    <task id="LOCAL-00065" summary="feat(docs-bundle): add major version extraction with release dates and refactor versioning logic">
+      <option name="closed" value="true" />
+      <created>1768675836370</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675836370</updated>
+    </task>
+    <task id="LOCAL-00066" summary="ide(config): auto-updated">
+      <option name="closed" value="true" />
+      <created>1768675845621</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1768675845621</updated>
+    </task>
+    <task id="LOCAL-00067" summary="refactor(docs-bundle): migrate and replace OgImage components with Takumi versions">
+      <option name="closed" value="true" />
+      <created>1776618195980</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1776618195980</updated>
+    </task>
+    <task id="LOCAL-00068" summary="refactor(docs-bundle): reformat script setup and improve component prop handling in changelog page">
+      <option name="closed" value="true" />
+      <created>1776618212594</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1776618212594</updated>
+    </task>
+    <task id="LOCAL-00069" summary="refactor(docs-bundle): reformat script setup and adjust component props in docs page for improved readability and consistency">
+      <option name="closed" value="true" />
+      <created>1776618220613</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1776618220613</updated>
+    </task>
+    <task id="LOCAL-00070" summary="refactor(docs-bundle): reformat imports and object literals for improved readability and consistency">
+      <option name="closed" value="true" />
+      <created>1776618229079</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1776618229079</updated>
+    </task>
+    <task id="LOCAL-00071" summary="refactor(docs-bundle): update scripts to use `nuxi` CLI and adjust dependencies for compatibility">
+      <option name="closed" value="true" />
+      <created>1776618243326</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1776618243326</updated>
+    </task>
+    <task id="LOCAL-00072" summary="refactor(docs-bundle): remove unused `package-lock.json` file to streamline project structure">
+      <option name="closed" value="true" />
+      <created>1776618250970</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1776618250970</updated>
+    </task>
+    <task id="LOCAL-00073" summary="chore(gitignore): add lock files to ignore list">
+      <option name="closed" value="true" />
+      <created>1776618275146</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1776618275146</updated>
+    </task>
+    <task id="LOCAL-00074" summary="refactor(docs-bundle): update `nuxt.config.ts` to include Vue devtools dependencies for optimized builds">
+      <option name="closed" value="true" />
+      <created>1776618282548</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1776618282548</updated>
+    </task>
+    <task id="LOCAL-00075" summary="refactor(docs-bundle): reformat OgImage components and enhance prop handling with TypeScript">
+      <option name="closed" value="true" />
+      <created>1776627101109</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1776627101109</updated>
+    </task>
+    <task id="LOCAL-00076" summary="refactor(docs-bundle): reformat script setup, adjust imports, and replace `defineOgImageComponent` with `defineOgImage`">
+      <option name="closed" value="true" />
+      <created>1776627133066</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1776627133066</updated>
+    </task>
+    <task id="LOCAL-00077" summary="refactor(docs-bundle): comment out default component assignment for Docs">
+      <option name="closed" value="true" />
+      <created>1776627139135</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1776627139135</updated>
+    </task>
+    <task id="LOCAL-00078" summary="refactor(docs-bundle): simplify translation functions and update OgImage definition for consistency">
+      <option name="closed" value="true" />
+      <created>1776627216818</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1776627216818</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -697,35 +696,43 @@
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="refactor(docs-bundle): reorder and clean up imports in bundle module" />
-    <MESSAGE value="refactor(docs-bundle): update module imports and unify spacing/formatting" />
-    <MESSAGE value="style(docs-bundle): apply consistent spacing and formatting across the module file" />
-    <MESSAGE value="refactor(docs-bundle): comment out `package_name` in playground config" />
-    <MESSAGE value="feat(docs-bundle): fallback to appConfig SEO description for bundle description" />
-    <MESSAGE value="refactor(docs-bundle): move version label parsing to a utility file and simplify setup" />
-    <MESSAGE value="refactor(docs-bundle): remove unused versions property from playground config" />
-    <MESSAGE value="refactor(docs-bundle): simplify Vars component logic and improve handling of nested keys" />
-    <MESSAGE value="fix(docs-bundle): correctly handle 'project' key in Vars component computation" />
-    <MESSAGE value="feat(docs-bundle): add PHP language support for code highlighting in markdown content" />
-    <MESSAGE value="fix(docs-bundle): update Vars syntax for description key in index.md" />
-    <MESSAGE value="feat(docs-bundle): add description field to package.json" />
-    <MESSAGE value="fix(docs-bundle): ensure valid release date filtering in useReleases composable" />
-    <MESSAGE value="fix(docs-bundle): update date filtering logic to exclude invalid patterns in useReleases composable" />
-    <MESSAGE value="fix(docs-bundle): correct date filtering logic in useReleases composable to exclude patterns with '%y%'" />
     <MESSAGE value="fix(docs-bundle): update incorrect release dates in 1.x changelog files" />
     <MESSAGE value="fix(docs-bundle): update schema to use `z.date()` for date validation" />
     <MESSAGE value="fix(docs-bundle): update changelog query to order by branch instead of date" />
-    <MESSAGE value="ide(config): auto-updated" />
     <MESSAGE value="feat(docs-bundle): add majorVersions field to bundle.config.ts" />
     <MESSAGE value="feat(docs-bundle): restructure content config with new schemas and collections" />
     <MESSAGE value="feat(docs-bundle): integrate majorVersions and update changelog paths for consistency" />
     <MESSAGE value="refactor(docs-bundle): update useReleases composable to align with renamed collection and type adjustments" />
     <MESSAGE value="refactor(docs-bundle): adjust changelog collections, paths, and types for versioning consistency" />
     <MESSAGE value="refactor(docs-bundle): update changelog paths, collections, and types for improved versioning consistency" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(docs-bundle): update changelog paths, collections, and types for improved versioning consistency" />
+    <MESSAGE value="fix(docs-bundle): correct typo in collection key from `branchs` to `branches`" />
+    <MESSAGE value="refactor(docs-bundle): restructure changelog content with updated paths, collections, and new versioning schema" />
+    <MESSAGE value="feat(docs-bundle): add major version extraction with release dates and refactor versioning logic" />
+    <MESSAGE value="ide(config): auto-updated" />
+    <MESSAGE value="refactor(docs-bundle): migrate and replace OgImage components with Takumi versions" />
+    <MESSAGE value="refactor(docs-bundle): reformat script setup and improve component prop handling in changelog page" />
+    <MESSAGE value="refactor(docs-bundle): reformat script setup and adjust component props in docs page for improved readability and consistency" />
+    <MESSAGE value="refactor(docs-bundle): reformat imports and object literals for improved readability and consistency" />
+    <MESSAGE value="refactor(docs-bundle): update scripts to use `nuxi` CLI and adjust dependencies for compatibility" />
+    <MESSAGE value="refactor(docs-bundle): remove unused `package-lock.json` file to streamline project structure" />
+    <MESSAGE value="chore(gitignore): add lock files to ignore list" />
+    <MESSAGE value="refactor(docs-bundle): update `nuxt.config.ts` to include Vue devtools dependencies for optimized builds" />
+    <MESSAGE value="refactor(docs-bundle): reformat OgImage components and enhance prop handling with TypeScript" />
+    <MESSAGE value="refactor(docs-bundle): reformat script setup, adjust imports, and replace `defineOgImageComponent` with `defineOgImage`" />
+    <MESSAGE value="refactor(docs-bundle): comment out default component assignment for Docs" />
+    <MESSAGE value="refactor(docs-bundle): simplify translation functions and update OgImage definition for consistency" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(docs-bundle): simplify translation functions and update OgImage definition for consistency" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
