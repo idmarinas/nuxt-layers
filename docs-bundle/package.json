@@ -4,13 +4,20 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "build": "nuxt build .playground",
+    "build": "nuxi build .playground",
     "dev": "nuxi dev .playground",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "generate": "nuxi generate .playground",
+    "preview": "nuxi preview .playground",
+    "postinstall": "nuxi prepare .playground"
   },
   "dependencies": {
+    "@takumi-rs/core": "^1.0.14",
     "nuxt-seo-utils": "^7.0.19"
+  },
+  "devDependencies": {
+    "better-sqlite3": "^12.9.0",
+    "docus": "latest",
+    "nuxt": "^4.4.2",
+    "nuxt-studio": "^1.6.0"
   }
 }
