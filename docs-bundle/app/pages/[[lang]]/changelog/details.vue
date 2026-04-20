@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import {kebabCase} from 'scule'
-import type {Collections, VersionsCollectionItem} from '@nuxt/content'
-import type {ButtonProps} from '@nuxt/ui'
+import { kebabCase } from 'scule'
+import type { Collections, VersionsCollectionItem } from '@nuxt/content'
+import type { ButtonProps } from '@nuxt/ui'
 
 definePageMeta({
   layout: 'changelog',
@@ -9,20 +9,20 @@ definePageMeta({
 })
 
 const route = useRoute()
-const {locale, isEnabled, t} = useDocusI18n()
-const {lastRelease} = await useReleases()
+const { locale, isEnabled, t } = useDocusI18n()
+const { lastRelease } = await useReleases()
 const appConfig = useAppConfig()
 const collectionName = computed(() => isEnabled.value ? `versions_${locale.value}` : 'versions')
 
-const [{data: page}, {data: surround}] = await Promise.all([
+const [{ data: page }, { data: surround }] = await Promise.all([
   useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections)
     .where('version', '=', (route.params.semver as string).replaceAll('_', '.'))
     .first() as Promise<VersionsCollectionItem>),
-  useAsyncData(kebabCase(route.path) + '-surround', () => queryCollectionItemSurroundings(collectionName.value as keyof Collections, route.path, {fields: ['description'],}))
+  useAsyncData(kebabCase(route.path) + '-surround', () => queryCollectionItemSurroundings(collectionName.value as keyof Collections, route.path, { fields: ['description'], }))
 ])
 
 if (!page.value) {
-  throw createError({statusCode: 404, statusMessage: 'Page not found', fatal: true})
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
 const title = page.value.seo?.title || page.value.title
@@ -96,10 +96,10 @@ const links = ref((): ButtonProps[] => {
 })
 const items = useBreadcrumbItems({
   overrides: [
-    {label: 'Documentation', icon: 'i-tabler-book'},
-    {label: '', icon: 'i-tabler-layout'},
-    {label: '', icon: 'i-tabler-git-branch'},
-    {label: '', icon: 'i-tabler-tag'}
+    { label: 'Documentation', icon: 'i-tabler-book' },
+    { label: '', icon: 'i-tabler-layout' },
+    { label: page.value?.branch.replace('_', '.'), icon: 'i-tabler-git-branch' },
+    { label: page.value?.version.replace('_', '.'), icon: 'i-tabler-tag' }
   ]
 })
 </script>
@@ -116,9 +116,9 @@ const items = useBreadcrumbItems({
 
     <UPageBody>
       <UBreadcrumb :items="items" />
-      <UChangelogVersion :description="undefined" :indicator="false" :title="undefined" :ui="{
+      <UChangelogVersion v-bind="page" :description="undefined" :indicator="false" :title="undefined" :ui="{
         container: 'w-full max-w-full'
-      }" v-bind="page">
+      }">
         <template #body>
           <ContentRenderer v-if="page" :value="page" />
         </template>
@@ -127,17 +127,13 @@ const items = useBreadcrumbItems({
       <USeparator>
         <div v-if="github" class="flex items-center gap-2 text-sm text-muted">
           <UButton :to="editLink" :ui="{ leadingIcon: 'size-4' }" color="neutral" icon="i-tabler-pencil" target="_blank"
-                   variant="link">
-            {{ t('docs.edit', '', {}) }}
+            variant="link">
+            {{ t('docs.edit') }}
           </UButton>
-          <span>{{ t('common.or', '', {}) }}</span>
-          <UButton :to="`${github.url}/issues/new/choose`"
-                   :ui="{ leadingIcon: 'size-4' }"
-                   color="neutral"
-                   icon="i-tabler-alert-circle"
-                   target="_blank"
-                   variant="link">
-            {{ t('docs.report', '', {}) }}
+          <span>{{ t('common.or') }}</span>
+          <UButton :to="`${github.url}/issues/new/choose`" :ui="{ leadingIcon: 'size-4' }" color="neutral"
+            icon="i-tabler-alert-circle" target="_blank" variant="link">
+            {{ t('docs.report') }}
           </UButton>
         </div>
       </USeparator>
@@ -145,7 +141,7 @@ const items = useBreadcrumbItems({
     </UPageBody>
 
     <template #right>
-      <UContentToc :links="page.body?.toc?.links" :title="appConfig.toc?.title || t('docs.toc', '', {})" highlight>
+      <UContentToc :links="page.body?.toc?.links" :title="appConfig.toc?.title || t('docs.toc')" highlight>
         <template #bottom>
           <LastRelease v-if="!isLastRelease" :separator="!!page?.body?.toc?.links?.length" />
           <DocsAsideRightBottom />
