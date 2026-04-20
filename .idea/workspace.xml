@@ -19,11 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/.nuxtrc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,22 +280,7 @@
       <workItem from="1776356813009" duration="7567000" />
       <workItem from="1776615945826" duration="8378000" />
       <workItem from="1776625035601" duration="2598000" />
-    </task>
-    <task id="LOCAL-00030" summary="refactor(docs-bundle): remove unused lifecycle hooks and add nuxt-seo-utils dependency with runtime config updates">
-      <option name="closed" value="true" />
-      <created>1767119958799</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1767119958799</updated>
-    </task>
-    <task id="LOCAL-00031" summary="chore(docs-bundle): move changelog page to playground directory">
-      <option name="closed" value="true" />
-      <created>1767119986972</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1767119986972</updated>
+      <workItem from="1776627717877" duration="93000" />
     </task>
     <task id="LOCAL-00032" summary="style(docs-bundle): apply consistent spacing and formatting across module files">
       <option name="closed" value="true" />
@@ -676,7 +658,23 @@
       <option name="project" value="LOCAL" />
       <updated>1776627216818</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="refactor(docs-bundle): reformat imports, object literals, and components for consistency and readability">
+      <option name="closed" value="true" />
+      <created>1776627732026</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1776627732026</updated>
+    </task>
+    <task id="LOCAL-00080" summary="ide(config): auto-updated">
+      <option name="closed" value="true" />
+      <created>1776627799848</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1776627799848</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -696,7 +694,6 @@
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fix(docs-bundle): update incorrect release dates in 1.x changelog files" />
     <MESSAGE value="fix(docs-bundle): update schema to use `z.date()` for date validation" />
     <MESSAGE value="fix(docs-bundle): update changelog query to order by branch instead of date" />
     <MESSAGE value="feat(docs-bundle): add majorVersions field to bundle.config.ts" />
@@ -708,7 +705,6 @@
     <MESSAGE value="fix(docs-bundle): correct typo in collection key from `branchs` to `branches`" />
     <MESSAGE value="refactor(docs-bundle): restructure changelog content with updated paths, collections, and new versioning schema" />
     <MESSAGE value="feat(docs-bundle): add major version extraction with release dates and refactor versioning logic" />
-    <MESSAGE value="ide(config): auto-updated" />
     <MESSAGE value="refactor(docs-bundle): migrate and replace OgImage components with Takumi versions" />
     <MESSAGE value="refactor(docs-bundle): reformat script setup and improve component prop handling in changelog page" />
     <MESSAGE value="refactor(docs-bundle): reformat script setup and adjust component props in docs page for improved readability and consistency" />
@@ -721,7 +717,9 @@
     <MESSAGE value="refactor(docs-bundle): reformat script setup, adjust imports, and replace `defineOgImageComponent` with `defineOgImage`" />
     <MESSAGE value="refactor(docs-bundle): comment out default component assignment for Docs" />
     <MESSAGE value="refactor(docs-bundle): simplify translation functions and update OgImage definition for consistency" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(docs-bundle): simplify translation functions and update OgImage definition for consistency" />
+    <MESSAGE value="refactor(docs-bundle): reformat imports, object literals, and components for consistency and readability" />
+    <MESSAGE value="ide(config): auto-updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="ide(config): auto-updated" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
