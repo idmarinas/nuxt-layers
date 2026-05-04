@@ -112,12 +112,12 @@ function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<st
         // Guardar o actualizar si es una versión más reciente
         const existing = majorVersions.get(majorKey)
         if (!existing) {
-          majorVersions.set(majorKey, {date})
+          majorVersions.set(majorKey, { date })
         } else {
           // Comparar versiones: mantener la más nueva (mayor minor o patch)
           // Si no tenemos fecha, usar la que encontremos
           if (existing.date === null && date !== null) {
-            majorVersions.set(majorKey, {date})
+            majorVersions.set(majorKey, { date })
           }
         }
       }
@@ -151,19 +151,19 @@ function parseLabelsForVersions(dir: string) {
   const versions: string[] = getVersionsMajorMinor(dir)
 
   return Object.fromEntries(versions.map((version, index) => [
-      `v${version.replace('.', '_')}`,
-      {
-        label: version,
-        color: 0 === index ? 'primary' : 'secondary',
-        icon: 'i-tabler-tag',
-        tooltip: {
-          arrow: true,
-          delayDuration: 300,
-          text: `New in version ${version}`,
-        }
+    `v${version.replace('.', '_')}`,
+    {
+      label: version,
+      color: 0 === index ? 'primary' : 'secondary',
+      icon: 'i-tabler-tag',
+      tooltip: {
+        arrow: true,
+        delayDuration: 300,
+        text: `New in version ${version}`,
       }
-    ])
+    }
+  ])
   )
 }
 
-export {getVersionsMajorMinor, getVersionsMajorWithDate, parseLabelsForVersions}
+export { getVersionsMajorMinor, getVersionsMajorWithDate, parseLabelsForVersions }
