@@ -3,7 +3,7 @@ import type { BranchesCollectionItem, Collections, PageCollections, VersionsColl
 
 definePageMeta({
   layout: 'changelog',
-  path: '/:lang?/changelog/:v(\\d+_x)?',
+  path: '/:lang?/changelog/:v(\\d+_x|\\d+\.x)?',
 })
 
 const route = useRoute()

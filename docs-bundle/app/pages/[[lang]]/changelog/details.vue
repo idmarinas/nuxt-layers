@@ -5,7 +5,7 @@ import type { ButtonProps } from '@nuxt/ui'
 
 definePageMeta({
   layout: 'changelog',
-  path: '/:lang?/changelog/:v(\\d+_x)/:semver(\\d+_\\d+_\\d+)',
+  path: '/:lang?/changelog/:v(\\d+_x|\\d+\.x)/:semver(\\d+_\\d+_\\d+|\\d+\\.\\d+\\.\\d+)',
 })
 
 const route = useRoute()
