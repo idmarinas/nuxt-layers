@@ -1,20 +1,21 @@
-<script lang="ts" setup>
-import {kebabCase} from 'scule'
-import type {Collections, ContentNavigationItem, DocsCollectionItem} from '@nuxt/content'
-import {findPageHeadline} from '@nuxt/content/utils'
+<script setup lang="ts">
+import { kebabCase } from 'scule'
+import type { ContentNavigationItem, Collections, DocsCollectionItem } from '@nuxt/content'
+import { findPageHeadline } from '@nuxt/content/utils'
 
 definePageMeta({
   layout: 'docs',
 })
 
 const route = useRoute()
-const {locale, isEnabled, t} = useDocusI18n()
+const { locale, isEnabled, t } = useDocusI18n()
 const appConfig = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
+const { shouldPushContent: shouldHideToc } = useAssistant()
 
 const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
 
-const [{data: page}, {data: surround}] = await Promise.all([
+const [{ data: page }, { data: surround }] = await Promise.all([
   useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections).path(route.path).first() as Promise<DocsCollectionItem>),
   useAsyncData(`${kebabCase(route.path)}-surround`, () => {
     return queryCollectionItemSurroundings(collectionName.value as keyof Collections, route.path, {
@@ -24,35 +25,31 @@ const [{data: page}, {data: surround}] = await Promise.all([
 ])
 
 if (!page.value) {
-  throw createError({statusCode: 404, statusMessage: 'Page not found', fatal: true})
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
-
-// Add the page path to the prerender list
-// addPrerenderPath(`/raw${route.path}.md`)
 
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
 
-useSeoMeta({
-  title,
-  ogTitle: title,
-  description,
-  ogDescription: description,
-})
-
 const headline = ref(findPageHeadline(navigation?.value, page.value?.path))
+const breadcrumbs = computed(() => findPageBreadcrumbs(navigation?.value, page.value?.path || ''))
+
+useSeo({
+  title,
+  description,
+  type: 'article',
+  modifiedAt: (page.value as unknown as Record<string, unknown>).modifiedAt as string | undefined,
+  breadcrumbs,
+})
 watch(() => navigation?.value, () => {
   headline.value = findPageHeadline(navigation?.value, page.value?.path) || headline.value
 })
 
-// Define the OG Image
-if (page.value?.seo?.ogImage === undefined) {
-  defineOgImage('DocsTakumi', {
-    title,
-    description,
-    headline: headline.value,
-  })
-}
+defineOgImage('Docs', {
+  headline: headline.value,
+  title: title?.slice(0, 60),
+  description: formatOgDescription(title, description),
+})
 
 const github = computed(() => appConfig.github ? appConfig.github : null)
 
@@ -70,11 +67,14 @@ const editLink = computed(() => {
     `${page.value?.stem}.${page.value?.extension}`,
   ].filter(Boolean).join('/')
 })
+
+// Add the page path to the prerender list
+addPrerenderPath(`/raw${route.path}.md`)
 </script>
 
 <template>
-  <UPage v-if="page">
-    <UPageHeader :description="page.description" :headline="headline" :title="page.title" :ui="{
+  <UPage v-if="page" :key="`page-${shouldHideToc}`">
+    <UPageHeader :title="page.title" :description="page.description" :headline="headline" :ui="{
       wrapper: 'flex-row items-center flex-wrap justify-between',
     }">
       <template #links>
@@ -87,33 +87,26 @@ const editLink = computed(() => {
     <UPageBody>
       <ContentRenderer v-if="page" :value="page" />
 
-      <USeparator>
-        <div v-if="github" class="flex items-center gap-2 text-sm text-muted">
-          <UButton :to="editLink" :ui="{ leadingIcon: 'size-4' }" color="neutral" icon="i-tabler-pencil" target="_blank"
-                   variant="link">
+      <USeparator v-if="github">
+        <div class="flex items-center gap-2 text-sm text-muted">
+          <UButton variant="link" color="neutral" :to="editLink" target="_blank" icon="i-lucide-pen"
+            :ui="{ leadingIcon: 'size-4' }">
             {{ t('docs.edit') }}
           </UButton>
-          <span>{{ t('common.or') }}</span>
-          <UButton :to="`${github.url}/issues/new/choose`"
-                   :ui="{ leadingIcon: 'size-4' }"
-                   color="neutral"
-                   icon="i-tabler-alert-circle"
-                   target="_blank"
-                   variant="link">
-            {{ t('docs.report') }}
-          </UButton>
+          <template v-if="github?.url">
+            <span>{{ t('common.or') }}</span>
+            <UButton variant="link" color="neutral" :to="`${github.url}/issues/new/choose`" target="_blank"
+              icon="i-lucide-alert-circle" :ui="{ leadingIcon: 'size-4' }">
+              {{ t('docs.report') }}
+            </UButton>
+          </template>
         </div>
       </USeparator>
       <UContentSurround :surround="surround" />
     </UPageBody>
 
     <template #right>
-      <UContentToc :links="page.body?.toc?.links" :title="appConfig.toc?.title || t('docs.toc')" highlight>
-        <template #bottom>
-          <LastRelease :separator="!!page?.body?.toc?.links?.length" />
-          <DocsAsideRightBottom />
-        </template>
-      </UContentToc>
+      <DocsAsideRight :page="page" />
     </template>
   </UPage>
 </template>
