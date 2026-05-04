@@ -23,8 +23,8 @@ function getVersionsMajorMinor(changelogDir: string): string[] {
       for (const file of files) {
         if (!file.endsWith('.md') || file === 'index.md') continue
 
-        // Extract version from file name (e.g 1_0_0.md)
-        const versionMatch = file.match(/^(\d+)_(\d+)_(\d+)\.md$/)
+        // Extract version from file name (e.g 1_0_0.md or 1.0.0)
+        const versionMatch = file.match(/^(\d+)(_|\.)(\d+)(_|\.)(\d+)\.md$/)
         if (!versionMatch) continue
 
         const [, major, minor, patch] = versionMatch.map(Number)
@@ -82,7 +82,7 @@ function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<st
       for (const file of files) {
         if (!file.endsWith('.md') || file === 'index.md') continue
 
-        const versionMatch = file.match(/^(\d+)_(\d+)_(\d+)\.md$/)
+        const versionMatch = file.match(/^(\d+)(_|\.)(\d+)(_|\.)(\d+)\.md$/)
         if (!versionMatch) continue
 
         const [, majorStr, minorStr, patchStr] = versionMatch
@@ -112,12 +112,12 @@ function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<st
         // Guardar o actualizar si es una versión más reciente
         const existing = majorVersions.get(majorKey)
         if (!existing) {
-          majorVersions.set(majorKey, { date })
+          majorVersions.set(majorKey, {date})
         } else {
           // Comparar versiones: mantener la más nueva (mayor minor o patch)
           // Si no tenemos fecha, usar la que encontremos
           if (existing.date === null && date !== null) {
-            majorVersions.set(majorKey, { date })
+            majorVersions.set(majorKey, {date})
           }
         }
       }
@@ -151,19 +151,19 @@ function parseLabelsForVersions(dir: string) {
   const versions: string[] = getVersionsMajorMinor(dir)
 
   return Object.fromEntries(versions.map((version, index) => [
-    `v${version.replace('.', '_')}`,
-    {
-      label: version,
-      color: 0 === index ? 'primary' : 'secondary',
-      icon: 'i-tabler-tag',
-      tooltip: {
-        arrow: true,
-        delayDuration: 300,
-        text: `New in version ${version}`,
+      `v${version.replace('.', '_')}`,
+      {
+        label: version,
+        color: 0 === index ? 'primary' : 'secondary',
+        icon: 'i-tabler-tag',
+        tooltip: {
+          arrow: true,
+          delayDuration: 300,
+          text: `New in version ${version}`,
+        }
       }
-    }
-  ])
+    ])
   )
 }
 
-export { getVersionsMajorMinor, getVersionsMajorWithDate, parseLabelsForVersions }
+export {getVersionsMajorMinor, getVersionsMajorWithDate, parseLabelsForVersions}
