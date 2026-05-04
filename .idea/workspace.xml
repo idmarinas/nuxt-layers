@@ -19,8 +19,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/.nuxtrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ed00ae62-3491-414e-8deb-7f419e41eaea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/[...slug].vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/[...slug].vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +46,7 @@
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="86" />
+    <option name="cachedIndexableFilesCount" value="87" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -111,41 +113,42 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;HTTP Request.All in api.executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.graphql-requests | Request to get GraphQL Schema (1).executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.graphql-requests | Request to get GraphQL Schema (2).executor&quot;: &quot;Run&quot;,
-    &quot;HTTP Request.graphql-requests | Request to get GraphQL Schema.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;bun&quot;,
-    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Proyectos/home/idmarinas/Proyectos/Utils/nuxt-layers/docs-bundle/.playground&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;wsl://Proyectos@/usr/bin/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;bun&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\idmarinas\\AppData\\Local\\Programs\\PhpStorm 2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.All in api.executor": "Run",
+    "HTTP Request.graphql-requests | Request to get GraphQL Schema (1).executor": "Run",
+    "HTTP Request.graphql-requests | Request to get GraphQL Schema (2).executor": "Run",
+    "HTTP Request.graphql-requests | Request to get GraphQL Schema.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "code.cleanup.on.save": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "javascript.preferred.runtime.type.id": "bun",
+    "last_opened_file_path": "//wsl.localhost/Proyectos/home/idmarinas/Proyectos/Utils/nuxt-layers/docs-bundle/.playground",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "wsl://Proyectos@/usr/bin/node",
+    "nodejs_package_manager_path": "bun",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\idmarinas\\AppData\\Local\\Programs\\PhpStorm 2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;stardust.markdown.MarkdownSplitEditorSuppressor:keyList&quot;: [],
-    &quot;vue.recent.templates&quot;: [
-      &quot;Vue Composition API Component&quot;
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": [],
+    "vue.recent.templates": [
+      "Vue Composition API Component"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl.localhost\Proyectos\home\idmarinas\Proyectos\Utils\nuxt-layers\docs-bundle\.playground" />
@@ -233,7 +236,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-php-predefined-a98d8de5180a-0e0d91225499-com.jetbrains.php.sharedIndexes-PS-253.30387.85" />
+        <option value="bundled-php-predefined-a98d8de5180a-022fa7b8ab75-com.jetbrains.php.sharedIndexes-PS-261.23567.149" />
       </set>
     </attachedChunks>
   </component>
@@ -281,38 +284,8 @@
       <workItem from="1776615945826" duration="8378000" />
       <workItem from="1776625035601" duration="2598000" />
       <workItem from="1776627717877" duration="93000" />
-    </task>
-    <task id="LOCAL-00032" summary="style(docs-bundle): apply consistent spacing and formatting across module files">
-      <option name="closed" value="true" />
-      <created>1767120237726</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1767120237726</updated>
-    </task>
-    <task id="LOCAL-00033" summary="refactor(docs-bundle): relocate `pages:resolved` hook to `nuxt.config.ts` and remove unused imports">
-      <option name="closed" value="true" />
-      <created>1767360043133</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1767360043133</updated>
-    </task>
-    <task id="LOCAL-00034" summary="feat(docs-bundle): enhance SEO config with title and titleTemplate support">
-      <option name="closed" value="true" />
-      <created>1767361025704</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1767361025704</updated>
-    </task>
-    <task id="LOCAL-00035" summary="feat(docs-bundle): auto-detect package_name using local git info or environment variables">
-      <option name="closed" value="true" />
-      <created>1767361156930</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1767361156930</updated>
+      <workItem from="1776687583024" duration="177000" />
+      <workItem from="1777893861585" duration="600000" />
     </task>
     <task id="LOCAL-00036" summary="refactor(docs-bundle): reorder and clean up imports in bundle module">
       <option name="closed" value="true" />
@@ -674,7 +647,39 @@
       <option name="project" value="LOCAL" />
       <updated>1776627799848</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="chore(docs-bundle): remove unused `nuxt-studio` dependency and cleanup configuration files">
+      <option name="closed" value="true" />
+      <created>1776687713873</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1776687713873</updated>
+    </task>
+    <task id="LOCAL-00082" summary="refactor(docs-bundle): reformat script setup, improve object literals, and adjust components for readability and consistency">
+      <option name="closed" value="true" />
+      <created>1776687726909</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1776687726909</updated>
+    </task>
+    <task id="LOCAL-00083" summary="refactor(docs-bundle): reformat imports, object structures, and components for improved readability and consistency">
+      <option name="closed" value="true" />
+      <created>1776687733139</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1776687733139</updated>
+    </task>
+    <task id="LOCAL-00084" summary="ide(config): auto-updated">
+      <option name="closed" value="true" />
+      <created>1776687742630</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1776687742630</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,10 +699,6 @@
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="fix(docs-bundle): update schema to use `z.date()` for date validation" />
-    <MESSAGE value="fix(docs-bundle): update changelog query to order by branch instead of date" />
-    <MESSAGE value="feat(docs-bundle): add majorVersions field to bundle.config.ts" />
-    <MESSAGE value="feat(docs-bundle): restructure content config with new schemas and collections" />
     <MESSAGE value="feat(docs-bundle): integrate majorVersions and update changelog paths for consistency" />
     <MESSAGE value="refactor(docs-bundle): update useReleases composable to align with renamed collection and type adjustments" />
     <MESSAGE value="refactor(docs-bundle): adjust changelog collections, paths, and types for versioning consistency" />
@@ -718,6 +719,10 @@
     <MESSAGE value="refactor(docs-bundle): comment out default component assignment for Docs" />
     <MESSAGE value="refactor(docs-bundle): simplify translation functions and update OgImage definition for consistency" />
     <MESSAGE value="refactor(docs-bundle): reformat imports, object literals, and components for consistency and readability" />
+    <MESSAGE value="refactor(docs-bundle): remove `.nuxtrc` playground file" />
+    <MESSAGE value="chore(docs-bundle): remove unused `nuxt-studio` dependency and cleanup configuration files" />
+    <MESSAGE value="refactor(docs-bundle): reformat script setup, improve object literals, and adjust components for readability and consistency" />
+    <MESSAGE value="refactor(docs-bundle): reformat imports, object structures, and components for improved readability and consistency" />
     <MESSAGE value="ide(config): auto-updated" />
     <option name="LAST_COMMIT_MESSAGE" value="ide(config): auto-updated" />
   </component>
