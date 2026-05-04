@@ -5,7 +5,7 @@ import type { ButtonProps } from '@nuxt/ui'
 
 definePageMeta({
   layout: 'changelog',
-  path: '/:lang?/changelog/:v(\\d+_x|\\d+\.x)/:semver(\\d+_\\d+_\\d+|\\d+\\.\\d+\\.\\d+)',
+  path: '/:lang?/changelog/:branch(\\d+_x|\\d+\.x)/:v(\\d+_\\d+_\\d+|\\d+\\.\\d+\\.\\d+)',
 })
 
 const route = useRoute()
@@ -16,7 +16,7 @@ const collectionName = computed(() => isEnabled.value ? `versions_${locale.value
 
 const [{ data: page }, { data: surround }] = await Promise.all([
   useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections)
-    .where('version', '=', (route.params.semver as string).replaceAll('_', '.'))
+    .where('version', '=', (route.params.v as string).replaceAll('_', '.'))
     .first() as Promise<VersionsCollectionItem>),
   useAsyncData(kebabCase(route.path) + '-surround', () => queryCollectionItemSurroundings(collectionName.value as keyof Collections, route.path, { fields: ['description'], }))
 ])

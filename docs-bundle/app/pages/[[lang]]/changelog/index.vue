@@ -3,7 +3,7 @@ import type { BranchesCollectionItem, Collections, PageCollections, VersionsColl
 
 definePageMeta({
   layout: 'changelog',
-  path: '/:lang?/changelog/:v(\\d+_x|\\d+\.x)?',
+  path: '/:lang?/changelog/:branch(\\d+_x|\\d+\.x)?',
 })
 
 const route = useRoute()
@@ -13,35 +13,35 @@ const majorVersions = appConfig.docsBundle.majorVersions as Record<string, strin
 
 // Dynamic collection name based on i18n status
 const collectionName = computed(() => {
-  const collection = route.params.v ? 'versions' : 'branches'
+  const collection = route.params.branch ? 'versions' : 'branches'
   return isEnabled.value ? `${collection}_${locale.value}` : collection
 })
 const pageName = computed(() => isEnabled.value ? `branches_${locale.value}` : 'branches')
 
 const [{ data: pages }, { data: page }, { data: surround }] = await Promise.all([
-  useAsyncData(collectionName.value + route.params.v, () => {
+  useAsyncData(collectionName.value + route.params.branch, () => {
     const query = queryCollection(collectionName.value as keyof PageCollections)
 
-    if (route.params.v) {
-      query.where('branch', '=', (route.params.v as string).replaceAll('_', '.')).order('branch' as any, 'DESC')
+    if (route.params.branch) {
+      query.where('branch', '=', (route.params.branch as string).replaceAll('_', '.')).order('date' as any, 'DESC')
     } else {
       query.where('branch', 'IS NOT NULL').order('branch' as any, 'DESC')
     }
 
     return query.all() as Promise<VersionsCollectionItem[]>
   }),
-  useAsyncData(`page_${pageName.value}_${route.params.v}`, () => {
+  useAsyncData(`page_${pageName.value}_${route.params.branch}`, () => {
     const query = queryCollection(pageName.value as keyof Collections)
 
-    if (route.params.v) {
-      query.where('branch', '=', (route.params.v as string).replaceAll('_', '.'))
+    if (route.params.branch) {
+      query.where('branch', '=', (route.params.branch as string).replaceAll('_', '.'))
     } else {
       query.where('branch', 'IS NULL')
     }
 
     return query.first() as Promise<BranchesCollectionItem>
   }),
-  useAsyncData(`page_${pageName.value}_${route.params.v}-surround`, () => {
+  useAsyncData(`page_${pageName.value}_${route.params.branch}-surround`, () => {
     return queryCollectionItemSurroundings(pageName.value as keyof Collections, route.path, {
       fields: ['description'],
     })
@@ -89,8 +89,8 @@ const items = useBreadcrumbItems({
       <UBreadcrumb :items="items" />
 
       <UChangelogVersions>
-        <UChangelogVersion v-for="(version, index) in pages" v-bind="version" :key="index"
-          :date="majorVersions[version.branch.replace('.x', '')]" :to="version.path" />
+        <UChangelogVersion v-for="(version, index) in pages" v-bind="version" :key="index" :to="version.path"
+          :date="!route.params.branch ? majorVersions[version.branch.replace('.x', '')] : version.date" />
       </UChangelogVersions>
 
       <UContentSurround :surround="surround" />
