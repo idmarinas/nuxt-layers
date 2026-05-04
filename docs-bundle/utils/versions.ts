@@ -1,6 +1,16 @@
 import fs from 'fs'
 import path from 'path'
 
+function isVersionGreater(
+  current: { minor: number; patch: number },
+  existing: { minor: number; patch: number }
+): boolean {
+  if (current.minor !== existing.minor) {
+    return current.minor > existing.minor
+  }
+  return current.patch > existing.patch
+}
+
 /**
  * Extract all MAJOR.MINOR versions from the changelog directory
  * omitting the PATCH and sorted in descending order
@@ -66,7 +76,7 @@ function getVersionsMajorMinor(changelogDir: string): string[] {
  * Devuelve un objeto con MAJOR como clave y fecha como valor
  */
 function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<string, string> {
-  const majorVersions = new Map<string, { date: string | null }>()
+  const majorVersions = new Map<string, { minor: number; patch: number; date: string | null }>()
 
   try {
     const mainDirs = fs.readdirSync(changelogDir)
@@ -85,10 +95,7 @@ function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<st
         const versionMatch = file.match(/^(\d+)(?:_|\.)(\d+)(?:_|\.)(\d+)\.md$/)
         if (!versionMatch) continue
 
-        const [, majorStr, minorStr, patchStr] = versionMatch
-        const major = Number(majorStr)
-        // const minor = Number(minorStr)
-        // const patch = Number(patchStr)
+        const [, major, minor, patch] = versionMatch.map(Number)
 
         // Leer el archivo para obtener la fecha del frontmatter
         const filePath = path.join(mainPath, file)
@@ -108,17 +115,22 @@ function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<st
         }
 
         const majorKey = String(major)
-
-        // Guardar o actualizar si es una versión más reciente
+        const currentVersion = { minor, patch, date }
         const existing = majorVersions.get(majorKey)
+
         if (!existing) {
-          majorVersions.set(majorKey, { date })
-        } else {
-          // Comparar versiones: mantener la más nueva (mayor minor o patch)
-          // Si no tenemos fecha, usar la que encontremos
-          if (existing.date === null && date !== null) {
-            majorVersions.set(majorKey, { date })
-          }
+          majorVersions.set(majorKey, currentVersion)
+          continue
+        }
+
+        if (existing.date === null && date !== null) {
+          majorVersions.set(majorKey, currentVersion)
+          continue
+        }
+
+        if (date !== null && isVersionGreater(currentVersion, existing)) {
+          majorVersions.set(majorKey, currentVersion)
+          continue
         }
       }
     }
