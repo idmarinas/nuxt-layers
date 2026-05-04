@@ -11,12 +11,12 @@
     "postinstall": "nuxi prepare .playground"
   },
   "dependencies": {
-    "@takumi-rs/core": "^1.0.14",
+    "@takumi-rs/core": "^1.1.2",
     "nuxt-seo-utils": "^7.0.19"
   },
   "devDependencies": {
     "better-sqlite3": "^12.9.0",
     "docus": "latest",
-    "nuxt": "^4.4.2"
+    "nuxt": "^4.4.4"
   }
 }
