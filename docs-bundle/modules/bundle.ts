@@ -1,30 +1,15 @@
-import type {Author, DocsBundleConfig, LabelProps} from '../bundle.config'
-import type {TooltipProps} from '@nuxt/ui'
-import type {FileAfterParseHook} from '@nuxt/content'
-import type {Nuxt} from 'nuxt/schema'
-import {getVersionsMajorWithDate, parseLabelsForVersions} from '../utils/versions'
-import {defineNuxtModule, useLogger, useNuxt} from 'nuxt/kit'
-import {defu} from 'defu'
-import {pascalCase, titleCase} from 'scule'
-import {getGitEnv, getLocalGitInfo} from 'docus/utils/git'
-import {updateSiteConfig} from 'nuxt-site-config/kit'
-import {join} from 'node:path'
+import type { Author, DocsBundleConfig, ModuleOptions, DocsBundleRuntimeConfig } from '../interfaces'
+import type { TooltipProps } from '@nuxt/ui'
+import type { FileAfterParseHook } from '@nuxt/content'
+import type { Nuxt } from 'nuxt/schema'
+import { getVersionsMajorWithDate, parseLabelsForVersions } from '../utils/versions'
 
-interface ModuleOptions {
-  package_name: string;
-  name?: string;
-  description?: string;
-  author?: Author;
-  short_name?: string;
-  repository?: {
-    name?: string; owner?: string;
-  };
-  colors: Record<string, string>;
-  authors: Record<string, Author>;
-  labels: Record<string, Record<string, LabelProps> | LabelProps>;
-  socials: Record<string, string>;
-  support_links: { title: string, links: object[] };
-}
+import { defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
+import { defu } from 'defu'
+import { pascalCase, titleCase } from 'scule'
+import { getGitEnv, getLocalGitInfo } from 'docus/utils/git'
+import { updateSiteConfig } from 'nuxt-site-config/kit'
+import { join } from 'node:path'
 
 const defaultTooltip: TooltipProps = {
   arrow: true,
@@ -36,7 +21,7 @@ const idmarinas: Author = {
   name: 'Iván Diaz',
   description: '@IDMarinas',
   username: 'IDMarinas',
-  avatar: {src: 'https://avatars.githubusercontent.com/u/35842929?v=4'},
+  avatar: { src: 'https://avatars.githubusercontent.com/u/35842929?v=4' },
   to: 'https://github.com/idmarinas',
   target: '_blank'
 }
@@ -54,7 +39,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    colors: {purple: 'purple'},
+    colors: { purple: 'purple' },
     labels: {
       wip: {
         label: 'WIP',
@@ -74,30 +59,6 @@ export default defineNuxtModule<ModuleOptions>({
           text: 'Beta version',
         }
       }
-    },
-    socials: {
-      x: 'https://x.com/idmarinas',
-      reddit: 'https://reddit.com/u/idmarinas',
-      paypal: 'https://www.paypal.me/idmarinas',
-      bitly: 'https://bit.ly/m/idmarinas',
-      githubsponsors: 'https://github.com/sponsors/idmarinas'
-    },
-    support_links: {
-      title: 'Support me',
-      links: [
-        {
-          icon: 'i-tabler-brand-paypal',
-          label: 'PayPal.Me',
-          to: 'https://www.paypal.me/idmarinas',
-          target: '_blank'
-        },
-        {
-          icon: 'i-tabler-brand-github',
-          label: 'GitHub Sponsor',
-          to: 'https://github.com/sponsors/idmarinas',
-          target: '_blank'
-        }
-      ]
     },
     authors: {
       idmarinas,
@@ -137,20 +98,20 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    const {docsBundle, socials} = createDocsBundleConfig(options.package_name, options, nuxt)
+    const { docsBundle, socials } = createDocsBundleConfig(options.package_name, options, nuxt)
 
     // Merge docsBundle config
     nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle)
 
     nuxt.options.runtimeConfig.docsBundle = {
-      authors: options.authors as typeof nuxt.options.runtimeConfig.docsBundle.authors,
-      repository: docsBundle.repository as typeof nuxt.options.runtimeConfig.docsBundle.repository
+      authors: options.authors as DocsBundleRuntimeConfig['authors'],
+      repository: docsBundle.repository as DocsBundleRuntimeConfig['repository']
     }
 
     nuxt.hook('modules:done', () => {
       nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui?.colors, options.colors)
 
-      const colors = new Set(nuxt.options.ui.theme?.colors || UI_THEME_COLORS)
+      const colors = new Set(nuxt.options.ui?.theme?.colors || UI_THEME_COLORS)
       Object.keys(nuxt.options.appConfig.ui.colors!).forEach(color => !colors.has(color) && colors.add(color))
 
       // Nuxt Config
@@ -161,7 +122,7 @@ export default defineNuxtModule<ModuleOptions>({
           twitterCreator: `@${docsBundle.repository.owner}`,
         }
       })
-      nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, {colors: Array.from(colors)})
+      nuxt.options.ui = Object.assign({}, nuxt.options.ui || {}, { theme: Object.assign({}, nuxt.options.ui?.theme, { colors: Array.from(colors) }) })
 
       // Modify AppConfig defaults
       nuxt.options.appConfig.header.title = docsBundle.name
@@ -201,7 +162,7 @@ export default defineNuxtModule<ModuleOptions>({
   hooks: {
     'content:file:afterParse'(ctx: FileAfterParseHook) {
       const nuxt = useNuxt()
-      const options = nuxt.options.runtimeConfig.docsBundle
+      const options = nuxt.options.runtimeConfig.docsBundle as DocsBundleRuntimeConfig
 
       if (ctx.collection.name.startsWith('versions')) {
         if (ctx.content.authors === undefined || Array.isArray(ctx.content.authors) && ctx.content.authors.length === 0) {
@@ -226,6 +187,13 @@ export default defineNuxtModule<ModuleOptions>({
   }
 })
 
+/**
+ * Create the DocsBundleConfig based on the provided options and the Nuxt instance.
+ *
+ * @param packageName
+ * @param options
+ * @param nuxt
+ */
 function createDocsBundleConfig(packageName: string, options: ModuleOptions, nuxt: Nuxt) {
   const docsBundle = {} as DocsBundleConfig
   const package_name = packageName.trim()
@@ -268,7 +236,7 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
     return Array.from(icons).map(key => `i-simple-icons-${key}`)
   }
 
-  return {docsBundle, socials}
+  return { docsBundle, socials }
 }
 
 const getAuthorByUserName = (authors: Record<string, Author>, userName: string, placeholder?: string): undefined | Author => {
@@ -279,7 +247,7 @@ const getAuthorByUserName = (authors: Record<string, Author>, userName: string, 
       name: placeholder,
       username: placeholder,
       description: '',
-      avatar: {src: ''}
+      avatar: { src: '' }
     }
   }
 
