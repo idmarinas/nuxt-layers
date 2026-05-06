@@ -37,7 +37,10 @@ function getVersionsMajorMinor(changelogDir: string): string[] {
         const versionMatch = file.match(/^(\d+)(?:_|\.)(\d+)(?:_|\.)(\d+)\.md$/)
         if (!versionMatch) continue
 
-        const [, major, minor, patch] = versionMatch.map(Number)
+        const [, majorText, minorText, patchText] = versionMatch
+        const major = Number(majorText)
+        const minor = Number(minorText)
+        const patch = Number(patchText)
         const majorMinor = `${major}.${minor}`
         const fullVersion = `${major}.${minor}.${patch}`
 
@@ -95,7 +98,10 @@ function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<st
         const versionMatch = file.match(/^(\d+)(?:_|\.)(\d+)(?:_|\.)(\d+)\.md$/)
         if (!versionMatch) continue
 
-        const [, major, minor, patch] = versionMatch.map(Number)
+        const [, majorText, minorText, patchText] = versionMatch
+        const major = Number(majorText)
+        const minor = Number(minorText)
+        const patch = Number(patchText)
 
         // Leer el archivo para obtener la fecha del frontmatter
         const filePath = path.join(mainPath, file)
