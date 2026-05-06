@@ -104,9 +104,10 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle)
 
     nuxt.options.runtimeConfig.docsBundle = {
-      authors: options.authors as DocsBundleRuntimeConfig['authors'],
-      repository: docsBundle.repository as DocsBundleRuntimeConfig['repository']
-    }
+      project_name: docsBundle.name,
+      authors: options.authors,
+      repository: docsBundle.repository
+    } as DocsBundleRuntimeConfig
 
     nuxt.hook('modules:done', () => {
       nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui?.colors, options.colors)
@@ -163,6 +164,14 @@ export default defineNuxtModule<ModuleOptions>({
     'content:file:afterParse'(ctx: FileAfterParseHook) {
       const nuxt = useNuxt()
       const options = nuxt.options.runtimeConfig.docsBundle as DocsBundleRuntimeConfig
+
+      if (ctx.content.title) {
+        ctx.content.title = (ctx.content.title as string).replaceAll('{{project_name}}', options.project_name)
+      }
+
+      if (ctx.content.description) {
+        ctx.content.description = (ctx.content.description as string).replaceAll('{{project_name}}', options.project_name)
+      }
 
       if (ctx.collection.name.startsWith('versions')) {
         if (ctx.content.authors === undefined || Array.isArray(ctx.content.authors) && ctx.content.authors.length === 0) {

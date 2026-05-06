@@ -1,6 +1,7 @@
 import type { BadgeProps, UserProps, TooltipProps } from '@nuxt/ui'
 
 export interface DocsBundleRuntimeConfig {
+  project_name: string
   authors: Record<string, Author>
   repository: { name: string; owner: string }
 }
