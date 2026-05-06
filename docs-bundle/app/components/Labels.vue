@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { LabelProps } from '../../bundle.config';
+import type { LabelProps } from '../../interfaces';
 
 const bundle = useAppConfig().docsBundle
 
