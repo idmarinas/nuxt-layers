@@ -1,4 +1,4 @@
-import type {DocsBundleConfig} from './bundle.config'
+import type { DocsBundleConfig } from './interfaces'
 
 declare module '@nuxt/schema' {
   interface AppConfig {
@@ -6,4 +6,4 @@ declare module '@nuxt/schema' {
   }
 }
 
-export {}
+export { }
