@@ -1,5 +1,26 @@
 import type { BadgeProps, UserProps, TooltipProps } from '@nuxt/ui'
 
+export interface DocsBundleRuntimeConfig {
+  authors: Record<string, Author>
+  repository: { name: string; owner: string }
+}
+
+export interface ModuleOptions {
+  package_name: string;
+  name?: string;
+  description?: string;
+  author?: Author;
+  short_name?: string;
+  repository?: {
+    name?: string; owner?: string;
+  };
+  colors: Record<string, string>;
+  authors: Record<string, Author>;
+  labels: Record<string, Record<string, LabelProps> | LabelProps>;
+  socials: Record<string, string>;
+  support_links: { title: string, links: object[] };
+}
+
 export interface LabelProps extends BadgeProps {
   tooltip?: TooltipProps;
 }
