@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   extends: ['..', 'docus'],
-  devtools: {enabled: true},
+  devtools: { enabled: true },
   docsBundle: {
     // package_name: 'idmarinas/template-bundle',
     socials: {
@@ -25,6 +25,23 @@ export default defineNuxtConfig({
         description: 'Other Component used in this project.'
       }
     ],
+    support_links: {
+      title: 'Support me',
+      links: [
+        {
+          icon: 'i-tabler-brand-paypal',
+          label: 'PayPal.Me',
+          to: 'https://www.paypal.me/idmarinas',
+          target: '_blank'
+        },
+        {
+          icon: 'i-tabler-brand-github',
+          label: 'GitHub Sponsor',
+          to: 'https://github.com/sponsors/idmarinas',
+          target: '_blank'
+        }
+      ]
+    },
   },
   vite: {
     optimizeDeps: {
