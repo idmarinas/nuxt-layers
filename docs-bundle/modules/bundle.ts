@@ -112,18 +112,20 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.hook('modules:done', () => {
       nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui?.colors, options.colors)
 
-      const colors = new Set(nuxt.options.ui?.theme?.colors || UI_THEME_COLORS)
-      Object.keys(nuxt.options.appConfig.ui.colors!).forEach(color => !colors.has(color) && colors.add(color))
+      if (nuxt.options.ui !== false) {
+        const colors = new Set(nuxt.options.ui.theme?.colors || UI_THEME_COLORS)
+        Object.keys(nuxt.options.appConfig.ui.colors!).forEach(color => !colors.has(color) && colors.add(color))
 
-      // Nuxt Config
-      nuxt.options.seo = defu(nuxt.options.seo, {
-        meta: {
-          title: docsBundle.name,
-          description: docsBundle.description,
-          twitterCreator: `@${docsBundle.repository.owner}`,
-        }
-      })
-      nuxt.options.ui = Object.assign({}, nuxt.options.ui || {}, { theme: Object.assign({}, nuxt.options.ui?.theme, { colors: Array.from(colors) }) })
+        // Nuxt Config
+        nuxt.options.seo = defu(nuxt.options.seo, {
+          meta: {
+            title: docsBundle.name,
+            description: docsBundle.description,
+            twitterCreator: `@${docsBundle.repository.owner}`,
+          }
+        })
+        nuxt.options.ui = Object.assign({}, nuxt.options.ui, { theme: Object.assign({}, nuxt.options.ui.theme, { colors: Array.from(colors) }) })
+      }
 
       // Modify AppConfig defaults
       nuxt.options.appConfig.header.title = docsBundle.name
