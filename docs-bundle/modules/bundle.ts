@@ -101,7 +101,7 @@ export default defineNuxtModule<ModuleOptions>({
     const { docsBundle, socials } = createDocsBundleConfig(options.package_name, options, nuxt)
 
     // Merge docsBundle config
-    nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle)
+    nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle as unknown as typeof nuxt.options.appConfig.docsBundle)
 
     nuxt.options.runtimeConfig.docsBundle = {
       project_name: docsBundle.name,
@@ -261,6 +261,9 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
     return Array.from(icons).map(key => `i-simple-icons-${key}`)
   }
 
+  // Libraries for about page
+  docsBundle.libraries = options.libraries
+
   return { docsBundle, socials }
 }
 
@@ -272,7 +275,8 @@ const getAuthorByUserName = (authors: Record<string, Author>, userName: string, 
       name: placeholder,
       username: placeholder,
       description: '',
-      avatar: { src: '' }
+      avatar: { src: '' },
+      target: '_blank'
     }
   }
 
