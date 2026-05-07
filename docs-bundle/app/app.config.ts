@@ -1,6 +1,6 @@
 export default defineAppConfig({
   ui: {
-    colors: { primary: 'indigo', secondary: 'sky', neutral: 'stone' }
+    colors: { primary: 'blue', secondary: 'sky', neutral: 'stone' }
   },
   github: { rootDir: 'docs' },
   navigation: {
