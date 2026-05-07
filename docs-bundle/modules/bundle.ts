@@ -1,6 +1,6 @@
 import type { Author, DocsBundleConfig, ModuleOptions, DocsBundleRuntimeConfig } from '../interfaces'
 import type { TooltipProps } from '@nuxt/ui'
-import type { FileAfterParseHook } from '@nuxt/content'
+import type { FileAfterParseHook, FileBeforeParseHook } from '@nuxt/content'
 import type { Nuxt } from 'nuxt/schema'
 import { getVersionsMajorWithDate, parseLabelsForVersions } from '../utils/versions'
 
@@ -161,17 +161,31 @@ export default defineNuxtModule<ModuleOptions>({
     })
   },
   hooks: {
-    'content:file:afterParse'(ctx: FileAfterParseHook) {
+    'content:file:beforeParse'(ctx: FileBeforeParseHook) {
+      if (ctx.collection.type !== 'page') {
+        return
+      }
+
       const nuxt = useNuxt()
       const options = nuxt.options.runtimeConfig.docsBundle as DocsBundleRuntimeConfig
 
-      if (ctx.content.title) {
-        ctx.content.title = (ctx.content.title as string).replaceAll('{{project_name}}', options.project_name)
-      }
+      // Extract frontmatter and content
+      const frontmatterMatch = ctx.file.body.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
 
-      if (ctx.content.description) {
-        ctx.content.description = (ctx.content.description as string).replaceAll('{{project_name}}', options.project_name)
+      if (frontmatterMatch) {
+        const [, frontmatter, content] = frontmatterMatch;
+
+        // Replace only in the frontmatter
+        const updatedFrontmatter = frontmatter
+          ?.replace(/{{(?:project_name|project)}}/gm, options.project_name) // Add Project Name
+
+        // Rebuild the file
+        ctx.file.body = `---\n${updatedFrontmatter}\n---\n${content}`;
       }
+    },
+    'content:file:afterParse'(ctx: FileAfterParseHook) {
+      const nuxt = useNuxt()
+      const options = nuxt.options.runtimeConfig.docsBundle as DocsBundleRuntimeConfig
 
       if (ctx.collection.name.startsWith('versions')) {
         if (ctx.content.authors === undefined || Array.isArray(ctx.content.authors) && ctx.content.authors.length === 0) {
