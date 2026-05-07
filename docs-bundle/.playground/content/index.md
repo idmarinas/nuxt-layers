@@ -2,8 +2,6 @@
 seo:
   title: Seo Tools Bundle
   description: Provides tools for SEO optimization in Symfony applications and sitemap generation and management.
-  ogImage:
-    component: Bundle
 ---
 
 ::u-page-hero{orientation="horizontal"}
