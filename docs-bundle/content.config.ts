@@ -1,4 +1,9 @@
-import { defineCollection, defineContentConfig, type DefinedCollection, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig, type DefinedCollection } from '@nuxt/content'
+import { z } from 'zod'
+// import { defineRobotsSchema } from '@nuxtjs/robots/content'
+// import { defineSitemapSchema } from '@nuxtjs/sitemap/content'
+import { defineOgImageSchema } from 'nuxt-og-image/content'
+// import { defineSchemaOrgSchema } from 'nuxt-schema-org/content'
 import { join } from 'pathe'
 import { useNuxt } from '@nuxt/kit'
 
@@ -22,10 +27,15 @@ const createVersionsSchema = () => z.object({
   })),
   to: z.string(),
   target: z.string().default('_self'),
+  // robots: defineRobotsSchema(),
+  // sitemap: defineSitemapSchema(),
+  ogImage: defineOgImageSchema(),
+  // schemaOrg: defineSchemaOrgSchema(),
 })
 
 const createBranchSchema = () => z.object({
   branch: z.string(),
+  ogImage: defineOgImageSchema(),
 })
 
 const createDocsSchema = () => z.object({
@@ -35,6 +45,7 @@ const createDocsSchema = () => z.object({
     to: z.string(),
     target: z.string().optional(),
   })).optional(),
+  ogImage: defineOgImageSchema(),
 })
 
 const langs = locales || ['']
