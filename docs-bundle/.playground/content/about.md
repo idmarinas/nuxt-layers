@@ -1,14 +1,11 @@
 ---
 title: About
-description: Third-party libraries/bundles that have helped create this bundle
+description: Third-party libraries and packages that have contributed to the creation of the {{project_name}}
 navigation: false
-seo:
-  ogImage:
-    props:
-      title: About
-      description: Third-party libraries/bundles that have helped create this bundle
-      headline: Components Used
-      icon: i-tabler-user
+ogImage:
+  props:
+    headline: Components Used
+    icon: i-tabler-user
 ---
 
 ::note
