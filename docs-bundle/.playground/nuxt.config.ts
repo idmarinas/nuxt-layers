@@ -3,6 +3,23 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   docsBundle: {
     // package_name: 'idmarinas/template-bundle',
+    labels: {
+      yellow: {
+        label: 'Yellow',
+        color: 'yellow',
+        icon: 'i-tabler-tag'
+      },
+      green: {
+        label: 'Green',
+        color: 'green',
+        icon: 'i-tabler-tags'
+      },
+      orange: {
+        label: 'Orange',
+        color: 'orange',
+        icon: 'i-tabler-label'
+      }
+    },
     socials: {
       x: 'https://x.com/idmarinas',
       reddit: 'https://reddit.com/u/idmarinas',
