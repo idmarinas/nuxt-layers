@@ -39,7 +39,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    colors: { purple: 'purple' },
+    colors: { purple: 'purple', orange: 'orange', green: 'green', yellow: 'yellow' },
     labels: {
       wip: {
         label: 'WIP',
