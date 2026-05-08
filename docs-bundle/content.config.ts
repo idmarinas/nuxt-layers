@@ -45,6 +45,11 @@ const createDocsSchema = () => z.object({
     to: z.string(),
     target: z.string().optional(),
   })).optional(),
+  since: z.string().optional(),
+  deprecated: z.object({
+    since: z.string(),
+    removed: z.string().optional(),
+  }).optional()
   ogImage: defineOgImageSchema(),
 })
 
