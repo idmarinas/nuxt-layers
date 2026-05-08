@@ -110,22 +110,22 @@ export default defineNuxtModule<ModuleOptions>({
     } as DocsBundleRuntimeConfig
 
     nuxt.hook('modules:done', () => {
-      nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui?.colors, options.colors)
+      nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui.colors, options.colors)
 
       if (nuxt.options.ui !== false) {
         const colors = new Set(nuxt.options.ui.theme?.colors || UI_THEME_COLORS)
         Object.keys(nuxt.options.appConfig.ui.colors!).forEach(color => !colors.has(color) && colors.add(color))
-
-        // Nuxt Config
-        nuxt.options.seo = defu(nuxt.options.seo, {
-          meta: {
-            title: docsBundle.name,
-            description: docsBundle.description,
-            twitterCreator: `@${docsBundle.repository.owner}`,
-          }
-        })
-        nuxt.options.ui = Object.assign({}, nuxt.options.ui, { theme: Object.assign({}, nuxt.options.ui.theme, { colors: Array.from(colors) }) })
+        nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, { colors: Array.from(colors) })
       }
+
+      // Nuxt SEO Config
+      nuxt.options.seo = defu(nuxt.options.seo, {
+        meta: {
+          title: docsBundle.name,
+          description: docsBundle.description,
+          twitterCreator: `@${docsBundle.repository.owner}`,
+        }
+      })
 
       // Modify AppConfig defaults
       nuxt.options.appConfig.header.title = docsBundle.name
