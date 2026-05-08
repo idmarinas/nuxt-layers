@@ -49,7 +49,7 @@ const createDocsSchema = () => z.object({
   deprecated: z.object({
     since: z.string(),
     removed: z.string().optional(),
-  }).optional()
+  }).optional(),
   ogImage: defineOgImageSchema(),
 })
 
