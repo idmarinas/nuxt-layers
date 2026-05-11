@@ -2,8 +2,8 @@ import type { Author, DocsBundleConfig, ModuleOptions, DocsBundleRuntimeConfig }
 import type { TooltipProps } from '@nuxt/ui'
 import type { FileAfterParseHook, FileBeforeParseHook } from '@nuxt/content'
 import type { Nuxt } from 'nuxt/schema'
-import { getVersionsMajorWithDate, parseLabelsForVersions } from '../utils/versions'
 
+import { getVersionsMajorWithDate, parseLabelsForVersions } from '../utils/versions'
 import { defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
 import { defu } from 'defu'
 import { pascalCase, titleCase } from 'scule'
