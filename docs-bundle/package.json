@@ -15,7 +15,7 @@
     "nuxt-seo-utils": "^7.0.19"
   },
   "devDependencies": {
-    "better-sqlite3": "^12.9.0",
+    "better-sqlite3": "^12.10.0",
     "docus": "latest",
     "nuxt": "^4.4.5"
   }
