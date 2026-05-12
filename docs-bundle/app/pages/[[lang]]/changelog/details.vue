@@ -116,9 +116,8 @@ const items = useBreadcrumbItems({
 
     <UPageBody>
       <UBreadcrumb :items="items" />
-      <UChangelogVersion v-bind="page" :description="undefined" :indicator="false" :title="undefined" :ui="{
-        container: 'w-full max-w-full'
-      }">
+      <UChangelogVersion v-bind="page" :badge="`v${page.version}`" :description="undefined" :indicator="false"
+        :title="undefined" :ui="{ container: 'w-full max-w-full' }">
         <template #body>
           <ContentRenderer v-if="page" :value="page" />
         </template>
