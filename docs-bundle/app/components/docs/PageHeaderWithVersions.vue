@@ -54,7 +54,7 @@ const showSinceBadge = computed(() => !!props.since && !props.deprecated)
       <template v-if="$slots.headline" #headline>
         <slot name="headline" />
         <div class="flex-1" />
-        <Labels v-if="showSinceBadge" :n="`versions.v${since?.replace(/\./g, '_')}`" />
+        <LabelsVersion v-if="showSinceBadge" :version="since as string" />
       </template>
       <template v-if="$slots.links" #links>
         <slot name="links" />
