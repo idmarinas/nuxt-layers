@@ -9,7 +9,7 @@ definePageMeta({
 const route = useRoute()
 const { locale, isEnabled, t } = useDocusI18n()
 const appConfig = useAppConfig()
-const majorVersions = appConfig.docsBundle.majorVersions as Record<string, string>
+const branchesInfo = appConfig.docsBundle.branchesInfo
 
 // Dynamic collection name based on i18n status
 const collectionName = computed(() => {
@@ -90,7 +90,7 @@ const items = useBreadcrumbItems({
 
       <UChangelogVersions>
         <UChangelogVersion v-for="(version, index) in pages" v-bind="version" :key="index" :to="version.path"
-          :date="!route.params.branch ? majorVersions[version.branch.replace('.x', '')] : version.date" />
+          :date="!route.params.branch ? branchesInfo[`b${version.branch.replace('.', '_')}`]?.date as string : version.date" />
       </UChangelogVersions>
 
       <UContentSurround :surround="surround" />
