@@ -29,11 +29,11 @@ export const DocsSchema = BaseSchema.extend({
 export const BranchSchema = BaseSchema.extend({
   branch: z.string(),
   security: z.boolean().default(false).describe('Does the branch receive security updates?'),
-  requirements: z.array(z.object({
+  requirements: z.object({
     php: z.array(z.string()).default([]),
     symfony: z.array(z.string()).default([]),
-    supported: z.enum(['features', 'bugs', 'none']).default('none')
-  }).required())
+    support: z.enum(['features', 'bugs', 'none']).default('none')
+  }).required()
 })
 
 export const VersionSchema = BaseSchema.extend({
