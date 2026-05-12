@@ -1,4 +1,4 @@
-import type { BadgeProps, UserProps, TooltipProps, PageCardProps } from '@nuxt/ui'
+import type {BadgeProps, PageCardProps, TooltipProps, UserProps} from '@nuxt/ui'
 
 export type LibraryCardProps = Omit<PageCardProps, 'title' | 'icon' | 'to' | 'description'> & {
   title: string
@@ -30,6 +30,13 @@ export interface ModuleOptions {
   libraries?: PageCardProps[];
 }
 
+export interface BranchInfo {
+  release: string;
+  date: string | null;
+  count: number;
+  labels: string[];
+}
+
 export interface LabelProps extends BadgeProps {
   tooltip?: TooltipProps;
 }
@@ -57,6 +64,6 @@ export interface DocsBundleConfig {
   labels: Record<string, Record<string, LabelProps> | LabelProps>;
   vars: Record<string, string | number | boolean>;
   links: Record<string, string>;
-  majorVersions: Record<string, string>;
+  branchesInfo: Record<string, BranchInfo>;
   libraries?: PageCardProps[];
 }
