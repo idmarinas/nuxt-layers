@@ -7,4 +7,4 @@ security: true
 requirements:
   php: ['^8.0']
   symfony: ['^5.4', '^6.4', '^7.1', '^8.0']
-  support: full
+  support: features
