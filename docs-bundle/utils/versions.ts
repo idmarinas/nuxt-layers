@@ -1,3 +1,5 @@
+import type { BranchInfo } from '../interfaces';
+
 import fs from 'fs'
 import path from 'path'
 
@@ -75,20 +77,22 @@ function getVersionsMajorMinor(changelogDir: string): string[] {
 }
 
 /**
- * Extrae versiones MAJOR con la fecha de la última release
- * Devuelve un objeto con MAJOR como clave y fecha como valor
+ * Extract branches info from the changelog directory.
+ * Returns an object with branch name as key (e.g. "b1_x") and branch info as value.
  */
-function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<string, string> {
-  const majorVersions = new Map<string, { minor: number; patch: number; date: string | null }>()
+function getBranchesInfo(changelogDir: string = 'changelog'): Record<string, BranchInfo> {
+  const branchMap = new Map<string, { release: string; minor: number; patch: number; date: string | null; count: number; labels: Set<string> }>()
 
   try {
     const mainDirs = fs.readdirSync(changelogDir)
 
     for (const mainDir of mainDirs) {
       const mainPath = path.join(changelogDir, mainDir)
-      const stats = fs.statSync(mainPath)
 
-      if (!stats.isDirectory()) continue
+      if (!fs.statSync(mainPath).isDirectory()) continue
+
+      // "1.x" -> "b1_x"
+      const branchKey = `b${mainDir.replace('.', '_')}`
 
       const files = fs.readdirSync(mainPath)
 
@@ -102,8 +106,9 @@ function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<st
         const major = Number(majorText)
         const minor = Number(minorText)
         const patch = Number(patchText)
+        const fullVersion = `${major}.${minor}.${patch}`
 
-        // Leer el archivo para obtener la fecha del frontmatter
+        // Leer fecha del frontmatter
         const filePath = path.join(mainPath, file)
         let date: string | null = null
 
@@ -116,44 +121,47 @@ function getVersionsMajorWithDate(changelogDir: string = 'changelog'): Record<st
               date = dateMatch[1]!.trim()
             }
           }
-        } catch (error) {
+        } catch {
           console.warn(`No se pudo leer ${filePath}`)
         }
 
-        const majorKey = String(major)
-        const currentVersion = { minor, patch, date }
-        const existing = majorVersions.get(majorKey)
+        const existing = branchMap.get(branchKey)
+
+        const majorMinor = `${major}.${minor}`
 
         if (!existing) {
-          majorVersions.set(majorKey, currentVersion)
+          branchMap.set(branchKey, { release: fullVersion, minor, patch, date, count: 1, labels: new Set([majorMinor]) })
           continue
         }
 
-        if (existing.date === null && date !== null) {
-          majorVersions.set(majorKey, currentVersion)
-          continue
-        }
+        // Incrementar contador siempre y añadir label
+        existing.count++
+        existing.labels.add(majorMinor)
 
-        if (date !== null && isVersionGreater(currentVersion, existing)) {
-          majorVersions.set(majorKey, currentVersion)
-          continue
+        // Actualizar release si es una versión mayor
+        if (isVersionGreater({ minor, patch }, existing)) {
+          existing.release = fullVersion
+          existing.minor = minor
+          existing.patch = patch
+          existing.date = date
         }
       }
     }
 
-    // Convertir a objeto y ordenar por MAJOR descendente
-    const result: Record<string, string> = {}
-    const sortedKeys = Array.from(majorVersions.keys())
-      .map(Number)
-      .sort((a, b) => b - a)
-      .map(String)
-
-    for (const key of sortedKeys) {
-      const data = majorVersions.get(key)
-      if (data?.date) {
-        result[key] = data.date
-      }
-    }
+    // Convertir a objeto ordenado descendente y limpiar campos internos
+    const result: Record<string, BranchInfo> = {}
+    Array.from(branchMap.entries())
+      .sort(([a], [b]) => b.localeCompare(a))
+      .forEach(([key, { release, date, count, labels }]) => {
+        // Ordenar labels descendente
+        const sortedLabels = Array.from(labels).sort((a, b) => {
+          const [aMajor, aMinor] = a.split('.').map(Number)
+          const [bMajor, bMinor] = b.split('.').map(Number)
+          if (aMajor !== bMajor) return bMajor! - aMajor!
+          return bMinor! - aMinor!
+        })
+        result[key] = { release, date, count, labels: sortedLabels }
+      })
 
     return result
   } catch (error) {
@@ -180,8 +188,7 @@ function parseLabelsForVersions(dir: string) {
         text: `New in version ${version}`,
       }
     }
-  ])
-  )
+  ]))
 }
 
-export { getVersionsMajorMinor, getVersionsMajorWithDate, parseLabelsForVersions }
+export { getVersionsMajorMinor, getBranchesInfo, parseLabelsForVersions }
