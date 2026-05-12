@@ -3,7 +3,7 @@ import type { TooltipProps } from '@nuxt/ui'
 import type { FileAfterParseHook, FileBeforeParseHook } from '@nuxt/content'
 import type { Nuxt } from 'nuxt/schema'
 
-import { getVersionsMajorWithDate, parseLabelsForVersions } from '../utils/versions'
+import { getBranchesInfo, parseLabelsForVersions } from '../utils/versions'
 import { defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
 import { defu } from 'defu'
 import { pascalCase, titleCase } from 'scule'
@@ -244,11 +244,11 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
     namespace: `${vendor}\\Bundle\\${short_name}\\${vendor}${short_name}Bundle`
   }
 
-  docsBundle.majorVersions = getVersionsMajorWithDate(join(nuxt.options.rootDir, 'content/.changelog'))
+  docsBundle.branchesInfo = getBranchesInfo(join(nuxt.options.rootDir, 'content/.changelog'))
 
   // Labels
   docsBundle.labels = {
-    versions: parseLabelsForVersions(join(nuxt.options.rootDir, 'content/.changelog')),
+    // versions: parseLabelsForVersions(join(nuxt.options.rootDir, 'content/.changelog')),
     ...options.labels
   }
 
