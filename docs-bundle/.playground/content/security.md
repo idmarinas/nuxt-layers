@@ -14,9 +14,7 @@ seo:
 
 Not all branches of this project are supported, to know which branches are supported and which are not, see the table below.
 
-| Branch | Supported          |
-|--------|--------------------|
-| 1.x    | :white_check_mark: |
+:list-branch-security
 
 ## Reporting a Vulnerability
 
