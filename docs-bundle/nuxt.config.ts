@@ -10,12 +10,15 @@ export default defineNuxtConfig({
     compatibility: {
       prerender: {
         browser: false
-      }
+      },
     }
   },
   nitro: {
     prerender: {
       crawlLinks: true, // que rastree y pre-renderice todas las páginas
+      routes: [
+        '/'
+      ]
     }
   }
 })
