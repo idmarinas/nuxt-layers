@@ -103,7 +103,7 @@ addPrerenderPath(`/raw${route.path}.md`)
           <template v-if="github?.url">
             <span>{{ t('common.or') }}</span>
             <UButton variant="link" color="neutral" :to="`${github.url}/issues/new/choose`" target="_blank"
-              icon="i-lucide-alert-circle" :ui="{ leadingIcon: 'size-4' }">
+              icon="i-tabler-alert-circle" :ui="{ leadingIcon: 'size-4' }">
               {{ t('docs.report') }}
             </UButton>
           </template>
