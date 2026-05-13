@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import type { BranchesCollectionItem, Collections } from '@nuxt/content'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   version: string
-}>()
+  isNew: boolean
+}>(), {
+  isNew: false
+})
 
 const { locale, isEnabled } = useDocusI18n()
 const collectionName = computed(() => isEnabled.value ? `branches_${locale.value}` : 'branches')
@@ -63,7 +66,9 @@ const tooltip = computed(() => {
   const supported = branch.value?.requirements.support
   const security = branch.value?.security
 
-  if ('features' === supported) {
+  if (props.isNew) {
+    return `New in version ${props.version}`
+  } else if ('features' === supported) {
     return 'New features bug and security fixes'
   } else if ('none' === supported && !security) {
     return 'No longer maintained'
@@ -78,7 +83,7 @@ const tooltip = computed(() => {
 </script>
 
 <template>
-  <UTooltip :text="tooltip">
+  <UTooltip :text="tooltip" arrow :delay-duration="100">
     <UBadge :color="color" :variant="variant" :icon="!branch ? '' : 'i-tabler-tag'" :label="version" />
   </UTooltip>
 </template>
