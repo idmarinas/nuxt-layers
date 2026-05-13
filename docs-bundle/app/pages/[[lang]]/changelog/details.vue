@@ -67,7 +67,7 @@ const isLastRelease = computed(() => {
   return lastRelease.value.version === page.value.version
 })
 
-defineOgImage('Release', {
+const [ogImageUrl] = defineOgImage('Release', {
   title: title,
   description: description,
   headline: page.value.version
@@ -117,7 +117,7 @@ const items = useBreadcrumbItems({
     <UPageBody>
       <UBreadcrumb :items="items" />
       <UChangelogVersion v-bind="page" :badge="`v${page.version}`" :description="undefined" :indicator="false"
-        :title="undefined" :ui="{ container: 'w-full max-w-full' }">
+        :image="ogImageUrl" :title="undefined" :ui="{ container: 'w-full max-w-full' }">
         <template #body>
           <ContentRenderer v-if="page" :value="page" />
         </template>
