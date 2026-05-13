@@ -122,7 +122,7 @@ const items = useBreadcrumbItems({
           <ContentRenderer v-if="page" :value="page" />
         </template>
         <template #image>
-          <img :src="ogImageUrl" :alt="title" class="w-full h-auto object-cover object-top" />
+          <img :src="ogImageUrl" :alt="title" class="w-full h-auto object-cover object-top" lazy />
         </template>
       </UChangelogVersion>
 
