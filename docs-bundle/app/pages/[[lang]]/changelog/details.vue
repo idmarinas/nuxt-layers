@@ -102,6 +102,9 @@ const items = useBreadcrumbItems({
     { label: page.value?.version.replace('_', '.'), icon: 'i-tabler-tag' }
   ]
 })
+
+// Add the page path to the prerender list
+addPrerenderPath(`/raw${route.path}.md`)
 </script>
 
 <template>
