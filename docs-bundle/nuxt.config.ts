@@ -6,7 +6,12 @@ export default defineNuxtConfig({
     }
   },
   ogImage: {
-    zeroRuntime: true  // elimina todo el código de generación en runtime
+    zeroRuntime: true,  // elimina todo el código de generación en runtime
+    compatibility: {
+      prerender: {
+        browser: false
+      }
+    }
   },
   nitro: {
     prerender: {
