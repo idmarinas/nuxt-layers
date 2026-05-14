@@ -19,13 +19,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="632010fb-af6c-4d3e-9d43-d6fce6a074f8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs-bundle/TODO.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/5_x/5_0_0.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/5_x/index.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/.playground/content/.changelog/index.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/details.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/details.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/app/pages/[[lang]]/changelog/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs-bundle/utils/versions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/docs-bundle/utils/versions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +38,31 @@
       <interpreter name="idmarinas/php:8.4-xdebug" composer="composer" />
     </execution>
   </component>
+  <component name="CopilotChats">
+    <option name="panelChat">
+      <chat>
+        <option name="activeSessionId" value="138dafc4-6a04-499a-a81c-379a1097def5" />
+        <option name="sessions">
+          <session>
+            <option name="chatType" value="PANEL" />
+            <option name="id" value="138dafc4-6a04-499a-a81c-379a1097def5" />
+            <option name="modeId" value="Agent" />
+            <option name="modelType" value="builtin_family" />
+            <option name="modelValue" value="auto" />
+            <option name="targetType" value="LOCAL" />
+          </session>
+        </option>
+        <option name="type" value="PANEL" />
+      </chat>
+    </option>
+  </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
       <entry key="_//wsl.localhost/Proyectos/home/idmarinas/Proyectos/Utils/nuxt-layers" value="36cUcNNvJYkpkD71r4Tuy3Z7c4p" />
     </persistenceIdMap>
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="87" />
+    <option name="cachedIndexableFilesCount" value="139" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -289,401 +302,417 @@
       <workItem from="1776627717877" duration="93000" />
       <workItem from="1776687583024" duration="177000" />
       <workItem from="1777893861585" duration="2820000" />
-      <workItem from="1777907697841" duration="673000" />
+      <workItem from="1777907697841" duration="825000" />
+      <workItem from="1777910083758" duration="6000" />
+      <workItem from="1777912296506" duration="1523000" />
+      <workItem from="1778072355112" duration="2894000" />
+      <workItem from="1778146426564" duration="4292000" />
+      <workItem from="1778173291149" duration="46000" />
+      <workItem from="1778173592047" duration="15000" />
+      <workItem from="1778243185762" duration="3246000" />
+      <workItem from="1778439642778" duration="434000" />
+      <workItem from="1778491215984" duration="10000" />
+      <workItem from="1778500598217" duration="3515000" />
+      <workItem from="1778575326365" duration="1244000" />
+      <workItem from="1778605123488" duration="3841000" />
+      <workItem from="1778658153694" duration="1534000" />
+      <workItem from="1778671415492" duration="905000" />
+      <workItem from="1778681246653" duration="4801000" />
+      <workItem from="1778753738051" duration="319000" />
     </task>
-    <task id="LOCAL-00039" summary="refactor(docs-bundle): comment out `package_name` in playground config">
+    <task id="LOCAL-00125" summary="feat(docs-bundle): extend default colors with orange, green, and yellow">
       <option name="closed" value="true" />
-      <created>1767365679543</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
+      <created>1778244386165</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
       <option name="project" value="LOCAL" />
-      <updated>1767365679543</updated>
+      <updated>1778244386165</updated>
     </task>
-    <task id="LOCAL-00040" summary="feat(docs-bundle): fallback to appConfig SEO description for bundle description">
+    <task id="LOCAL-00126" summary="fix(docs-bundle): correct color merging logic and update UI theme configuration for SEO alignment">
       <option name="closed" value="true" />
-      <created>1767366349992</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
+      <created>1778250395576</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
       <option name="project" value="LOCAL" />
-      <updated>1767366349992</updated>
+      <updated>1778250395576</updated>
     </task>
-    <task id="LOCAL-00041" summary="refactor(docs-bundle): move version label parsing to a utility file and simplify setup">
+    <task id="LOCAL-00127" summary="feat(docs-bundle): add customizable `labels` configuration to nuxt config with yellow, green, and orange options">
       <option name="closed" value="true" />
-      <created>1767368520780</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
+      <created>1778250408006</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
       <option name="project" value="LOCAL" />
-      <updated>1767368520780</updated>
+      <updated>1778250408006</updated>
     </task>
-    <task id="LOCAL-00042" summary="ide(config): auto-updated">
+    <task id="LOCAL-00128" summary="feat(docs-bundle): add `labels` configuration to introduction content for enhanced customization">
       <option name="closed" value="true" />
-      <created>1767368542440</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
+      <created>1778250415106</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
       <option name="project" value="LOCAL" />
-      <updated>1767368542440</updated>
+      <updated>1778250415106</updated>
     </task>
-    <task id="LOCAL-00043" summary="refactor(docs-bundle): remove unused versions property from playground config">
+    <task id="LOCAL-00129" summary="feat(docs-bundle): add version tracking fields (`since`, `deprecated`) to content configurations">
       <option name="closed" value="true" />
-      <created>1767368723980</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
+      <created>1778254477313</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
       <option name="project" value="LOCAL" />
-      <updated>1767368723980</updated>
+      <updated>1778254477314</updated>
     </task>
-    <task id="LOCAL-00044" summary="refactor(docs-bundle): simplify Vars component logic and improve handling of nested keys">
+    <task id="LOCAL-00130" summary="feat(docs-bundle): add `PageHeaderWithVersions` component to support deprecated and version badges in headers">
       <option name="closed" value="true" />
-      <created>1767370648056</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
+      <created>1778254565969</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
       <option name="project" value="LOCAL" />
-      <updated>1767370648056</updated>
+      <updated>1778254565969</updated>
     </task>
-    <task id="LOCAL-00045" summary="fix(docs-bundle): correctly handle 'project' key in Vars component computation">
+    <task id="LOCAL-00131" summary="feat(docs-bundle): add dynamic page rendering and SEO enhancements for multilingual documentation">
       <option name="closed" value="true" />
-      <created>1767371633823</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
+      <created>1778254572963</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
       <option name="project" value="LOCAL" />
-      <updated>1767371633823</updated>
+      <updated>1778254572963</updated>
     </task>
-    <task id="LOCAL-00046" summary="feat(docs-bundle): add PHP language support for code highlighting in markdown content">
+    <task id="LOCAL-00132" summary="refactor(docs-bundle): replace `UBadge` with `LabelsDeprecation` in `PageHeaderWithVersions` for streamlined deprecation handling">
       <option name="closed" value="true" />
-      <created>1767804259634</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
+      <created>1778439756775</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
       <option name="project" value="LOCAL" />
-      <updated>1767804259634</updated>
+      <updated>1778439756776</updated>
     </task>
-    <task id="LOCAL-00047" summary="fix(docs-bundle): update Vars syntax for description key in index.md">
+    <task id="LOCAL-00133" summary="feat(docs-bundle): add `Field` and `LabelsDeprecation` components for displaying version and deprecation badges">
       <option name="closed" value="true" />
-      <created>1767804290405</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
+      <created>1778439766572</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
       <option name="project" value="LOCAL" />
-      <updated>1767804290405</updated>
+      <updated>1778439766572</updated>
     </task>
-    <task id="LOCAL-00048" summary="feat(docs-bundle): add description field to package.json">
+    <task id="LOCAL-00134" summary="feat(docs-bundle): add `since` and `deprecated` fields to content metadata">
       <option name="closed" value="true" />
-      <created>1767804298250</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
+      <created>1778439774885</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
       <option name="project" value="LOCAL" />
-      <updated>1767804298252</updated>
+      <updated>1778439774885</updated>
     </task>
-    <task id="LOCAL-00049" summary="fix(docs-bundle): ensure valid release date filtering in useReleases composable">
+    <task id="LOCAL-00135" summary="feat(docs-bundle): add `prose.field.slots.description` configuration for enhanced UI customization">
       <option name="closed" value="true" />
-      <created>1767804393391</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
+      <created>1778440069454</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
       <option name="project" value="LOCAL" />
-      <updated>1767804393391</updated>
+      <updated>1778440069454</updated>
     </task>
-    <task id="LOCAL-00050" summary="fix(docs-bundle): update date filtering logic to exclude invalid patterns in useReleases composable">
+    <task id="LOCAL-00136" summary="chore(docs-bundle): bump nuxt dependency to ^4.4.5">
       <option name="closed" value="true" />
-      <created>1767805899257</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
+      <created>1778500926145</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
       <option name="project" value="LOCAL" />
-      <updated>1767805899257</updated>
+      <updated>1778500926145</updated>
     </task>
-    <task id="LOCAL-00051" summary="fix(docs-bundle): correct date filtering logic in useReleases composable to exclude patterns with '%y%'">
+    <task id="LOCAL-00137" summary="refactor(docs-bundle): reorganize `OgImage` components into `og-image` directory">
       <option name="closed" value="true" />
-      <created>1767806071852</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
+      <created>1778500943318</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
       <option name="project" value="LOCAL" />
-      <updated>1767806071852</updated>
+      <updated>1778500943318</updated>
     </task>
-    <task id="LOCAL-00052" summary="fix(docs-bundle): update incorrect release dates in 1.x changelog files">
+    <task id="LOCAL-00138" summary="chore(docs-bundle): cleanup and format `code-blocks.md` for consistency and readability">
       <option name="closed" value="true" />
-      <created>1767806643188</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
+      <created>1778500951271</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
       <option name="project" value="LOCAL" />
-      <updated>1767806643188</updated>
+      <updated>1778500951271</updated>
     </task>
-    <task id="LOCAL-00053" summary="fix(docs-bundle): update schema to use `z.date()` for date validation">
+    <task id="LOCAL-00139" summary="feat(docs-bundle): add `AppHeaderLogo` and `Favicon` components for branding and UI enhancement">
       <option name="closed" value="true" />
-      <created>1767806729980</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
+      <created>1778508672635</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
       <option name="project" value="LOCAL" />
-      <updated>1767806729980</updated>
+      <updated>1778508672635</updated>
     </task>
-    <task id="LOCAL-00054" summary="fix(docs-bundle): update changelog query to order by branch instead of date">
+    <task id="LOCAL-00140" summary="refactor(docs-bundle): relocate `LibraryList` component to `list` directory for improved structure">
       <option name="closed" value="true" />
-      <created>1767807714881</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
+      <created>1778517748021</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
       <option name="project" value="LOCAL" />
-      <updated>1767807714881</updated>
+      <updated>1778517748021</updated>
     </task>
-    <task id="LOCAL-00055" summary="ide(config): auto-updated">
+    <task id="LOCAL-00141" summary="chore(docs-bundle): remove unnecessary blank lines in `bundle.ts` for code consistency">
       <option name="closed" value="true" />
-      <created>1767807743174</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
+      <created>1778517760613</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
       <option name="project" value="LOCAL" />
-      <updated>1767807743174</updated>
+      <updated>1778517760613</updated>
     </task>
-    <task id="LOCAL-00056" summary="ide(config): auto-updated">
+    <task id="LOCAL-00142" summary="refactor(docs-bundle): centralize content schemas into `content.schema.ts` and update imports for improved maintainability">
       <option name="closed" value="true" />
-      <created>1768675156120</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
+      <created>1778517785766</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
       <option name="project" value="LOCAL" />
-      <updated>1768675156122</updated>
+      <updated>1778517785766</updated>
     </task>
-    <task id="LOCAL-00057" summary="feat(docs-bundle): add majorVersions field to bundle.config.ts">
+    <task id="LOCAL-00143" summary="refactor(docs-bundle): rename `:library-list` to `:list-library` in about.md for consistency">
       <option name="closed" value="true" />
-      <created>1768675193649</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
+      <created>1778517799496</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
       <option name="project" value="LOCAL" />
-      <updated>1768675193649</updated>
+      <updated>1778517799496</updated>
     </task>
-    <task id="LOCAL-00058" summary="feat(docs-bundle): restructure content config with new schemas and collections">
+    <task id="LOCAL-00144" summary="feat(docs-bundle): add `BranchSecurity` component to display branch security and release details">
       <option name="closed" value="true" />
-      <created>1768675214077</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
+      <created>1778605228115</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
       <option name="project" value="LOCAL" />
-      <updated>1768675214077</updated>
+      <updated>1778605228116</updated>
     </task>
-    <task id="LOCAL-00059" summary="feat(docs-bundle): integrate majorVersions and update changelog paths for consistency">
+    <task id="LOCAL-00145" summary="feat(docs-bundle): add `BranchSupport` component to display branch requirements and status details">
       <option name="closed" value="true" />
-      <created>1768675335051</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
+      <created>1778605276738</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
       <option name="project" value="LOCAL" />
-      <updated>1768675335051</updated>
+      <updated>1778605276738</updated>
     </task>
-    <task id="LOCAL-00060" summary="refactor(docs-bundle): update useReleases composable to align with renamed collection and type adjustments">
+    <task id="LOCAL-00146" summary="feat(docs-bundle): add `BranchSupport` component to display branch requirements and status details">
       <option name="closed" value="true" />
-      <created>1768675350355</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
+      <created>1778605481151</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
       <option name="project" value="LOCAL" />
-      <updated>1768675350355</updated>
+      <updated>1778605481151</updated>
     </task>
-    <task id="LOCAL-00061" summary="refactor(docs-bundle): adjust changelog collections, paths, and types for versioning consistency">
+    <task id="LOCAL-00147" summary="feat(docs-bundle): add `BranchSupport` component to display branch requirements and status details">
       <option name="closed" value="true" />
-      <created>1768675632910</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
+      <created>1778605630043</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
       <option name="project" value="LOCAL" />
-      <updated>1768675632910</updated>
+      <updated>1778605630043</updated>
     </task>
-    <task id="LOCAL-00062" summary="refactor(docs-bundle): update changelog paths, collections, and types for improved versioning consistency">
+    <task id="LOCAL-00148" summary="feat(docs-bundle): add `BranchSecurity` component to display branch security and release details">
       <option name="closed" value="true" />
-      <created>1768675662930</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
+      <created>1778605638944</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
       <option name="project" value="LOCAL" />
-      <updated>1768675662930</updated>
+      <updated>1778605638944</updated>
     </task>
-    <task id="LOCAL-00063" summary="fix(docs-bundle): correct typo in collection key from `branchs` to `branches`">
+    <task id="LOCAL-00149" summary="feat(docs-bundle): add `BranchSupport` component to display branch requirements and status details">
       <option name="closed" value="true" />
-      <created>1768675720456</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
+      <created>1778607843425</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
       <option name="project" value="LOCAL" />
-      <updated>1768675720456</updated>
+      <updated>1778607843425</updated>
     </task>
-    <task id="LOCAL-00064" summary="refactor(docs-bundle): restructure changelog content with updated paths, collections, and new versioning schema">
+    <task id="LOCAL-00150" summary="feat(docs-bundle): add `BranchSupport` component to display branch requirements and status details">
       <option name="closed" value="true" />
-      <created>1768675744664</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
+      <created>1778608215481</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
       <option name="project" value="LOCAL" />
-      <updated>1768675744664</updated>
+      <updated>1778608215481</updated>
     </task>
-    <task id="LOCAL-00065" summary="feat(docs-bundle): add major version extraction with release dates and refactor versioning logic">
+    <task id="LOCAL-00151" summary="feat(docs-bundle): add `Version` component to display version details with tooltip and badge">
       <option name="closed" value="true" />
-      <created>1768675836370</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
+      <created>1778608760929</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
       <option name="project" value="LOCAL" />
-      <updated>1768675836370</updated>
+      <updated>1778608760929</updated>
     </task>
-    <task id="LOCAL-00066" summary="ide(config): auto-updated">
+    <task id="LOCAL-00152" summary="refactor(docs-bundle): update branch support type from &quot;full&quot; to &quot;features&quot; in changelog">
       <option name="closed" value="true" />
-      <created>1768675845621</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
+      <created>1778608768184</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
       <option name="project" value="LOCAL" />
-      <updated>1768675845621</updated>
+      <updated>1778608768185</updated>
     </task>
-    <task id="LOCAL-00067" summary="refactor(docs-bundle): migrate and replace OgImage components with Takumi versions">
+    <task id="LOCAL-00153" summary="feat(docs-bundle): add `BranchSupport` component to display branch requirements and status details">
       <option name="closed" value="true" />
-      <created>1776618195980</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
+      <created>1778608905556</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
       <option name="project" value="LOCAL" />
-      <updated>1776618195980</updated>
+      <updated>1778608905556</updated>
     </task>
-    <task id="LOCAL-00068" summary="refactor(docs-bundle): reformat script setup and improve component prop handling in changelog page">
+    <task id="LOCAL-00154" summary="feat(docs-bundle): add `Version` component to display version details with tooltip and badge">
       <option name="closed" value="true" />
-      <created>1776618212594</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
+      <created>1778609104814</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
       <option name="project" value="LOCAL" />
-      <updated>1776618212594</updated>
+      <updated>1778609104814</updated>
     </task>
-    <task id="LOCAL-00069" summary="refactor(docs-bundle): reformat script setup and adjust component props in docs page for improved readability and consistency">
+    <task id="LOCAL-00155" summary="refactor(docs-bundle): replace `Labels` with `LabelsVersion` in PageHeaderWithVersions component">
       <option name="closed" value="true" />
-      <created>1776618220613</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
+      <created>1778609113320</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
       <option name="project" value="LOCAL" />
-      <updated>1776618220613</updated>
+      <updated>1778609113320</updated>
     </task>
-    <task id="LOCAL-00070" summary="refactor(docs-bundle): reformat imports and object literals for improved readability and consistency">
+    <task id="LOCAL-00156" summary="refactor(docs-bundle): replace `Labels` with `LabelsVersion` in Field component">
       <option name="closed" value="true" />
-      <created>1776618229079</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
+      <created>1778609188473</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
       <option name="project" value="LOCAL" />
-      <updated>1776618229079</updated>
+      <updated>1778609188473</updated>
     </task>
-    <task id="LOCAL-00071" summary="refactor(docs-bundle): update scripts to use `nuxi` CLI and adjust dependencies for compatibility">
+    <task id="LOCAL-00157" summary="refactor(docs-bundle): update `UChangelogVersion` to include version badge in changelog details">
       <option name="closed" value="true" />
-      <created>1776618243326</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
+      <created>1778612717406</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
       <option name="project" value="LOCAL" />
-      <updated>1776618243326</updated>
+      <updated>1778612717406</updated>
     </task>
-    <task id="LOCAL-00072" summary="refactor(docs-bundle): remove unused `package-lock.json` file to streamline project structure">
+    <task id="LOCAL-00158" summary="refactor(docs-bundle): replace `majorVersions` with `branchesInfo` in changelog version rendering">
       <option name="closed" value="true" />
-      <created>1776618250970</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
+      <created>1778612729047</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
       <option name="project" value="LOCAL" />
-      <updated>1776618250970</updated>
+      <updated>1778612729047</updated>
     </task>
-    <task id="LOCAL-00073" summary="chore(gitignore): add lock files to ignore list">
+    <task id="LOCAL-00159" summary="refactor(docs-bundle): replace `i-lucide-alert-circle` with `i-tabler-alert-circle` icon in report button">
       <option name="closed" value="true" />
-      <created>1776618275146</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
+      <created>1778663131107</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
       <option name="project" value="LOCAL" />
-      <updated>1776618275146</updated>
+      <updated>1778663131107</updated>
     </task>
-    <task id="LOCAL-00074" summary="refactor(docs-bundle): update `nuxt.config.ts` to include Vue devtools dependencies for optimized builds">
+    <task id="LOCAL-00160" summary="feat(docs-bundle): configure Nitro to use Bun preset in playground">
       <option name="closed" value="true" />
-      <created>1776618282548</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
+      <created>1778671547972</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
       <option name="project" value="LOCAL" />
-      <updated>1776618282548</updated>
+      <updated>1778671547972</updated>
     </task>
-    <task id="LOCAL-00075" summary="refactor(docs-bundle): reformat OgImage components and enhance prop handling with TypeScript">
+    <task id="LOCAL-00161" summary="refactor(docs-bundle): use `defineOgImage` output for `UChangelogVersion` image in changelog details">
       <option name="closed" value="true" />
-      <created>1776627101109</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
+      <created>1778671574152</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
       <option name="project" value="LOCAL" />
-      <updated>1776627101109</updated>
+      <updated>1778671574152</updated>
     </task>
-    <task id="LOCAL-00076" summary="refactor(docs-bundle): reformat script setup, adjust imports, and replace `defineOgImageComponent` with `defineOgImage`">
+    <task id="LOCAL-00162" summary="refactor(docs-bundle): update `UChangelogVersion` to include customizable image slot and wrapper styles">
       <option name="closed" value="true" />
-      <created>1776627133066</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
+      <created>1778676482541</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
       <option name="project" value="LOCAL" />
-      <updated>1776627133066</updated>
+      <updated>1778676482541</updated>
     </task>
-    <task id="LOCAL-00077" summary="refactor(docs-bundle): comment out default component assignment for Docs">
+    <task id="LOCAL-00163" summary="refactor(docs-bundle): simplify `seo.ogImage` structure in security policy file">
       <option name="closed" value="true" />
-      <created>1776627139135</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
+      <created>1778676490500</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
       <option name="project" value="LOCAL" />
-      <updated>1776627139135</updated>
+      <updated>1778676490500</updated>
     </task>
-    <task id="LOCAL-00078" summary="refactor(docs-bundle): simplify translation functions and update OgImage definition for consistency">
+    <task id="LOCAL-00164" summary="feat(docs-bundle): enable prerendering with Nitro and add zero-runtime support for ogImage">
       <option name="closed" value="true" />
-      <created>1776627216818</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
+      <created>1778688434029</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
       <option name="project" value="LOCAL" />
-      <updated>1776627216818</updated>
+      <updated>1778688434029</updated>
     </task>
-    <task id="LOCAL-00079" summary="refactor(docs-bundle): reformat imports, object literals, and components for consistency and readability">
+    <task id="LOCAL-00165" summary="refactor(docs-bundle): add lazy loading to changelog version image">
       <option name="closed" value="true" />
-      <created>1776627732026</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
+      <created>1778688444808</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
       <option name="project" value="LOCAL" />
-      <updated>1776627732026</updated>
+      <updated>1778688444808</updated>
     </task>
-    <task id="LOCAL-00080" summary="ide(config): auto-updated">
+    <task id="LOCAL-00166" summary="feat(docs-bundle): add compatibility options for prerendering in `ogImage` configuration">
       <option name="closed" value="true" />
-      <created>1776627799848</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
+      <created>1778689855291</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
       <option name="project" value="LOCAL" />
-      <updated>1776627799848</updated>
+      <updated>1778689855291</updated>
     </task>
-    <task id="LOCAL-00081" summary="chore(docs-bundle): remove unused `nuxt-studio` dependency and cleanup configuration files">
+    <task id="LOCAL-00167" summary="feat(docs-bundle): update Nitro prerender config to include root route">
       <option name="closed" value="true" />
-      <created>1776687713873</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
+      <created>1778692003088</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
       <option name="project" value="LOCAL" />
-      <updated>1776687713873</updated>
+      <updated>1778692003088</updated>
     </task>
-    <task id="LOCAL-00082" summary="refactor(docs-bundle): reformat script setup, improve object literals, and adjust components for readability and consistency">
+    <task id="LOCAL-00168" summary="refactor(docs-bundle): simplify Nitro and ogImage configuration by removing unused options">
       <option name="closed" value="true" />
-      <created>1776687726909</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
+      <created>1778693559590</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
       <option name="project" value="LOCAL" />
-      <updated>1776687726909</updated>
+      <updated>1778693559590</updated>
     </task>
-    <task id="LOCAL-00083" summary="refactor(docs-bundle): reformat imports, object structures, and components for improved readability and consistency">
+    <task id="LOCAL-00169" summary="feat(docs-bundle): add prerendering for changelog paths in Nitro">
       <option name="closed" value="true" />
-      <created>1776687733139</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
+      <created>1778693575225</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
       <option name="project" value="LOCAL" />
-      <updated>1776687733139</updated>
+      <updated>1778693575225</updated>
     </task>
-    <task id="LOCAL-00084" summary="ide(config): auto-updated">
+    <task id="LOCAL-00170" summary="refactor(docs-bundle): remove unused ogImage and Nitro prerender configurations">
       <option name="closed" value="true" />
-      <created>1776687742630</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
+      <created>1778753949595</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
       <option name="project" value="LOCAL" />
-      <updated>1776687742630</updated>
+      <updated>1778753949595</updated>
     </task>
-    <task id="LOCAL-00085" summary="refactor(docs-bundle): enhance script setup, SEO, and component structure for better readability and functionality">
+    <task id="LOCAL-00171" summary="feat(docs-bundle): add `BranchVersions` interface for handling branch version mappings">
       <option name="closed" value="true" />
-      <created>1777897064444</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
+      <created>1778753963456</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
       <option name="project" value="LOCAL" />
-      <updated>1777897064444</updated>
+      <updated>1778753963456</updated>
     </task>
-    <task id="LOCAL-00086" summary="ide(config): auto-updated">
+    <task id="LOCAL-00172" summary="refactor(docs-bundle): streamline version extraction logic and group versions by branch">
       <option name="closed" value="true" />
-      <created>1777897084122</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
+      <created>1778753973635</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
       <option name="project" value="LOCAL" />
-      <updated>1777897084122</updated>
+      <updated>1778753973635</updated>
     </task>
-    <task id="LOCAL-00087" summary="chore(docs-bundle): update dependencies @takumi-rs/core to v1.1.2 and nuxt to v4.4.4">
+    <task id="LOCAL-00173" summary="feat(docs-bundle): enhance Nitro prerendering with dynamic changelog routes and i18n support">
       <option name="closed" value="true" />
-      <created>1777907754809</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
+      <created>1778754051915</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
       <option name="project" value="LOCAL" />
-      <updated>1777907754809</updated>
+      <updated>1778754051915</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,32 +732,32 @@
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="refactor(docs-bundle): adjust changelog collections, paths, and types for versioning consistency" />
-    <MESSAGE value="refactor(docs-bundle): update changelog paths, collections, and types for improved versioning consistency" />
-    <MESSAGE value="fix(docs-bundle): correct typo in collection key from `branchs` to `branches`" />
-    <MESSAGE value="refactor(docs-bundle): restructure changelog content with updated paths, collections, and new versioning schema" />
-    <MESSAGE value="feat(docs-bundle): add major version extraction with release dates and refactor versioning logic" />
-    <MESSAGE value="refactor(docs-bundle): migrate and replace OgImage components with Takumi versions" />
-    <MESSAGE value="refactor(docs-bundle): reformat script setup and improve component prop handling in changelog page" />
-    <MESSAGE value="refactor(docs-bundle): reformat script setup and adjust component props in docs page for improved readability and consistency" />
-    <MESSAGE value="refactor(docs-bundle): reformat imports and object literals for improved readability and consistency" />
-    <MESSAGE value="refactor(docs-bundle): update scripts to use `nuxi` CLI and adjust dependencies for compatibility" />
-    <MESSAGE value="refactor(docs-bundle): remove unused `package-lock.json` file to streamline project structure" />
-    <MESSAGE value="chore(gitignore): add lock files to ignore list" />
-    <MESSAGE value="refactor(docs-bundle): update `nuxt.config.ts` to include Vue devtools dependencies for optimized builds" />
-    <MESSAGE value="refactor(docs-bundle): reformat OgImage components and enhance prop handling with TypeScript" />
-    <MESSAGE value="refactor(docs-bundle): reformat script setup, adjust imports, and replace `defineOgImageComponent` with `defineOgImage`" />
-    <MESSAGE value="refactor(docs-bundle): comment out default component assignment for Docs" />
-    <MESSAGE value="refactor(docs-bundle): simplify translation functions and update OgImage definition for consistency" />
-    <MESSAGE value="refactor(docs-bundle): reformat imports, object literals, and components for consistency and readability" />
-    <MESSAGE value="refactor(docs-bundle): remove `.nuxtrc` playground file" />
-    <MESSAGE value="chore(docs-bundle): remove unused `nuxt-studio` dependency and cleanup configuration files" />
-    <MESSAGE value="refactor(docs-bundle): reformat script setup, improve object literals, and adjust components for readability and consistency" />
-    <MESSAGE value="refactor(docs-bundle): reformat imports, object structures, and components for improved readability and consistency" />
-    <MESSAGE value="refactor(docs-bundle): enhance script setup, SEO, and component structure for better readability and functionality" />
-    <MESSAGE value="ide(config): auto-updated" />
-    <MESSAGE value="chore(docs-bundle): update dependencies @takumi-rs/core to v1.1.2 and nuxt to v4.4.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore(docs-bundle): update dependencies @takumi-rs/core to v1.1.2 and nuxt to v4.4.4" />
+    <MESSAGE value="refactor(docs-bundle): centralize content schemas into `content.schema.ts` and update imports for improved maintainability" />
+    <MESSAGE value="refactor(docs-bundle): rename `:library-list` to `:list-library` in about.md for consistency" />
+    <MESSAGE value="feat(docs-bundle): add `BranchSecurity` component to display branch security and release details" />
+    <MESSAGE value="refactor(docs-bundle): update branch support type from &quot;full&quot; to &quot;features&quot; in changelog" />
+    <MESSAGE value="feat(docs-bundle): add `BranchSupport` component to display branch requirements and status details" />
+    <MESSAGE value="feat(docs-bundle): add `Version` component to display version details with tooltip and badge" />
+    <MESSAGE value="refactor(docs-bundle): replace `Labels` with `LabelsVersion` in PageHeaderWithVersions component" />
+    <MESSAGE value="refactor(docs-bundle): replace `Labels` with `LabelsVersion` in Field component" />
+    <MESSAGE value="refactor(docs-bundle): update `UChangelogVersion` to include version badge in changelog details" />
+    <MESSAGE value="refactor(docs-bundle): replace `majorVersions` with `branchesInfo` in changelog version rendering" />
+    <MESSAGE value="refactor(docs-bundle): replace `i-lucide-alert-circle` with `i-tabler-alert-circle` icon in report button" />
+    <MESSAGE value="feat(docs-bundle): configure Nitro to use Bun preset in playground" />
+    <MESSAGE value="refactor(docs-bundle): use `defineOgImage` output for `UChangelogVersion` image in changelog details" />
+    <MESSAGE value="refactor(docs-bundle): update `UChangelogVersion` to include customizable image slot and wrapper styles" />
+    <MESSAGE value="refactor(docs-bundle): simplify `seo.ogImage` structure in security policy file" />
+    <MESSAGE value="feat(docs-bundle): enable prerendering with Nitro and add zero-runtime support for ogImage" />
+    <MESSAGE value="refactor(docs-bundle): add lazy loading to changelog version image" />
+    <MESSAGE value="feat(docs-bundle): add compatibility options for prerendering in `ogImage` configuration" />
+    <MESSAGE value="feat(docs-bundle): update Nitro prerender config to include root route" />
+    <MESSAGE value="refactor(docs-bundle): simplify Nitro and ogImage configuration by removing unused options" />
+    <MESSAGE value="feat(docs-bundle): add prerendering for changelog paths in Nitro" />
+    <MESSAGE value="refactor(docs-bundle): remove unused ogImage and Nitro prerender configurations" />
+    <MESSAGE value="feat(docs-bundle): add `BranchVersions` interface for handling branch version mappings" />
+    <MESSAGE value="refactor(docs-bundle): streamline version extraction logic and group versions by branch" />
+    <MESSAGE value="feat(docs-bundle): enhance Nitro prerendering with dynamic changelog routes and i18n support" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(docs-bundle): enhance Nitro prerendering with dynamic changelog routes and i18n support" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
