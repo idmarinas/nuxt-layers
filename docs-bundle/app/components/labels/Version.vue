@@ -47,7 +47,7 @@ const color = computed(() => {
 
 const variant = computed(() => {
   const supported = branch.value?.requirements.support
-  const security = branch.value?.security
+  const security = Boolean(branch.value?.security)
 
   if ('features' === supported) {
     return 'outline'
