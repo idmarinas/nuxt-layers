@@ -43,8 +43,8 @@ const { data: branches } = await useAsyncData('branches-support', async () => {
     const info = bundle.branchesInfo[`b${branch.branch.replaceAll('.', '_')}`]
 
     collection.add({
-      branch: branch.branch,
-      security: branch.security,
+      branch: branch.branch || '0.x',
+      security: branch.security || false,
       requirements: branch.requirements || {},
       release: {
         version: info?.release || '',
@@ -88,6 +88,10 @@ const columns: TableColumn<BranchSupport>[] = [
     cell: ({ row }) => {
       const requirements: Requirements = row.getValue('requirements')
 
+      if (!requirements.php) {
+        return h(UBadge, { icon: 'i-tabler-question-mark', color: 'error' })
+      }
+
       const child = new Set<VNode>()
 
       requirements.php.forEach(v => child.add(h(UBadge, { color: 'neutral', variant: 'subtle' }, () => v)))
@@ -99,6 +103,10 @@ const columns: TableColumn<BranchSupport>[] = [
     header: 'Symfony Version',
     cell: ({ row }) => {
       const requirements: Requirements = row.getValue('requirements')
+
+      if (!requirements.symfony) {
+        return h(UBadge, { icon: 'i-tabler-question-mark', color: 'error' })
+      }
 
       const child = new Set<VNode>()
 
