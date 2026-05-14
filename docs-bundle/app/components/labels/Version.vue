@@ -3,7 +3,7 @@ import type { BranchesCollectionItem, Collections } from '@nuxt/content'
 
 const props = withDefaults(defineProps<{
   version: string
-  isNew: boolean
+  isNew?: boolean
 }>(), {
   isNew: false
 })
