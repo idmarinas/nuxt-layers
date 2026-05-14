@@ -3,6 +3,7 @@
   "description": "Nuxt Layer for Docs of bundles",
   "type": "module",
   "version": "0.1.0",
+  "main": "./nuxt.config.ts",
   "scripts": {
     "build": "nuxi build .playground",
     "dev": "nuxi dev .playground",
