@@ -1,4 +1,4 @@
-import type {BadgeProps, PageCardProps, TooltipProps, UserProps} from '@nuxt/ui'
+import type { BadgeProps, PageCardProps, TooltipProps, UserProps } from '@nuxt/ui'
 
 export type LibraryCardProps = Omit<PageCardProps, 'title' | 'icon' | 'to' | 'description'> & {
   title: string
@@ -35,6 +35,12 @@ export interface BranchInfo {
   date: string | null;
   count: number;
   labels: string[];
+}
+
+
+export interface BranchVersions {
+  branch: string;
+  versions: string[];
 }
 
 export interface LabelProps extends BadgeProps {
