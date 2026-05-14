@@ -60,9 +60,6 @@ export default defineNuxtConfig({
       ]
     },
   },
-  nitro: {
-    preset: 'bun',
-  },
   vite: {
     optimizeDeps: {
       include: [
