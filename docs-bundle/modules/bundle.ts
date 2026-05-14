@@ -1,15 +1,18 @@
-import type { Author, DocsBundleConfig, ModuleOptions, DocsBundleRuntimeConfig } from '../interfaces'
-import type { TooltipProps } from '@nuxt/ui'
-import type { FileAfterParseHook, FileBeforeParseHook } from '@nuxt/content'
-import type { Nuxt } from 'nuxt/schema'
+import type {Author, BranchVersions, DocsBundleConfig, DocsBundleRuntimeConfig, ModuleOptions} from '../interfaces'
+import type {TooltipProps} from '@nuxt/ui'
+import type {FileAfterParseHook, FileBeforeParseHook} from '@nuxt/content'
+import type {Nuxt} from 'nuxt/schema'
+import type {NitroConfig} from 'nitropack/types'
 
-import { getBranchesInfo, parseLabelsForVersions } from '../utils/versions'
-import { defineNuxtModule, useLogger, useNuxt } from 'nuxt/kit'
-import { defu } from 'defu'
-import { pascalCase, titleCase } from 'scule'
-import { getGitEnv, getLocalGitInfo } from 'docus/utils/git'
-import { updateSiteConfig } from 'nuxt-site-config/kit'
-import { join } from 'node:path'
+import {getBranchesInfo, getVersionsByBranch} from '../utils/versions'
+import {defineNuxtModule, useLogger, useNuxt} from 'nuxt/kit'
+import {defu} from 'defu'
+import {pascalCase, titleCase} from 'scule'
+import {getGitEnv, getLocalGitInfo} from 'docus/utils/git'
+import {updateSiteConfig} from 'nuxt-site-config/kit'
+import {join} from 'node:path'
+
+type DocusI18nOptions = { locales?: Array<string | { code: string }> }
 
 const defaultTooltip: TooltipProps = {
   arrow: true,
@@ -21,7 +24,7 @@ const idmarinas: Author = {
   name: 'Iván Diaz',
   description: '@IDMarinas',
   username: 'IDMarinas',
-  avatar: { src: 'https://avatars.githubusercontent.com/u/35842929?v=4' },
+  avatar: {src: 'https://avatars.githubusercontent.com/u/35842929?v=4'},
   to: 'https://github.com/idmarinas',
   target: '_blank'
 }
@@ -39,7 +42,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    colors: { purple: 'purple', orange: 'orange', green: 'green', yellow: 'yellow' },
+    colors: {purple: 'purple', orange: 'orange', green: 'green', yellow: 'yellow'},
     labels: {
       wip: {
         label: 'WIP',
@@ -98,7 +101,7 @@ export default defineNuxtModule<ModuleOptions>({
       return
     }
 
-    const { docsBundle, socials } = createDocsBundleConfig(options.package_name, options, nuxt)
+    const {docsBundle, socials} = createDocsBundleConfig(options.package_name, options, nuxt)
 
     // Merge docsBundle config
     nuxt.options.appConfig.docsBundle = defu(nuxt.options.appConfig.docsBundle, docsBundle as unknown as typeof nuxt.options.appConfig.docsBundle)
@@ -115,7 +118,7 @@ export default defineNuxtModule<ModuleOptions>({
       if (nuxt.options.ui !== false) {
         const colors = new Set(nuxt.options.ui.theme?.colors || UI_THEME_COLORS)
         Object.keys(nuxt.options.appConfig.ui.colors!).forEach(color => !colors.has(color) && colors.add(color))
-        nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, { colors: Array.from(colors) })
+        nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, {colors: Array.from(colors)})
       }
 
       // Nuxt SEO Config
@@ -208,7 +211,35 @@ export default defineNuxtModule<ModuleOptions>({
           }
         }
       }
-    }
+    },
+    'nitro:config'(nitroConfig: NitroConfig) {
+      const nuxt = useNuxt()
+
+      const i18nOptions = (nuxt.options as typeof nuxt.options & { i18n?: DocusI18nOptions }).i18n
+      const changelog = getVersionsByBranch(join(nuxt.options.rootDir, 'content/.changelog'))
+      const changelogRoutes: string[] = ['/changelog']
+
+      changelog.forEach((branch: BranchVersions) => {
+        changelogRoutes.push(`/changelog/${branch.branch}`)
+
+        branch.versions.forEach(version => changelogRoutes.push(`/changelog/${branch.branch}/${version}`))
+      })
+
+      const routes: string[] = []
+      if (!i18nOptions) {
+        routes.push(...changelogRoutes)
+      } else {
+        i18nOptions.locales?.forEach((locale: string | { code: string }) => {
+          const lang = typeof locale === 'string' ? `/${locale}` : `/${locale.code}`
+
+          routes.push(...changelogRoutes.map(route => `${lang}${route}`))
+        })
+      }
+
+      nitroConfig.prerender = nitroConfig.prerender || {}
+      nitroConfig.prerender.routes = nitroConfig.prerender.routes || []
+      nitroConfig.prerender.routes.push(...(routes || []))
+    },
   }
 })
 
@@ -248,7 +279,6 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
 
   // Labels
   docsBundle.labels = {
-    // versions: parseLabelsForVersions(join(nuxt.options.rootDir, 'content/.changelog')),
     ...options.labels
   }
 
@@ -264,7 +294,7 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
   // Libraries for about page
   docsBundle.libraries = options.libraries
 
-  return { docsBundle, socials }
+  return {docsBundle, socials}
 }
 
 const getAuthorByUserName = (authors: Record<string, Author>, userName: string, placeholder?: string): undefined | Author => {
@@ -275,7 +305,7 @@ const getAuthorByUserName = (authors: Record<string, Author>, userName: string, 
       name: placeholder,
       username: placeholder,
       description: '',
-      avatar: { src: '' },
+      avatar: {src: ''},
       target: '_blank'
     }
   }
