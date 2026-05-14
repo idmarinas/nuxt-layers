@@ -29,8 +29,8 @@ const { data: branch } = await useAsyncData(`label-version-${versionMajor.value}
 })
 
 const color = computed(() => {
-  const supported = String(branch.value?.requirements.support)
-  const security = Boolean(branch.value?.security)
+  const supported = branch.value?.requirements.support || 'none'
+  const security = branch.value?.security || false
 
   if ('features' === supported) {
     return 'primary'
@@ -46,8 +46,8 @@ const color = computed(() => {
 })
 
 const variant = computed(() => {
-  const supported = String(branch.value?.requirements.support)
-  const security = Boolean(branch.value?.security)
+  const supported = branch.value?.requirements.support || 'none'
+  const security = branch.value?.security || false
 
   if ('features' === supported) {
     return 'outline'
@@ -63,8 +63,8 @@ const variant = computed(() => {
 })
 
 const tooltip = computed(() => {
-  const supported = String(branch.value?.requirements.support)
-  const security = Boolean(branch.value?.security)
+  const supported = branch.value?.requirements.support || 'none'
+  const security = branch.value?.security || false
 
   if (props.isNew) {
     return `New in version ${props.version}`

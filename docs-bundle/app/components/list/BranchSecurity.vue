@@ -31,10 +31,10 @@ const { data: branches } = await useAsyncData('security-policy', async () => {
   query.forEach(branch => {
     const info = bundle.branchesInfo[`b${branch.branch.replaceAll('.', '_')}`]
     collection.add({
-      branch: branch.branch,
-      security: branch.security,
-      date: info?.date as string,
-      release: info?.release
+      branch: branch.branch || '',
+      security: branch.security || false,
+      date: info?.date || '',
+      release: info?.release || ''
     })
   })
 

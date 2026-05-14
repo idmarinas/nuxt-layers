@@ -45,11 +45,11 @@ const { data: branches } = await useAsyncData('branches-support', async () => {
     collection.add({
       branch: branch.branch,
       security: branch.security,
-      requirements: branch.requirements,
+      requirements: branch.requirements || [],
       release: {
-        version: String(info?.release),
-        date: String(info?.date),
-        count: Number(info?.count),
+        version: info?.release || '',
+        date: info?.date || '',
+        count: info?.count || 0,
         labels: info?.labels || []
       }
     })
@@ -110,8 +110,8 @@ const columns: TableColumn<BranchSupport>[] = [
     id: 'status',
     header: 'Status',
     cell: ({ row }) => {
-      const supported = String(row.original.requirements.support)
-      const security = Boolean(row.original.security)
+      const supported = row.original.requirements.support || 'none'
+      const security = row.original.security || false
 
       if ('none' === supported && !security) {
         return h('em', {}, 'No longer maintained')
