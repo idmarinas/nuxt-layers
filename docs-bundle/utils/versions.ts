@@ -1,4 +1,4 @@
-import type { BranchInfo } from '../interfaces';
+import type { BranchInfo, BranchVersions } from '../interfaces'
 
 import fs from 'fs'
 import path from 'path'
@@ -14,60 +14,38 @@ function isVersionGreater(
 }
 
 /**
- * Extract all MAJOR.MINOR versions from the changelog directory
- * omitting the PATCH and sorted in descending order
+ * Extract all versions grouped by branch from the changelog directory.
+ * Branch and version names are returned as-is from the filesystem.
  */
-function getVersionsMajorMinor(changelogDir: string): string[] {
-  const versions = new Map<string, string>() // { '1.0': '1.0.0', '1.1': '1.1.5', ... }
+function getVersionsByBranch(changelogDir: string): BranchVersions[] {
+  const result: BranchVersions[] = []
 
   try {
     const mainDirs = fs.readdirSync(changelogDir)
 
     for (const mainDir of mainDirs) {
       const mainPath = path.join(changelogDir, mainDir)
-      const stats = fs.statSync(mainPath)
 
-      // Solo procesar directorios
-      if (!stats.isDirectory()) continue
+      if (!fs.statSync(mainPath).isDirectory()) continue
 
+      const versions: string[] = []
       const files = fs.readdirSync(mainPath)
 
       for (const file of files) {
         if (!file.endsWith('.md') || file === 'index.md') continue
 
-        // Extract version from file name (e.g 1_0_0.md or 1.0.0)
-        const versionMatch = file.match(/^(\d+)(?:_|\.)(\d+)(?:_|\.)(\d+)\.md$/)
+        const versionMatch = file.match(/^(\d+(?:_|\.)\d+(?:_|\.)\d+)\.md$/)
         if (!versionMatch) continue
 
-        const [, majorText, minorText, patchText] = versionMatch
-        const major = Number(majorText)
-        const minor = Number(minorText)
-        const patch = Number(patchText)
-        const majorMinor = `${major}.${minor}`
-        const fullVersion = `${major}.${minor}.${patch}`
+        versions.push(versionMatch[1]!)
+      }
 
-        const existing = versions.get(majorMinor)
-        if (!existing) {
-          versions.set(majorMinor, fullVersion)
-        } else {
-          // Comparar versiones: mantener la más alta
-          const [, , existingPatch] = existing.split('.').map(Number)
-          if (patch! > existingPatch!) {
-            versions.set(majorMinor, fullVersion)
-          }
-        }
+      if (versions.length > 0) {
+        result.push({ branch: mainDir, versions })
       }
     }
 
-    // Convert to MAJOR.MINOR array and sort in descending order
-    return Array.from(versions.keys())
-      .sort((a: string, b: string): number => {
-        const [aMajor, aMinor] = a.split('.').map(Number)
-        const [bMajor, bMinor] = b.split('.').map(Number)
-
-        if (aMajor !== bMajor) return bMajor! - aMajor!
-        return bMinor! - aMinor!
-      })
+    return result
   } catch (error) {
     if (error instanceof Error) {
       console.error('Error leyendo directorio:', error.message)
@@ -172,23 +150,5 @@ function getBranchesInfo(changelogDir: string = 'changelog'): Record<string, Bra
   }
 }
 
-// Generate labels for each MAJOR.MINOR version.
-function parseLabelsForVersions(dir: string) {
-  const versions: string[] = getVersionsMajorMinor(dir)
 
-  return Object.fromEntries(versions.map((version, index) => [
-    `v${version.replace('.', '_')}`,
-    {
-      label: version,
-      color: 0 === index ? 'primary' : 'secondary',
-      icon: 'i-tabler-tag',
-      tooltip: {
-        arrow: true,
-        delayDuration: 300,
-        text: `New in version ${version}`,
-      }
-    }
-  ]))
-}
-
-export { getVersionsMajorMinor, getBranchesInfo, parseLabelsForVersions }
+export { getVersionsByBranch, getBranchesInfo }
