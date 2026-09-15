@@ -23,7 +23,7 @@ const showSinceBadge = computed(() => !!props.since && !props.deprecated)
 <template>
   <!-- Banner de deprecated que envuelve todo -->
   <div v-if="showDeprecatedBanner"
-    class="rounded-lg p-3 mt-8 mb-3 bg-linear-to-r from-orange-50/50 to-transparent dark:from-orange-950/10 dark:to-transparent border-l-4 border-orange-300 dark:border-orange-700 border-orange-200 dark:border-orange-800/50">
+    class="rounded-lg p-3 mt-8 mb-3 bg-linear-to-r from-orange-50/50 to-transparent dark:from-orange-950/10 dark:to-transparent border-l-4 border-orange-200 dark:border-orange-800/50">
     <!-- Badges de deprecated/removed en la parte superior -->
     <div class="flex flex-wrap items-center justify-between gap-2 -mb-4.5">
       <LabelsDeprecation :since="deprecated?.since as string" :removed="deprecated?.removed" :with-tooltip="false" />
