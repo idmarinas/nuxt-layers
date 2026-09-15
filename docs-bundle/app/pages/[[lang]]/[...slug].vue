@@ -5,14 +5,14 @@ import { findPageHeadline } from '@nuxt/content/utils'
 
 definePageMeta({
   layout: 'docs',
+  path: '/:lang?/:slug(.*)',
 })
 
 const route = useRoute()
 const { locale, isEnabled, t } = useDocusI18n()
+const { isOpen } = useAssistant()
 const appConfig = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
-const { shouldPushContent: shouldHideToc } = useAssistant()
-
 const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
 
 const [{ data: page }, { data: surround }] = await Promise.all([
@@ -27,6 +27,8 @@ const [{ data: page }, { data: surround }] = await Promise.all([
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
+
+
 
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
@@ -74,8 +76,7 @@ addPrerenderPath(`/raw${route.path}.md`)
 </script>
 
 <template>
-  <UPage v-if="page" :key="`page-${shouldHideToc}`"
-    :ui="{ root: 'lg:grid-cols-12', center: 'lg:col-span-9', right: 'lg:col-span-3' }">
+  <UPage v-if="page" :ui="isOpen ? { center: 'lg:col-span-9' } : undefined">
     <!-- Usar el nuevo componente con soporte de versioning -->
     <DocsPageHeaderWithVersions :title="page.title" :description="page.description" :since="page.since"
       :deprecated="page.deprecated">
@@ -96,14 +97,20 @@ addPrerenderPath(`/raw${route.path}.md`)
 
       <USeparator v-if="github">
         <div class="flex items-center gap-2 text-sm text-muted">
-          <UButton variant="link" color="neutral" :to="editLink" target="_blank" icon="i-tabler-pencil"
-            :ui="{ leadingIcon: 'size-4' }">
+          <UButton
+            variant="link"
+            color="neutral"
+            :to="editLink"
+            target="_blank"
+            icon="i-tabler-pen"
+            :ui="{ leadingIcon: 'size-4' }"
+          >
             {{ t('docs.edit') }}
           </UButton>
           <template v-if="github?.url">
             <span>{{ t('common.or') }}</span>
-            <UButton variant="link" color="neutral" :to="`${github.url}/issues/new/choose`" target="_blank"
-              icon="i-tabler-alert-circle" :ui="{ leadingIcon: 'size-4' }">
+            <UButton variant="link" color="neutral" :to="`${github.url}/issues/new/choose`" target="_blank" icon="i-tabler-alert-circle"
+              :ui="{ leadingIcon: 'size-4' }">
               {{ t('docs.report') }}
             </UButton>
           </template>
@@ -112,7 +119,7 @@ addPrerenderPath(`/raw${route.path}.md`)
       <UContentSurround :surround="surround" />
     </UPageBody>
 
-    <template #right>
+    <template v-if="!isOpen" #right>
       <DocsAsideRight :page="page" />
     </template>
   </UPage>

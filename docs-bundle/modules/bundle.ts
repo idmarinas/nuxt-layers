@@ -216,7 +216,8 @@ export default defineNuxtModule<ModuleOptions>({
       const nuxt = useNuxt()
 
       const i18nOptions = (nuxt.options as typeof nuxt.options & { i18n?: DocusI18nOptions }).i18n
-      const changelog = getVersionsByBranch(join(nuxt.options.rootDir, 'content/.changelog'))
+      const srcLocale = i18nOptions.defaultLocale ? `${i18nOptions.defaultLocale}/` : ''
+      const changelog = getVersionsByBranch(join(nuxt.options.rootDir, `content/${srcLocale}.changelog`))
       const changelogRoutes: string[] = ['/changelog']
 
       changelog.forEach((branch: BranchVersions) => {
@@ -275,7 +276,9 @@ function createDocsBundleConfig(packageName: string, options: ModuleOptions, nux
     namespace: `${vendor}\\Bundle\\${short_name}\\${vendor}${short_name}Bundle`
   }
 
-  docsBundle.branchesInfo = getBranchesInfo(join(nuxt.options.rootDir, 'content/.changelog'))
+  const i18nOptions = (nuxt.options as typeof nuxt.options & { i18n?: DocusI18nOptions }).i18n
+  const srcLocale = i18nOptions.defaultLocale ? `${i18nOptions.defaultLocale}/` : ''
+  docsBundle.branchesInfo = getBranchesInfo(join(nuxt.options.rootDir, `content/${srcLocale}.changelog`))
 
   // Labels
   docsBundle.labels = {
