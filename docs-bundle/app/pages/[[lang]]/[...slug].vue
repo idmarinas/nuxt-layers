@@ -102,7 +102,7 @@ addPrerenderPath(`/raw${route.path}.md`)
             color="neutral"
             :to="editLink"
             target="_blank"
-            icon="i-tabler-pen"
+            icon="i-tabler-pencil"
             :ui="{ leadingIcon: 'size-4' }"
           >
             {{ t('docs.edit') }}
