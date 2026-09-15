@@ -3,7 +3,11 @@ export default defineNuxtConfig({
   extends: ['..', 'docus'],
   devtools: { enabled: true },
   // i18n: {
-  //   locales: ['en', 'es'],
+  //   locales: [
+  //     { code: 'en', name: 'English' },
+  //     { code: 'es', name: 'Español' },
+  //     { code: 'fr', name: 'Français' },
+  //   ],
   //   defaultLocale: 'es',
   // },
   docsBundle: {
