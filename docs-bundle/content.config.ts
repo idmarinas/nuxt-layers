@@ -25,7 +25,7 @@ for (const locale of langs) {
     source: {
       cwd: `${cwd}/${codeCwd}.changelog`,
       include: "**/*.md",
-      prefix: "/changelog",
+      prefix: `/${codeCwd}changelog`,
     },
     schema: VersionSchema,
   });
@@ -35,7 +35,7 @@ for (const locale of langs) {
     source: {
       cwd: `${cwd}/${codeCwd}.changelog`,
       include: "**/index.yaml",
-      prefix: "/changelog",
+      prefix: `/${codeCwd}changelog`,
     },
     schema: BranchSchema,
   });
