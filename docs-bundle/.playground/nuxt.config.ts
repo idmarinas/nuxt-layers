@@ -1,6 +1,11 @@
 export default defineNuxtConfig({
+  // modules: ['@nuxtjs/i18n'],
   extends: ['..', 'docus'],
   devtools: { enabled: true },
+  // i18n: {
+  //   locales: ['en', 'es'],
+  //   defaultLocale: 'es',
+  // },
   docsBundle: {
     // package_name: 'idmarinas/template-bundle',
     labels: {
