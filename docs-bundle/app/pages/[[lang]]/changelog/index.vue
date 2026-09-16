@@ -7,7 +7,7 @@ definePageMeta({
 })
 
 const route = useRoute()
-const { locale, isEnabled, t } = useDocusI18n()
+const { locale, isEnabled, t } = useBundleI18n()
 const appConfig = useAppConfig()
 const branchesInfo = appConfig.docsBundle.branchesInfo
 
@@ -49,7 +49,7 @@ const [{ data: pages }, { data: page }, { data: surround }] = await Promise.all(
 ])
 
 if (!pages.value || !page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: t('common.error.title'), fatal: true })
 }
 
 const title = page.value.seo?.title || page.value.title
@@ -65,13 +65,13 @@ useSeoMeta({
 defineOgImage('DocsTakumi', {
   title,
   description,
-  headline: 'Changelog'
+  headline: t('navigation.changelog')
 })
 
 const items = useBreadcrumbItems({
   overrides: [
-    { label: 'Documentation', icon: 'i-tabler-book' },
-    { label: '', icon: 'i-tabler-layout' },
+    { label: t('navigation.documentation'), icon: 'i-tabler-book' },
+    { label: t('navigation.changelog'), icon: 'i-tabler-layout' },
     { label: page.value.branch?.replace('_', '.'), icon: 'i-tabler-git-branch' },
     { label: '', icon: 'i-tabler-tag' }
   ]
@@ -82,7 +82,7 @@ const items = useBreadcrumbItems({
   <UPage v-if="page">
     <UPageHeader v-bind="page">
       <template #headline>
-        <UBadge label="Changelog" variant="soft" />
+        <UBadge :label="t('navigation.changelog')" variant="soft" />
       </template>
     </UPageHeader>
     <UPageBody>
@@ -105,6 +105,6 @@ const items = useBreadcrumbItems({
     </template>
   </UPage>
   <UPage v-else>
-    No se encuentra la rama
+    {{ t('branch.not_found') }}
   </UPage>
 </template>

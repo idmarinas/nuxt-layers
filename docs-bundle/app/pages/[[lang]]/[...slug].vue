@@ -25,7 +25,7 @@ const [{ data: page }, { data: surround }] = await Promise.all([
 ])
 
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: t('common.error.title'), fatal: true })
 }
 
 

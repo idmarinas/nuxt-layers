@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<{
   isNew: false
 })
 
-const { locale, isEnabled } = useDocusI18n()
+const { locale, isEnabled, t } = useBundleI18n()
 const collectionName = computed(() => isEnabled.value ? `branches_${locale.value}` : 'branches')
 const versionMajor = computed(() => {
   const versionMatch = props.version.match(/^(\d+)(?:_|\.)(\d+)(?:(?:_|\.)(\d+))?$/)
@@ -67,18 +67,18 @@ const tooltip = computed(() => {
   const security = branch.value?.security || false
 
   if (props.isNew) {
-    return `New in version ${props.version}`
+    return t('label.version.new', { version: props.version})
   } else if ('features' === supported) {
-    return 'New features bug and security fixes'
+    return t('label.version.features')
   } else if ('none' === supported && !security) {
-    return 'No longer maintained'
+    return t('label.version.none')
   } else if ('none' === supported && security) {
-    return 'Security fixes only'
+    return t('label.version.security')
   } else if ('bugs' === supported) {
-    return 'Bug and security fixes'
+    return t('label.version.bug_security')
   }
 
-  return 'Unknown version'
+  return t('label.version.unknown')
 })
 </script>
 

@@ -1,7 +1,7 @@
 import type { Collections, VersionsCollectionItem } from '@nuxt/content'
 
 export const useReleases = async () => {
-  const { locale, isEnabled } = useDocusI18n()
+  const { locale, isEnabled } = useBundleI18n()
 
   const collectionName = computed(() => isEnabled.value ? `versions_${locale.value}` : 'versions')
 

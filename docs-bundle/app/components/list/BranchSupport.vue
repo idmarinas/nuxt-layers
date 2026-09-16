@@ -28,7 +28,7 @@ const UButton = resolveComponent('UButton')
 const UBadge = resolveComponent('UBadge')
 
 const bundle = useAppConfig().docsBundle
-const { locale, isEnabled } = useDocusI18n()
+const { locale, isEnabled, t } = useBundleI18n()
 const collectionName = computed(() => isEnabled.value ? `branches_${locale.value}` : 'branches')
 
 const { data: branches } = await useAsyncData('branches-support', async () => {
@@ -68,7 +68,7 @@ const columns: TableColumn<BranchSupport>[] = [
         variant: 'ghost',
         icon: 'i-tabler-chevron-down',
         square: true,
-        'aria-label': 'Expand',
+        'aria-label': t('table.expand'),
         ui: {
           leadingIcon: [
             'transition-transform',
@@ -80,11 +80,11 @@ const columns: TableColumn<BranchSupport>[] = [
   },
   {
     accessorKey: 'branch',
-    header: 'Branch'
+    header: t('table.branch')
   },
   {
     accessorKey: 'requirements',
-    header: 'PHP Version',
+    header: t('table.php_version'),
     cell: ({ row }) => {
       const requirements: Requirements = row.getValue('requirements')
 
@@ -100,7 +100,7 @@ const columns: TableColumn<BranchSupport>[] = [
   },
   {
     accessorKey: 'requirements',
-    header: 'Symfony Version',
+    header: t('table.symfony_version'),
     cell: ({ row }) => {
       const requirements: Requirements = row.getValue('requirements')
 
@@ -116,22 +116,22 @@ const columns: TableColumn<BranchSupport>[] = [
   },
   {
     id: 'status',
-    header: 'Status',
+    header: t('table.status'),
     cell: ({ row }) => {
       const supported = row.original.requirements?.support || 'none'
       const security = row.original.security || false
 
       if ('none' === supported && !security) {
-        return h('em', {}, 'No longer maintained')
+        return h('em', {}, t('label.version.none'))
       } else if ('none' === supported && security) {
-        return h('em', {}, 'Security fixes only')
+        return h('em', {}, t('label.version.security'))
       } else if ('bugs' === supported) {
-        return h('em', {}, 'Bug and security fixes')
+        return h('em', {}, t('label.version.bug_security'))
       } else if ('features' === supported) {
-        return h('em', {}, 'New features bug and security fixes')
+        return h('em', {}, t('label.version.features'))
       }
 
-      return h('strong', {}, 'Unknown')
+      return h('strong', {}, t('table.unknown'))
     }
   }
 ]
@@ -144,9 +144,9 @@ const expanded = ref({ 0: true })
     :ui="{ tr: 'data-[expanded=true]:bg-elevated/50' }" class="flex-1">
     <template #expanded="{ row }">
       <div class="flex items-center justify-center gap-3">
-        <div>Last Release {{ new Date(row.original.release.date).toLocaleString(locale, { dateStyle: 'full' }) }}</div>
+        <div>{{ t('table.last_release') }} {{ new Date(row.original.release.date).toLocaleString(locale, { dateStyle: 'full' }) }}</div>
         <LabelsVersion :version="row.original.release.version" />
-        <div>Releases count
+        <div>{{ t('table.releases_count') }}
           <UBadge color="neutral" variant="outline">{{ row.original.release.count }}</UBadge>
         </div>
       </div>

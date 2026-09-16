@@ -9,7 +9,7 @@ definePageMeta({
 })
 
 const route = useRoute()
-const { locale, isEnabled, t } = useDocusI18n()
+const { locale, isEnabled, t } = useBundleI18n()
 const { lastRelease } = await useReleases()
 const appConfig = useAppConfig()
 const collectionName = computed(() => isEnabled.value ? `versions_${locale.value}` : 'versions')
@@ -22,7 +22,7 @@ const [{ data: page }, { data: surround }] = await Promise.all([
 ])
 
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: t('common.error.title'), fatal: true })
 }
 
 const title = page.value.seo?.title || page.value.title
@@ -53,10 +53,10 @@ const editLink = computed(() => {
 
 const headline = computed(() => {
   if (!isLastRelease.value) {
-    return 'Changelog'
+    return t('navigation.changelog')
   }
 
-  return 'Latest Release'
+  return t('release.latest')
 })
 
 const isLastRelease = computed(() => {
@@ -80,13 +80,13 @@ const links = ref((): ButtonProps[] => {
 
   return [
     {
-      label: 'Tag ' + page.value?.version,
+      label: t('release.tag', { version: page.value?.version || '' }),
       icon: 'i-tabler-tag',
       color: 'success',
       to: `${github.value.url}/releases/tag/${page.value?.version}`,
       target: '_blank'
     }, {
-      label: 'Branch ' + page.value?.branch,
+      label: t('release.branch', { version: page.value?.branch || '' }),
       icon: 'i-tabler-git-branch',
       // color: 'primary',
       to: `${github.value.url}/tree/${page.value?.branch}`,
@@ -96,8 +96,8 @@ const links = ref((): ButtonProps[] => {
 })
 const items = useBreadcrumbItems({
   overrides: [
-    { label: 'Documentation', icon: 'i-tabler-book' },
-    { label: '', icon: 'i-tabler-layout' },
+    { label: t('navigation.documentation'), icon: 'i-tabler-book' },
+    { label: t('navigation.changelog'), icon: 'i-tabler-layout' },
     { label: page.value?.branch.replace('_', '.'), icon: 'i-tabler-git-branch' },
     { label: page.value?.version.replace('_', '.'), icon: 'i-tabler-tag' }
   ]

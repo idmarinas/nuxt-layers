@@ -13,8 +13,10 @@ const props = withDefaults(defineProps<LabelsDeprecationProps>(), {
   withTooltip: true
 })
 
-const sinceTooltip = computed(() => `Deprecated since v${props.since}`)
-const removedTooltip = computed(() => `Removed in v${props.removed}`)
+const { t } = useBundleI18n()
+
+const sinceTooltip = computed(() => t('label.deprecation.since', { version: props.since}))
+const removedTooltip = computed(() => t('label.deprecation.removed', { version: props.removed!}))
 </script>
 
 <template>

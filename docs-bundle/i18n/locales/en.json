@@ -1,0 +1,48 @@
+{
+  "navigation": {
+    "documentation": "Documentation",
+    "changelog": "Changelog",
+    "about": "About",
+    "security_policy": "Security Policy"
+  },
+  "button": {
+    "star_on": {
+      "github": "Star on GitHub"
+    }
+  },
+  "label": {
+    "version": {
+      "new": "New in version {version}",
+      "features": "New features, bug and security fixes",
+      "none":"No longer maintained",
+      "security": "Security fixes only",
+      "bug_security": "Bug and security fixes",
+      "unknown": "Unknown version"
+    },
+    "deprecation": {
+      "since": "Deprecated since v{version}",
+      "removed": "Removed in v{version}"
+    }
+  },
+  "table": {
+    "branch": "Branch",
+    "security": "Security",
+    "status": "Status",
+    "php_version": "PHP Version",
+    "symfony_version": "Symfony Version",
+    "last_release": "Last Release",
+    "last_release_date": "Last Release Date",
+    "releases_count": "Releases count",
+    "expand": "Expand",
+    "unknown": "Unknown"
+  },
+  "release": {
+    "latest": "Latest Release",
+    "badge": "Latest Release: {version}",
+    "tag": "Tag {version}",
+    "branch": "Branch {version}"
+  },
+  "branch": {
+    "not_found": "Branch not found"
+  }
+}

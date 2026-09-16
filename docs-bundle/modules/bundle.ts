@@ -5,14 +5,20 @@ import type {Nuxt} from 'nuxt/schema'
 import type {NitroConfig} from 'nitropack/types'
 
 import {getBranchesInfo, getVersionsByBranch} from '../utils/versions'
-import {defineNuxtModule, useLogger, useNuxt} from 'nuxt/kit'
+import {defineNuxtModule, useLogger, useNuxt, createResolver} from 'nuxt/kit'
 import {defu} from 'defu'
 import {pascalCase, titleCase} from 'scule'
 import {getGitEnv, getLocalGitInfo} from 'docus/utils/git'
 import {updateSiteConfig} from 'nuxt-site-config/kit'
 import {join} from 'node:path'
+import { existsSync } from 'node:fs'
 
-type DocusI18nOptions = { locales?: Array<string | { code: string }> }
+type DocusI18nOptions = { locales?: Array<string | { code: string }>, defaultLocale: string }
+type I18nLocale = string | { code: string, name?: string }
+type RegisterModuleOptions = {
+  langDir: string
+  locales: Array<{ code: string, name: string, file: string }>
+}
 
 const defaultTooltip: TooltipProps = {
   arrow: true,
@@ -111,6 +117,44 @@ export default defineNuxtModule<ModuleOptions>({
       authors: options.authors,
       repository: docsBundle.repository
     } as DocsBundleRuntimeConfig
+
+    /*
+    ** I18N
+    */
+    const typedNuxtOptions = nuxt.options as typeof nuxt.options & { i18n?: false | DocusI18nOptions }
+    const i18nOptions = typedNuxtOptions.i18n
+
+    if (i18nOptions && typeof i18nOptions === 'object' && i18nOptions.locales) {
+      const { resolve } = createResolver(import.meta.url)
+
+      const filteredLocales  = (nuxt.options.runtimeConfig.public.docus as Record<string, any>).filteredLocales as I18nLocale[]
+
+      const registerI18nModule = nuxt.hook as unknown as (name: string, callback: (register: (options: RegisterModuleOptions) => void) => void) => void
+
+      registerI18nModule('i18n:registerModule', (register) => {
+        const langDir = resolve('../i18n/locales')
+
+        const locales = filteredLocales.map((locale: I18nLocale) => {
+          return typeof locale === 'string'
+            ? {
+                code: locale,
+                name: locale,
+                file: `${locale}.json`,
+              }
+            : {
+                code: locale.code,
+                name: locale.name || locale.code,
+                file: `${locale.code}.json`,
+              }
+        }).filter(locale => {
+          const localeCode = typeof locale === 'string' ? locale : locale.code
+          // Check for JSON locale file
+          return existsSync(resolve('../i18n/locales', `${localeCode}.json`))
+        })
+
+        register({ langDir, locales })
+      })
+    }
 
     nuxt.hook('modules:done', () => {
       nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui.colors, options.colors)

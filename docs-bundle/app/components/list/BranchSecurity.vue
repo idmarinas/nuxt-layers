@@ -17,7 +17,7 @@ const LabelsVersion = resolveComponent('LabelsVersion')
 const UBadge = resolveComponent('UBadge')
 
 const bundle = useAppConfig().docsBundle
-const { locale, isEnabled } = useDocusI18n()
+const { locale, isEnabled, t } = useBundleI18n()
 const collectionName = computed(() => isEnabled.value ? `branches_${locale.value}` : 'branches')
 
 const { data: branches } = await useAsyncData('security-policy', async () => {
@@ -45,12 +45,12 @@ const data = ref(branches)
 const columns: TableColumn<Security>[] = [
   {
     accessorKey: 'branch',
-    header: 'Branch',
+    header: t('table.branch'),
     cell: ({ row }) => row.getValue('branch')
   },
   {
     accessorKey: 'security',
-    header: 'Security',
+    header: t('table.security'),
     cell: ({ row }) => {
       const color = {
         true: 'success' as const,
@@ -67,14 +67,14 @@ const columns: TableColumn<Security>[] = [
   },
   {
     accessorKey: 'date',
-    header: 'Last Release Date',
+    header: t('table.last_release_date'),
     cell: ({ row }) => {
       return new Date(row.getValue('date')).toLocaleString(locale.value, { dateStyle: 'long' })
     }
   },
   {
     accessorKey: 'release',
-    header: 'Last Release',
+    header: t('table.last_release'),
     cell: ({ row }) => {
       return h(LabelsVersion, { version: row.getValue('release') })
     }

@@ -1,0 +1,48 @@
+{
+  "navigation": {
+    "documentation": "Documentación",
+    "changelog": "Registro de cambios",
+    "about": "Acerca de",
+    "security_policy": "Política de seguridad"
+  },
+  "button": {
+    "star_on": {
+      "github": "Dar una estrella en GitHub"
+    }
+  },
+  "label": {
+    "version": {
+      "new": "Nuevo en la versión {version}",
+      "features": "Nuevas funciones, correcciones de errores y de seguridad",
+      "none": "Ya no se mantiene",
+      "security": "Solo correcciones de seguridad",
+      "bug_security": "Correcciones de errores y seguridad",
+      "unknown": "Versión desconocida"
+    },
+    "deprecation": {
+      "since": "Obsoleto desde v{version}",
+      "removed": "Eliminado en v{version}"
+    }
+  },
+  "table": {
+    "branch": "Rama",
+    "security": "Seguridad",
+    "status": "Estado",
+    "php_version": "Versión de PHP",
+    "symfony_version": "Versión de Symfony",
+    "last_release": "Último lanzamiento",
+    "last_release_date": "Fecha del último lanzamiento",
+    "releases_count": "Número de lanzamientos",
+    "expand": "Expandir",
+    "unknown": "Desconocido"
+  },
+  "release": {
+    "latest": "Último lanzamiento",
+    "badge": "Último lanzamiento: {version}",
+    "tag": "Etiqueta {version}",
+    "branch": "Rama {version}"
+  },
+  "branch": {
+    "not_found": "Rama no encontrada"
+  }
+}
