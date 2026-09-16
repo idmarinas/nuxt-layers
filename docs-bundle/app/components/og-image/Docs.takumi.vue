@@ -14,7 +14,7 @@ const bundle = useAppConfig().docsBundle
 </script>
 
 <template>
-  <div class="relative w-full h-full flex flex-row justify-center gap-4 pl-[100px] bg-blue-950">
+  <div class="relative w-full h-full flex flex-row justify-center gap-4 pl-25 bg-blue-950">
     <svg class="absolute right-0 top-0 fill-blue-200" height="593" viewBox="0 0 629 593" width="629"
          xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_f_199_94966)">
@@ -41,7 +41,7 @@ const bundle = useAppConfig().docsBundle
         <UIcon :name="icon" mode="svg" />
         <span>{{ headline }}</span>
       </p>
-      <h1 v-if="title" class="w-[600px] m-0 text-[75px] font-semibold mb-4 text-white text-ellipsis line-clamp-2">
+      <h1 v-if="title" class="w-150 m-0 text-[75px] font-semibold mb-4 text-white text-ellipsis line-clamp-2">
         {{ title.slice(0, 60) }}
       </h1>
       <p v-if="description" class="block text-[32px] text-[#E4E4E7] leading-tight text-ellipsis line-clamp-3">

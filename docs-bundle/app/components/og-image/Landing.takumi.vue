@@ -17,7 +17,7 @@ const bundle = useAppConfig().docsBundle
 </script>
 
 <template>
-  <div class="flex flex-col justify-center w-full h-full bg-blue-950 p-[100px]">
+  <div class="flex flex-col justify-center w-full h-full bg-blue-950 p-25">
     <svg class="absolute right-0 top-0 fill-blue-200" height="593" viewBox="0 0 629 593" width="629"
       xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_f_199_94966)">
@@ -39,7 +39,7 @@ const bundle = useAppConfig().docsBundle
         <p v-if="headline" class="uppercase text-[24px] text-blue-500 mb-4 font-semibold">
           {{ headline }}
         </p>
-        <h1 v-if="title" class="w-[600px] m-0 text-[75px] font-semibold mb-4 text-white"
+        <h1 v-if="title" class="w-150 m-0 text-[75px] font-semibold mb-4 text-white"
           style="display: block; line-clamp: 2; text-overflow: ellipsis;">
           {{ title.slice(0, 60) }}
         </h1>
@@ -49,7 +49,7 @@ const bundle = useAppConfig().docsBundle
         </p>
       </div>
 
-      <div class="w-[340px] flex flex-col items-center justify-center gap-0 text-blue-300 dark:text-blue-900">
+      <div class="w-85 flex flex-col items-center justify-center gap-0 text-blue-300 dark:text-blue-900">
         <div class="text-4xl -mb-8">{{ bundle.author.username }}</div>
         <SvgShip class="opacity-65" height="340" width="340" />
         <span class="text-5xl -mt-24">{{ bundle.short_name }}</span>
