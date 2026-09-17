@@ -5,7 +5,8 @@ import type { ButtonProps } from '@nuxt/ui'
 
 definePageMeta({
   layout: 'changelog',
-  path: '/:lang?/changelog/:branch(\\d+(_|\.)(\\d+(_|\.)|)x)/:v(\\d+(_|\.)\\d+(_|\.)\\d+)',
+  // Revisar el RegExp, falla
+  path: '/:lang?/changelog/:branch(\\d+(?:_|\.\\)(?:\\d+(?:_|\.\\)|\\)x)/:v(\\d+(?:_|\.\\)\\d+(?:_|\.\\)\\d+)',
 })
 
 const route = useRoute()
@@ -13,6 +14,8 @@ const { locale, isEnabled, t } = useBundleI18n()
 const { lastRelease } = await useReleases()
 const appConfig = useAppConfig()
 const collectionName = computed(() => isEnabled.value ? `versions_${locale.value}` : 'versions')
+
+console.log(route.params)
 
 const [{ data: page }, { data: surround }] = await Promise.all([
   useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections)
