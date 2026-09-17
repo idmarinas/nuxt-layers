@@ -11,8 +11,6 @@ const { locale, isEnabled, t } = useBundleI18n()
 const appConfig = useAppConfig()
 const branchesInfo = appConfig.docsBundle.branchesInfo
 
-console.log(route.params)
-
 // Dynamic collection name based on i18n status
 const collectionName = computed(() => {
   const collection = route.params.branch ? 'versions' : 'branches'

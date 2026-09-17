@@ -15,8 +15,6 @@ const { lastRelease } = await useReleases()
 const appConfig = useAppConfig()
 const collectionName = computed(() => isEnabled.value ? `versions_${locale.value}` : 'versions')
 
-console.log(route.params)
-
 const [{ data: page }, { data: surround }] = await Promise.all([
   useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections)
     .where('version', '=', (route.params.v as string).replaceAll('_', '.'))
