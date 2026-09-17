@@ -1,8 +1,7 @@
 <script lang="ts">
 interface Requirements {
-  php: string[]
-  symfony: string[]
   support: string
+  [key: string]: string[] | string | undefined
 }
 
 interface BranchSupport {
@@ -59,7 +58,57 @@ const { data: branches } = await useAsyncData('branches-support', async () => {
 })
 const data = ref(branches)
 
-const columns: TableColumn<BranchSupport>[] = [
+const requirementKeys = computed(() => {
+  const keys = new Set<string>()
+
+  data.value?.forEach(branch => {
+    Object.keys(branch.requirements || {}).forEach(key => {
+      if (key !== 'support') keys.add(key)
+    })
+  })
+
+  return Array.from(keys)
+})
+
+const statusColumn: TableColumn<BranchSupport> = {
+  id: 'status',
+  header: t('table.status'),
+  cell: ({ row }) => {
+    const supported = row.original.requirements?.support || 'none'
+    const security = row.original.security || false
+
+    if ('none' === supported && !security) {
+      return h('em', {}, t('label.version.none'))
+    } else if ('none' === supported && security) {
+      return h('em', {}, t('label.version.security'))
+    } else if ('bugs' === supported) {
+      return h('em', {}, t('label.version.bug_security'))
+    } else if ('features' === supported) {
+      return h('em', {}, t('label.version.features'))
+    }
+
+    return h('strong', {}, t('table.unknown'))
+  }
+}
+
+const requirementColumn = (key: string): TableColumn<BranchSupport> => ({
+  accessorKey: 'requirements',
+  header: t(`table.${key}_version`),
+  cell: ({ row }) => {
+    const requirement = (row.getValue('requirements') as Requirements)[key]
+
+    if (!requirement || !Array.isArray(requirement) || requirement.length === 0) {
+      return h(UBadge, { icon: 'i-tabler-question-mark', color: 'error' })
+    }
+
+    const child = new Set<VNode>()
+
+    requirement.forEach(v => child.add(h(UBadge, { color: 'neutral', variant: 'subtle' }, () => v)))
+    return h('div', { class: 'flex gap-2' }, Array.from(child))
+  }
+})
+
+const columns = computed<TableColumn<BranchSupport>[]>(() => [
   {
     id: 'expand',
     cell: ({ row }) =>
@@ -82,59 +131,9 @@ const columns: TableColumn<BranchSupport>[] = [
     accessorKey: 'branch',
     header: t('table.branch')
   },
-  {
-    accessorKey: 'requirements',
-    header: t('table.php_version'),
-    cell: ({ row }) => {
-      const requirements: Requirements = row.getValue('requirements')
-
-      if (!requirements.php) {
-        return h(UBadge, { icon: 'i-tabler-question-mark', color: 'error' })
-      }
-
-      const child = new Set<VNode>()
-
-      requirements.php.forEach(v => child.add(h(UBadge, { color: 'neutral', variant: 'subtle' }, () => v)))
-      return h('div', { class: 'flex gap-2' }, Array.from(child))
-    }
-  },
-  {
-    accessorKey: 'requirements',
-    header: t('table.symfony_version'),
-    cell: ({ row }) => {
-      const requirements: Requirements = row.getValue('requirements')
-
-      if (!requirements.symfony) {
-        return h(UBadge, { icon: 'i-tabler-question-mark', color: 'error' })
-      }
-
-      const child = new Set<VNode>()
-
-      requirements.symfony.forEach(v => child.add(h(UBadge, { color: 'neutral', variant: 'subtle' }, () => v)))
-      return h('div', { class: 'flex gap-2' }, Array.from(child))
-    }
-  },
-  {
-    id: 'status',
-    header: t('table.status'),
-    cell: ({ row }) => {
-      const supported = row.original.requirements?.support || 'none'
-      const security = row.original.security || false
-
-      if ('none' === supported && !security) {
-        return h('em', {}, t('label.version.none'))
-      } else if ('none' === supported && security) {
-        return h('em', {}, t('label.version.security'))
-      } else if ('bugs' === supported) {
-        return h('em', {}, t('label.version.bug_security'))
-      } else if ('features' === supported) {
-        return h('em', {}, t('label.version.features'))
-      }
-
-      return h('strong', {}, t('table.unknown'))
-    }
-  }
-]
+  ...requirementKeys.value.map(requirementColumn),
+  statusColumn
+])
 
 const expanded = ref({ 0: true })
 </script>

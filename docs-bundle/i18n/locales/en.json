@@ -30,6 +30,7 @@
     "status": "Status",
     "php_version": "PHP Version",
     "symfony_version": "Symfony Version",
+    "op_version": "Operating System",
     "last_release": "Last Release",
     "last_release_date": "Last Release Date",
     "releases_count": "Releases count",

@@ -30,6 +30,7 @@
     "status": "Estado",
     "php_version": "Versión de PHP",
     "symfony_version": "Versión de Symfony",
+    "op_version": "Sistema operativo",
     "last_release": "Último lanzamiento",
     "last_release_date": "Fecha del último lanzamiento",
     "releases_count": "Número de lanzamientos",
