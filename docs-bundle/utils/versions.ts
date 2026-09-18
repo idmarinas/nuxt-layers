@@ -70,7 +70,8 @@ function getBranchesInfo(changelogDir: string = 'changelog'): Record<string, Bra
       if (!fs.statSync(mainPath).isDirectory()) continue
 
       // "1.x" -> "b1_x"
-      const branchKey = `b${mainDir.replace('.', '_')}`
+      // "0.1.x" -> "b0_1_x"
+      const branchKey = `b${mainDir.replaceAll('.', '_')}`
 
       const files = fs.readdirSync(mainPath)
 
