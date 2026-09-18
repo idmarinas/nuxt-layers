@@ -43,6 +43,13 @@
     "tag": "Etiqueta {version}",
     "branch": "Rama {version}"
   },
+  "download": {
+    "title": "Descargas",
+    "latest": "Última versión:",
+    "button": "Descargar",
+    "security_only": "Solo actualizaciones de seguridad",
+    "support_ending": "Esta versión dejará de recibir soporte pronto."
+  },
   "branch": {
     "not_found": "Rama no encontrada"
   }

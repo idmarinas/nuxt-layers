@@ -14,7 +14,7 @@
     "version": {
       "new": "New in version {version}",
       "features": "New features, bug and security fixes",
-      "none":"No longer maintained",
+      "none": "No longer maintained",
       "security": "Security fixes only",
       "bug_security": "Bug and security fixes",
       "unknown": "Unknown version"
@@ -42,6 +42,13 @@
     "badge": "Latest Release: {version}",
     "tag": "Tag {version}",
     "branch": "Branch {version}"
+  },
+  "download": {
+    "title": "Downloads",
+    "latest": "Latest version:",
+    "button": "Download",
+    "security_only": "Security fixes only",
+    "support_ending": "This version will soon lose support."
   },
   "branch": {
     "not_found": "Branch not found"
