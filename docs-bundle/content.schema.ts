@@ -19,6 +19,7 @@ export const DocsSchema = BaseSchema.extend({
     to: z.string(),
     target: z.string().optional(),
   })).optional(),
+  label: z.string().optional(),
   since: z.string().optional(),
   deprecated: z.object({
     since: z.string(),
