@@ -18,7 +18,6 @@ const slots = defineSlots<{
 
 // Determinar si mostrar solo deprecated o ambos
 const showDeprecatedBanner = computed(() => !!props.deprecated)
-const showSinceBadge = computed(() => !!props.since && !props.deprecated)
 </script>
 
 <template>
@@ -56,7 +55,7 @@ const showSinceBadge = computed(() => !!props.since && !props.deprecated)
         <slot name="headline" />
         <div class="flex-1" />
         <Labels :n="label" />
-        <LabelsVersion v-if="showSinceBadge" :version="since!" is-new />
+        <LabelsVersion v-if="since" :version="since" is-new />
       </template>
       <template v-if="$slots.links" #links>
         <slot name="links" />
