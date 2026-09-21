@@ -17,7 +17,8 @@ export default defineNuxtConfig({
         'error',
         'wip',
         'beta',
-        'experimental'
+        'experimental',
+        'deprecated'
       ]
     }
   }

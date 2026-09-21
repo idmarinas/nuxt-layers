@@ -10,7 +10,8 @@ export default defineAppConfig({
 			neutral: 'stone',
       wip: 'purple',
       beta: 'fuchsia',
-      experimental: 'rose'
+      experimental: 'rose',
+      deprecated: 'orange',
 		},
 		icons: {
 			arrowDown: 'i-tabler-arrow-down',

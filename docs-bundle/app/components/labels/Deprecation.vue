@@ -21,7 +21,7 @@ const removedTooltip = computed(() => t('label.deprecation.removed', { version: 
 
 <template>
   <UTooltip :text="sinceTooltip" :disabled="!props.withTooltip">
-    <UBadge v-bind="props" :label="props.withTooltip ? props.since : sinceTooltip" color="orange"
+    <UBadge v-bind="props" :label="props.withTooltip ? props.since : sinceTooltip" color="deprecated"
       icon="i-tabler-alert-triangle" variant="outline" />
   </UTooltip>
   <UTooltip v-if="props.removed" :text="removedTooltip" :disabled="!props.withTooltip">
