@@ -48,11 +48,10 @@ export default defineNuxtModule<ModuleOptions>({
     }
   },
   defaults: {
-    colors: {purple: 'purple', orange: 'orange', green: 'green', yellow: 'yellow'},
     labels: {
       wip: {
         label: 'WIP',
-        color: 'purple',
+        color: 'wip',
         icon: 'i-tabler-progress-bolt',
         tooltip: {
           ...defaultTooltip,
@@ -61,11 +60,20 @@ export default defineNuxtModule<ModuleOptions>({
       },
       beta: {
         label: 'β',
-        color: 'purple',
+        color: 'beta',
         icon: 'i-tabler-beta',
         tooltip: {
           ...defaultTooltip,
           text: 'Beta version',
+        }
+      },
+      experimental: {
+        label: 'Experimental',
+        color: 'experimental',
+        icon: 'i-tabler-flask',
+        tooltip: {
+          ...defaultTooltip,
+          text: 'This is an experimental feature',
         }
       }
     },
@@ -157,14 +165,6 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     nuxt.hook('modules:done', () => {
-      nuxt.options.appConfig.ui.colors = Object.assign({}, nuxt.options.appConfig.ui.colors, options.colors)
-
-      if (nuxt.options.ui !== false) {
-        const colors = new Set(nuxt.options.ui.theme?.colors || UI_THEME_COLORS)
-        Object.keys(nuxt.options.appConfig.ui.colors!).forEach(color => !colors.has(color) && colors.add(color))
-        nuxt.options.ui.theme = Object.assign({}, nuxt.options.ui.theme, {colors: Array.from(colors)})
-      }
-
       // Nuxt SEO Config
       nuxt.options.seo = defu(nuxt.options.seo, {
         meta: {

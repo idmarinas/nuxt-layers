@@ -22,7 +22,6 @@ export interface ModuleOptions {
   repository?: {
     name?: string; owner?: string;
   };
-  colors: Record<string, string>;
   authors: Record<string, Author>;
   labels: Record<string, Record<string, LabelProps> | LabelProps>;
   socials: Record<string, string>;

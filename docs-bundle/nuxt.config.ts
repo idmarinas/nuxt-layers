@@ -5,4 +5,20 @@ export default defineNuxtConfig({
       langs: ['php', 'twig']
     }
   },
+  ui: {
+    theme: {
+      colors: [
+        'primary',
+        'secondary',
+        'yellow',
+        'info',
+        'success',
+        'warning',
+        'error',
+        'wip',
+        'beta',
+        'experimental'
+      ]
+    }
+  }
 })
