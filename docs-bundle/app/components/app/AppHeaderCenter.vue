@@ -8,7 +8,7 @@ const links = computed(() => [
     label: t('navigation.documentation'),
     icon: 'i-tabler-book',
     to: '/getting-started/introduction',
-    active: !route.path.includes('/changelog') && !route.path.endsWith('/about') && !route.path.endsWith('/security') && route.path.length > 1,
+    active: !route.path.includes('/changelog') && !route.path.endsWith('/about') && !route.path.endsWith('/security') && route.path.length > 2,
   },
   {
     label: t('navigation.changelog'),
