@@ -10,22 +10,35 @@ const props = withDefaults(defineProps<{
 
 const { locale, isEnabled, t } = useBundleI18n()
 const collectionName = computed(() => isEnabled.value ? `branches_${locale.value}` : 'branches')
-const versionMajor = computed(() => {
+const versionMajorMinor = computed(() => {
   const versionMatch = props.version.match(/^(\d+)(?:_|\.)(\d+)(?:(?:_|\.)(\d+))?$/)
   if (!versionMatch) {
-    return 0
+    return [0,0]
   }
 
-  const [, majorText] = versionMatch
+  const [, majorText, minorText] = versionMatch
 
-  return Number(majorText)
+  return [Number(majorText), Number(minorText)]
 })
 
-const { data: branch } = await useAsyncData(`label-version-${versionMajor.value}`, async () => {
-  return await queryCollection(collectionName.value as keyof Collections)
-    .where('branch', '=', `${versionMajor.value}.x`)
+const { data: branch } = await useAsyncData(`label-version-${versionMajorMinor.value.join('-')}`, async () => {
+  const [majorVersion, minorVersion] = versionMajorMinor.value
+
+  // Format N.x
+  let branch = await queryCollection(collectionName.value as keyof Collections)
+    .where('branch', '=', `${majorVersion}.x`)
     .select('branch' as any, 'security', 'requirements')
     .first() as BranchesCollectionItem
+
+    // Check for format N.N.x
+    if (!branch) {
+      branch = await queryCollection(collectionName.value as keyof Collections)
+        .where('branch', '=', `${majorVersion}.${minorVersion}.x`)
+        .select('branch' as any, 'security', 'requirements')
+        .first() as BranchesCollectionItem
+    }
+
+    return branch
 })
 
 const color = computed(() => {
@@ -37,9 +50,9 @@ const color = computed(() => {
   } else if ('none' === supported && !security) {
     return 'error'
   } else if ('none' === supported && security) {
-    return 'yellow'
+    return 'warning'
   } else if ('bugs' === supported) {
-    return 'orange'
+    return 'deprecated'
   }
 
   return 'neutral'
