@@ -18,7 +18,8 @@ export default defineNuxtConfig({
         'wip',
         'beta',
         'experimental',
-        'deprecated'
+        'deprecated',
+        'sponsor'
       ]
     }
   }

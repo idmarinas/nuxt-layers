@@ -12,6 +12,7 @@ export default defineAppConfig({
       beta: 'fuchsia',
       experimental: 'rose',
       deprecated: 'orange',
+      sponsor: 'purple'
 		},
 		icons: {
 			arrowDown: 'i-tabler-arrow-down',
