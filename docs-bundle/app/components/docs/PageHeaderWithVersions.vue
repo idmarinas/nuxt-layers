@@ -3,6 +3,7 @@ const props = defineProps<{
   title: string
   description?: string
   since?: string
+  label?: string
   deprecated?: {
     since: string
     removed?: string
@@ -54,7 +55,8 @@ const showSinceBadge = computed(() => !!props.since && !props.deprecated)
       <template v-if="$slots.headline" #headline>
         <slot name="headline" />
         <div class="flex-1" />
-        <LabelsVersion v-if="showSinceBadge" :version="since as string" isNew />
+        <Labels :n="label" />
+        <LabelsVersion v-if="showSinceBadge" :version="since!" is-new />
       </template>
       <template v-if="$slots.links" #links>
         <slot name="links" />

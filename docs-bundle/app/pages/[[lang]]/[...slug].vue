@@ -78,8 +78,13 @@ addPrerenderPath(`/raw${route.path}.md`)
 <template>
   <UPage v-if="page" :ui="isOpen ? { center: 'lg:col-span-9' } : undefined">
     <!-- Usar el nuevo componente con soporte de versioning -->
-    <DocsPageHeaderWithVersions :title="page.title" :description="page.description" :since="page.since"
-      :deprecated="page.deprecated">
+    <DocsPageHeaderWithVersions
+      :title="page.title"
+      :description="page.description"
+      :since="page.since"
+      :deprecated="page.deprecated"
+      :label="page.label"
+    >
       <template #links>
         <UButton v-for="(link, index) in (page as DocsCollectionItem).links" :key="index" size="sm" v-bind="link" />
         <DocsPageHeaderLinks />
