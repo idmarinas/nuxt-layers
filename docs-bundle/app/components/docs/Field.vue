@@ -22,11 +22,11 @@ const showDeprecatedBadge = computed(() => !!props.deprecated)
     <!-- Badges a la derecha -->
     <div class="flex items-center gap-2">
       <!-- Badge since -->
-      <LabelsVersion v-if="showSinceBadge" :version="since as string" isNew size="sm" />
+      <LabelsVersion v-if="showSinceBadge" :version="since!" isNew size="sm" />
 
       <!-- Badge deprecated -->
       <template v-if="showDeprecatedBadge">
-        <LabelsDeprecation :since="deprecated?.since as string" :removed="deprecated?.removed" size="sm" />
+        <LabelsDeprecation :since="deprecated?.since!" :removed="deprecated?.removed" size="sm" />
       </template>
     </div>
   </div>
