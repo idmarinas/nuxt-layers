@@ -2,6 +2,7 @@
 import { kebabCase } from 'scule'
 import type { ContentNavigationItem, Collections, DocsCollectionItem } from '@nuxt/content'
 import { findPageHeadline } from '@nuxt/content/utils'
+import { normalize } from '../../../utils/formats'
 
 definePageMeta({
   layout: 'docs',
@@ -13,7 +14,7 @@ const { locale, isEnabled, t } = useDocusI18n()
 const { isOpen } = useAssistant()
 const appConfig = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
-const collectionName = computed(() => isEnabled.value ? `docs_${locale.value}` : 'docs')
+const collectionName = computed(() => isEnabled.value ? `docs_${normalize(locale.value)}` : 'docs')
 
 const [{ data: page }, { data: surround }] = await Promise.all([
   useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections).path(route.path).first() as Promise<DocsCollectionItem>),
@@ -27,8 +28,6 @@ const [{ data: page }, { data: surround }] = await Promise.all([
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: t('common.error.title'), fatal: true })
 }
-
-
 
 const title = page.value.seo?.title || page.value.title
 const description = page.value.seo?.description || page.value.description
@@ -50,7 +49,7 @@ watch(() => navigation?.value, () => {
 defineOgImage('DocsTakumi', {
   headline: (page.value.ogImage?.props?.headline as string) || headline.value,
   icon: page.value.ogImage?.props?.icon as string | undefined,
-  title: title?.slice(0, 60),
+  title: formatOgTitle(title),
   description: formatOgDescription(title, description),
 })
 
@@ -70,9 +69,6 @@ const editLink = computed(() => {
     `${page.value?.stem}.${page.value?.extension}`,
   ].filter(Boolean).join('/')
 })
-
-// Add the page path to the prerender list
-addPrerenderPath(`/raw${route.path}.md`)
 </script>
 
 <template>
@@ -114,8 +110,7 @@ addPrerenderPath(`/raw${route.path}.md`)
           </UButton>
           <template v-if="github?.url">
             <span>{{ t('common.or') }}</span>
-            <UButton variant="link" color="neutral" :to="`${github.url}/issues/new/choose`" target="_blank" icon="i-tabler-alert-circle"
-              :ui="{ leadingIcon: 'size-4' }">
+            <UButton variant="link" color="neutral" :to="`${github.url}/issues/new/choose`" target="_blank" icon="i-tabler-alert-circle" :ui="{ leadingIcon: 'size-4' }">
               {{ t('docs.report') }}
             </UButton>
           </template>

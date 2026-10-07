@@ -69,6 +69,7 @@ export default defineNuxtConfig({
       ]
     },
   },
+  devServer: { host: 'localhost' },
   vite: {
     optimizeDeps: {
       include: [
