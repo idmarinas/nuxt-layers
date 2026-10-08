@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { kebabCase } from 'scule'
-import type { Collections, VersionsCollectionItem } from '@nuxt/content'
-import type { ButtonProps } from '@nuxt/ui'
+import {kebabCase} from 'scule'
+import type {Collections, VersionsCollectionItem} from '@nuxt/content'
+import type {ButtonProps} from '@nuxt/ui'
 
 definePageMeta({
   layout: 'changelog',
@@ -10,20 +10,20 @@ definePageMeta({
 })
 
 const route = useRoute()
-const { locale, isEnabled, t } = useBundleI18n()
-const { lastRelease } = await useReleases()
+const {locale, isEnabled, t} = useBundleI18n()
+const {lastRelease} = await useReleases()
 const appConfig = useAppConfig()
 const collectionName = computed(() => isEnabled.value ? `versions_${locale.value}` : 'versions')
 
-const [{ data: page }, { data: surround }] = await Promise.all([
+const [{data: page}, {data: surround}] = await Promise.all([
   useAsyncData(kebabCase(route.path), () => queryCollection(collectionName.value as keyof Collections)
     .where('version', '=', (route.params.v as string).replaceAll('_', '.'))
     .first() as Promise<VersionsCollectionItem>),
-  useAsyncData(kebabCase(route.path) + '-surround', () => queryCollectionItemSurroundings(collectionName.value as keyof Collections, route.path, { fields: ['description'], }))
+  useAsyncData(kebabCase(route.path) + '-surround', () => queryCollectionItemSurroundings(collectionName.value as keyof Collections, route.path, {fields: ['description'],}))
 ])
 
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: t('common.error.title'), fatal: true })
+  throw createError({statusCode: 404, statusMessage: t('common.error.title'), fatal: true})
 }
 
 const title = page.value.seo?.title || page.value.title
@@ -81,13 +81,13 @@ const links = ref((): ButtonProps[] => {
 
   return [
     {
-      label: t('release.tag', { version: page.value?.version || '' }),
+      label: t('release.tag', {version: page.value?.version || ''}),
       icon: 'i-tabler-tag',
       color: 'success',
       to: `${github.value.url}/releases/tag/${page.value?.version}`,
       target: '_blank'
     }, {
-      label: t('release.branch', { version: page.value?.branch || '' }),
+      label: t('release.branch', {version: page.value?.branch || ''}),
       icon: 'i-tabler-git-branch',
       // color: 'primary',
       to: `${github.value.url}/tree/${page.value?.branch}`,
@@ -97,15 +97,12 @@ const links = ref((): ButtonProps[] => {
 })
 const items = useBreadcrumbItems({
   overrides: [
-    { label: t('navigation.documentation'), icon: 'i-tabler-book' },
-    { label: t('navigation.changelog'), icon: 'i-tabler-layout' },
-    { label: page.value?.branch.replace('_', '.'), icon: 'i-tabler-git-branch' },
-    { label: page.value?.version.replace('_', '.'), icon: 'i-tabler-tag' }
+    {label: t('navigation.documentation'), icon: 'i-tabler-book'},
+    {label: t('navigation.changelog'), icon: 'i-tabler-layout'},
+    {label: page.value?.branch.replace('_', '.'), icon: 'i-tabler-git-branch'},
+    {label: page.value?.version.replace('_', '.'), icon: 'i-tabler-tag'}
   ]
 })
-
-// Add the page path to the prerender list
-addPrerenderPath(`/raw${route.path}.md`)
 </script>
 
 <template>
@@ -120,25 +117,25 @@ addPrerenderPath(`/raw${route.path}.md`)
 
     <UPageBody>
       <UBreadcrumb :items="items" />
-      <UChangelogVersion v-bind="page" :badge="`v${page.version}`" :description="undefined" :indicator="false"
-        :title="undefined" :ui="{ container: 'w-full max-w-full', imageWrapper: 'aspect-auto' }">
+      <UChangelogVersion :badge="`v${page.version}`" :description="undefined" :indicator="false" :title="undefined"
+                         :ui="{ container: 'w-full max-w-full', imageWrapper: 'aspect-auto' }" v-bind="page">
         <template #body>
           <ContentRenderer v-if="page" :value="page" />
         </template>
         <template #image>
-          <img :src="ogImageUrl" :alt="title" class="w-full h-auto object-cover object-top" lazy />
+          <img :alt="title" :src="ogImageUrl" class="w-full h-auto object-cover object-top" lazy />
         </template>
       </UChangelogVersion>
 
       <USeparator>
         <div v-if="github" class="flex items-center gap-2 text-sm text-muted">
           <UButton :to="editLink" :ui="{ leadingIcon: 'size-4' }" color="neutral" icon="i-tabler-pencil" target="_blank"
-            variant="link">
+                   variant="link">
             {{ t('docs.edit') }}
           </UButton>
           <span>{{ t('common.or') }}</span>
           <UButton :to="`${github.url}/issues/new/choose`" :ui="{ leadingIcon: 'size-4' }" color="neutral"
-            icon="i-tabler-alert-circle" target="_blank" variant="link">
+                   icon="i-tabler-alert-circle" target="_blank" variant="link">
             {{ t('docs.report') }}
           </UButton>
         </div>
